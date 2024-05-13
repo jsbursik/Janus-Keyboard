@@ -1,0 +1,53 @@
+units:
+  ks: 15
+  kc: 18.5
+  kp: kc + 1
+points:
+  key:
+    height: kc
+    width: kc
+    spread: kp
+    padding: kp
+  zones:
+    matrix:
+      anchor:
+        rotate: 7
+        shift: [50, -150]
+      columns:
+        outer:
+          key.splay: 2
+        pinky:
+          key.stagger: 2
+        ring:
+          key.stagger: 4
+          key.splay: -2
+        middle:
+          key.stagger: 3
+        index:
+          key.splay: -4
+          key.stagger: -3
+          rows.mod.skip: true
+        inner:
+          key.splay: -4
+          key.stagger: -3
+          rows.mod.skip: true
+      rows:
+        mod:
+        bottom:
+        home:
+        top:
+    thumbfan:
+      anchor:
+        ref: matrix_inner_bottom
+        shift: [0, -1kp - 10]
+        rotate: -20
+      columns:
+        inner:
+        home:
+          key.height: 1.5kc
+          key.shift: [0,0.25kc]
+        outer:
+          key.height: 1.5kc
+          key.shift: [0,0.25kc]
+      rows:
+        cluster:
