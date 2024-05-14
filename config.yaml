@@ -16,26 +16,36 @@ points:
       columns:
         outer:
           key.splay: 2
+          key.column_net: P15
         pinky:
           key.stagger: 2
+          key.column_net: P14
         ring:
           key.stagger: 4
           key.splay: -2
+          key.column_net: P16
         middle:
           key.stagger: 3
+          key.column_net: P10
         index:
           key.splay: -4
           key.stagger: -3
           rows.mod.skip: true
+          key.column_net: P20
         inner:
           key.splay: -4
           key.stagger: -3
           rows.mod.skip: true
+          key.column_net: P19
       rows:
         mod:
+          row_net: P9
         bottom:
+          row_net: P8
         home:
+          row_net: P7
         top:
+          row_net: P6
     thumbfan:
       anchor:
         ref: matrix_inner_bottom
@@ -43,11 +53,106 @@ points:
         rotate: -20
       columns:
         inner:
+          key.column_net: P20
         home:
           key.height: 1.5kc
-          key.shift: [0,0.25kc]
+          key.shift: [0, 0.25kc]
+          key.rotate: -90
+          key.column_net: P19
         outer:
           key.height: 1.5kc
-          key.shift: [0,0.25kc]
+          key.shift: [0, 0.25kc]
+          key.rotate: -90
+          key.column_net: P18
       rows:
         cluster:
+          row_net: P9
+outlines:
+  switches:
+    - what: rectangle
+      where: true
+      size: [ks, ks]
+  keycaps:
+    - what: rectangle
+      where: true
+      size: [kc, kc]
+  board:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: matrix_outer_top
+          shift: [-0.75ks, 0.75ks]
+        - ref: matrix_outer_top
+          shift: [0.5ks, 0.75ks]
+        - ref: matrix_pinky_top
+          shift: [-0.5ks, 0.75ks]
+        - ref: matrix_pinky_top
+          shift: [0.5ks, 0.75ks]
+        - ref: matrix_ring_top
+          shift: [-0.5ks, 0.75ks]
+        - ref: matrix_ring_top
+          shift: [0.5ks, 0.75ks]
+        - ref: matrix_middle_top
+          shift: [-0.5ks, 0.75ks + 1]
+        - ref: matrix_middle_top
+          shift: [0.5ks, 0.75ks + 1]
+        - ref: matrix_index_top
+          shift: [-0.5ks, 0.75ks]
+        - ref: matrix_index_top
+          shift: [0.5ks, 0.75ks]
+        - ref: matrix_inner_top
+          shift: [-0.5ks, 0.75ks]
+        - ref: matrix_inner_top
+          shift: [2.4ks, 0.75ks]
+        - ref: matrix_inner_bottom
+          shift: [2.4ks, -0.5ks]
+        - ref: thumbfan_outer_cluster
+          shift: [-1ks, 0.75ks + 2]
+        - ref: thumbfan_outer_cluster
+          shift: [1ks, 0.75ks + 2]
+        - ref: thumbfan_outer_cluster
+          shift: [1ks, -3ks - 5]
+        - ref: matrix_outer_mod
+          shift: [-0.75ks, -0.75ks]
+      expand: 5
+      joints: round
+pcbs:
+  janus:
+    outlines:
+      main:
+        outline: board
+    footprints:
+      ks27:
+        what: ks27
+        where: true
+        params:
+          keycaps: true
+          reverse: true
+          hotswap: true
+          from: "{{column_net}}"
+          to: "{{colrow}}"
+      diode:
+        what: diode
+        where: true
+        params:
+          from: "{{colrow}}"
+          to: "{{row_net}}"
+        adjust:
+          shift: [9, 6]
+          rotate: -90
+      rev_nano:
+        what: rev_nano
+        where:
+          ref: matrix_inner_top
+          shift: [1kc + 3, -2]
+      rev_view:
+        what: niceview
+        params:
+          side: "F"
+          reverse: true
+          MOSI: P2
+          SCK: P3
+          CS: P1
+        where:
+          ref: matrix_inner_top
+          shift: [1kc + 3, -4]
