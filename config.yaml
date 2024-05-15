@@ -3,7 +3,7 @@ units:
   kc: 18.5
   kp: kc + 1
   ep: 6
-  screw_size: 2
+  screw_size: 1.5
 points:
   key:
     height: kc
@@ -143,6 +143,12 @@ outlines:
       where:
         - ref: matrix_inner_bottom
           shift: [2kc - (ep / 2) + 1, -0.5kc - (ep / 2) - 1]
+    bottom_right:
+      what: circle
+      radius: screw_size
+      where:
+        - ref: thumbfan_outer_cluster
+          shift: [0.75kc + 1, 0.5kc + 1]
     bottom_middle:
       what: circle
       radius: screw_size
