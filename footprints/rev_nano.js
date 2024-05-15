@@ -53,11 +53,23 @@ module.exports = {
     ${"" /* USB C Port (Note: Re-measure this, seems wrong) */}
     (fp_rect (start -3.81 -19.304) (end 3.81 -14.224) (stroke (width 0.2) (type default)) (fill none) (layer "Dwgs.User"))
 
-    ${"" /* RAW/B+ square pads */}
-    (fp_rect (start 6.62 -14.97) (end 8.62 -12.97) (stroke (width 0) (type solid)) (fill solid) (layer "F.Cu"))
-    (fp_rect (start -8.62 -14.97) (end -6.62 -12.97) (stroke (width 0) (type solid)) (fill solid) (layer "B.Cu"))
-    (fp_rect (start 6.62 -14.97) (end 8.62 -12.97) (stroke (width 0) (type solid)) (fill solid) (layer "F.Mask"))
-    (fp_rect (start -8.62 -14.97) (end -6.62 -12.97) (stroke (width 0) (type solid)) (fill solid) (layer "B.Mask"))
+    ${"" /* Board Orientation Triangles */}
+    (fp_poly
+      (pts
+        (xy 8.255 -15.24) (xy 8.89 -14.605) (xy 8.89 -15.24)
+      )
+      (stroke (width 0.1) (type solid))
+      (fill solid)
+      (layer "F.SilkS")
+    )
+    (fp_poly 
+      (pts
+        (xy -8.89 -14.605) (xy -8.255 -15.24) (xy -8.89 -15.245)
+      )
+      (stroke (width 0.1) (type solid))
+      (fill solid)
+      (layer "B.SilkS")
+    )
 
     ${"" /* Left-hand thru-holes for nano mount */}
     (pad "" thru_hole circle (at -7.62 -13.97)(size 1.7526 1.7526)(drill 1.0922)(layers "*.Cu" "*.Mask"))
@@ -115,65 +127,49 @@ module.exports = {
     (pad "P10" thru_hole circle (at 2.62 13.97)(size 0.8 0.8)(drill 0.4)(layers "*.Cu" "*.Mask") ${p.P10})
 
     ${"" /* Left-hand jumpers (F & B) */}
-    (pad "" smd custom (at -5.895 -13.97 ${p.rot})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
+    (pad "" smd custom (at -5.715 -13.97 ${p.rot})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
       (gr_poly (pts
           (xy 1 0) (xy 0.5 0.75) (xy -0.5 0.75) (xy -0.5 -0.75) (xy 0.5 -0.75))
       (width 0))))
-    (pad "" smd custom (at -5.895 -13.97 ${p.rot + 180})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
+    (pad "" smd custom (at -5.715 -13.97 ${p.rot + 180})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
       (gr_poly (pts
           (xy -1 0) (xy -0.5 0.75) (xy 0.5 0.75) (xy 0.5 -0.75) (xy -0.5 -0.75))
       (width 0))))
-    (pad "" smd custom (at -5.895 -11.43 ${p.rot})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
+    (pad "" smd custom (at -5.715 -11.43 ${p.rot})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
       (gr_poly (pts
           (xy 1 0) (xy 0.5 0.75) (xy -0.5 0.75) (xy -0.5 -0.75) (xy 0.5 -0.75))
       (width 0))))
-    (pad "" smd custom (at -5.895 -11.43 ${p.rot + 180})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
+    (pad "" smd custom (at -5.715 -11.43 ${p.rot + 180})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
       (gr_poly (pts
           (xy -1 0) (xy -0.5 0.75) (xy 0.5 0.75) (xy 0.5 -0.75) (xy -0.5 -0.75))
       (width 0))))
-    (pad "" smd custom (at -5.895 -8.89 ${p.rot})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
+    (pad "" smd custom (at -5.715 -8.89 ${p.rot})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
       (gr_poly (pts
           (xy 1 0) (xy 0.5 0.75) (xy -0.5 0.75) (xy -0.5 -0.75) (xy 0.5 -0.75))
       (width 0))))
-    (pad "" smd custom (at -5.895 -8.89 ${p.rot + 180})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
+    (pad "" smd custom (at -5.715 -8.89 ${p.rot + 180})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
       (gr_poly (pts
           (xy -1 0) (xy -0.5 0.75) (xy 0.5 0.75) (xy 0.5 -0.75) (xy -0.5 -0.75))
       (width 0))))
-    (pad "" smd custom (at -5.895 -6.35 ${p.rot})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
-      (zone_connect 0)
-      (options (clearance outline)(anchor rect))
-      (primitives
-      (gr_poly (pts
-          (xy 1 0) (xy 0.5 0.75) (xy -0.5 0.75) (xy -0.5 -0.75) (xy 0.5 -0.75))
-      (width 0))))
-    (pad "" smd custom
-    (at -5.895 -6.35 ${p.rot + 180})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
-      (zone_connect 0)
-      (options (clearance outline)(anchor rect))
-      (primitives
-      (gr_poly (pts
-          (xy -1 0) (xy -0.5 0.75) (xy 0.5 0.75) (xy 0.5 -0.75) (xy -0.5 -0.75))
-      (width 0))))
-    (pad "" smd custom
-    (at -5.895 -3.81 ${p.rot})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
+    (pad "" smd custom (at -5.715 -6.35 ${p.rot})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -181,7 +177,7 @@ module.exports = {
           (xy 1 0) (xy 0.5 0.75) (xy -0.5 0.75) (xy -0.5 -0.75) (xy 0.5 -0.75))
       (width 0))))
     (pad "" smd custom
-    (at -5.895 -3.81 ${p.rot + 180})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
+    (at -5.715 -6.35 ${p.rot + 180})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -189,7 +185,7 @@ module.exports = {
           (xy -1 0) (xy -0.5 0.75) (xy 0.5 0.75) (xy 0.5 -0.75) (xy -0.5 -0.75))
       (width 0))))
     (pad "" smd custom
-    (at -5.895 -1.27 ${p.rot})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
+    (at -5.715 -3.81 ${p.rot})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -197,7 +193,7 @@ module.exports = {
           (xy 1 0) (xy 0.5 0.75) (xy -0.5 0.75) (xy -0.5 -0.75) (xy 0.5 -0.75))
       (width 0))))
     (pad "" smd custom
-    (at -5.895 -1.27 ${p.rot + 180})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
+    (at -5.715 -3.81 ${p.rot + 180})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -205,7 +201,7 @@ module.exports = {
           (xy -1 0) (xy -0.5 0.75) (xy 0.5 0.75) (xy 0.5 -0.75) (xy -0.5 -0.75))
       (width 0))))
     (pad "" smd custom
-    (at -5.895 1.27 ${p.rot})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
+    (at -5.715 -1.27 ${p.rot})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -213,7 +209,7 @@ module.exports = {
           (xy 1 0) (xy 0.5 0.75) (xy -0.5 0.75) (xy -0.5 -0.75) (xy 0.5 -0.75))
       (width 0))))
     (pad "" smd custom
-    (at -5.895 1.27 ${p.rot + 180})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
+    (at -5.715 -1.27 ${p.rot + 180})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -221,7 +217,7 @@ module.exports = {
           (xy -1 0) (xy -0.5 0.75) (xy 0.5 0.75) (xy 0.5 -0.75) (xy -0.5 -0.75))
       (width 0))))
     (pad "" smd custom
-    (at -5.895 3.81 ${p.rot})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
+    (at -5.715 1.27 ${p.rot})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -229,7 +225,7 @@ module.exports = {
           (xy 1 0) (xy 0.5 0.75) (xy -0.5 0.75) (xy -0.5 -0.75) (xy 0.5 -0.75))
       (width 0))))
     (pad "" smd custom
-    (at -5.895 3.81 ${p.rot + 180})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
+    (at -5.715 1.27 ${p.rot + 180})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -237,7 +233,7 @@ module.exports = {
           (xy -1 0) (xy -0.5 0.75) (xy 0.5 0.75) (xy 0.5 -0.75) (xy -0.5 -0.75))
       (width 0))))
     (pad "" smd custom
-    (at -5.895 6.35 ${p.rot})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
+    (at -5.715 3.81 ${p.rot})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -245,7 +241,7 @@ module.exports = {
           (xy 1 0) (xy 0.5 0.75) (xy -0.5 0.75) (xy -0.5 -0.75) (xy 0.5 -0.75))
       (width 0))))
     (pad "" smd custom
-    (at -5.895 6.35 ${p.rot + 180})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
+    (at -5.715 3.81 ${p.rot + 180})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -253,7 +249,7 @@ module.exports = {
           (xy -1 0) (xy -0.5 0.75) (xy 0.5 0.75) (xy 0.5 -0.75) (xy -0.5 -0.75))
       (width 0))))
     (pad "" smd custom
-    (at -5.895 8.89 ${p.rot})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
+    (at -5.715 6.35 ${p.rot})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -261,7 +257,7 @@ module.exports = {
           (xy 1 0) (xy 0.5 0.75) (xy -0.5 0.75) (xy -0.5 -0.75) (xy 0.5 -0.75))
       (width 0))))
     (pad "" smd custom
-    (at -5.895 8.89 ${p.rot + 180})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
+    (at -5.715 6.35 ${p.rot + 180})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -269,7 +265,7 @@ module.exports = {
           (xy -1 0) (xy -0.5 0.75) (xy 0.5 0.75) (xy 0.5 -0.75) (xy -0.5 -0.75))
       (width 0))))
     (pad "" smd custom
-    (at -5.895 11.43 ${p.rot})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
+    (at -5.715 8.89 ${p.rot})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -277,7 +273,7 @@ module.exports = {
           (xy 1 0) (xy 0.5 0.75) (xy -0.5 0.75) (xy -0.5 -0.75) (xy 0.5 -0.75))
       (width 0))))
     (pad "" smd custom
-    (at -5.895 11.43 ${p.rot + 180})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
+    (at -5.715 8.89 ${p.rot + 180})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -285,7 +281,7 @@ module.exports = {
           (xy -1 0) (xy -0.5 0.75) (xy 0.5 0.75) (xy 0.5 -0.75) (xy -0.5 -0.75))
       (width 0))))
     (pad "" smd custom
-    (at -5.895 13.97 ${p.rot})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
+    (at -5.715 11.43 ${p.rot})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -293,7 +289,7 @@ module.exports = {
           (xy 1 0) (xy 0.5 0.75) (xy -0.5 0.75) (xy -0.5 -0.75) (xy 0.5 -0.75))
       (width 0))))
     (pad "" smd custom
-    (at -5.895 13.97 ${p.rot + 180})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
+    (at -5.715 11.43 ${p.rot + 180})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -301,7 +297,23 @@ module.exports = {
           (xy -1 0) (xy -0.5 0.75) (xy 0.5 0.75) (xy 0.5 -0.75) (xy -0.5 -0.75))
       (width 0))))
     (pad "" smd custom
-    (at -4.445 -13.97 ${p.rot})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
+    (at -5.715 13.97 ${p.rot})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
+      (zone_connect 0)
+      (options (clearance outline)(anchor rect))
+      (primitives
+      (gr_poly (pts
+          (xy 1 0) (xy 0.5 0.75) (xy -0.5 0.75) (xy -0.5 -0.75) (xy 0.5 -0.75))
+      (width 0))))
+    (pad "" smd custom
+    (at -5.715 13.97 ${p.rot + 180})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
+      (zone_connect 0)
+      (options (clearance outline)(anchor rect))
+      (primitives
+      (gr_poly (pts
+          (xy -1 0) (xy -0.5 0.75) (xy 0.5 0.75) (xy 0.5 -0.75) (xy -0.5 -0.75))
+      (width 0))))
+    (pad "" smd custom
+    (at -4.265004 -13.97 ${p.rot})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -309,7 +321,7 @@ module.exports = {
           (xy 0.5 0.75) (xy -0.65 0.75) (xy -0.15 0) (xy -0.65 -0.75) (xy 0.5 -0.75))
       (width 0))) ${p.P1})
     (pad "" smd custom
-    (at -4.445 -13.97 ${p.rot + 180})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
+    (at -4.265004 -13.97 ${p.rot + 180})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -317,7 +329,7 @@ module.exports = {
           (xy -0.5 0.75) (xy 0.65 0.75) (xy 0.15 0) (xy 0.65 -0.75) (xy -0.5 -0.75))
       (width 0))) ${p.RAW})
     (pad "" smd custom
-    (at -4.445 -11.43 ${p.rot})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
+    (at -4.265004 -11.43 ${p.rot})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -325,7 +337,7 @@ module.exports = {
           (xy 0.5 0.75) (xy -0.65 0.75) (xy -0.15 0) (xy -0.65 -0.75) (xy 0.5 -0.75))
       (width 0))) ${p.P0})
     (pad "" smd custom
-    (at -4.445 -11.43 ${p.rot + 180})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
+    (at -4.265004 -11.43 ${p.rot + 180})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -333,7 +345,7 @@ module.exports = {
           (xy -0.5 0.75) (xy 0.65 0.75) (xy 0.15 0) (xy 0.65 -0.75) (xy -0.5 -0.75))
       (width 0))) ${p.GND})
     (pad "" smd custom
-    (at -4.445 -8.89 ${p.rot})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
+    (at -4.265004 -8.89 ${p.rot})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -341,7 +353,7 @@ module.exports = {
           (xy 0.5 0.75) (xy -0.65 0.75) (xy -0.15 0) (xy -0.65 -0.75) (xy 0.5 -0.75))
       (width 0))) ${p.GND})
     (pad "" smd custom
-    (at -4.445 -8.89 ${p.rot + 180})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
+    (at -4.265004 -8.89 ${p.rot + 180})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -349,7 +361,7 @@ module.exports = {
           (xy -0.5 0.75) (xy 0.65 0.75) (xy 0.15 0) (xy 0.65 -0.75) (xy -0.5 -0.75))
       (width 0))) ${p.RST})
     (pad "" smd custom
-    (at -4.445 -6.35 ${p.rot})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
+    (at -4.265004 -6.35 ${p.rot})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -357,7 +369,7 @@ module.exports = {
           (xy 0.5 0.75) (xy -0.65 0.75) (xy -0.15 0) (xy -0.65 -0.75) (xy 0.5 -0.75))
       (width 0))) ${p.GND})
     (pad "" smd custom
-    (at -4.445 -6.35 ${p.rot + 180})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
+    (at -4.265004 -6.35 ${p.rot + 180})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -365,7 +377,7 @@ module.exports = {
           (xy -0.5 0.75) (xy 0.65 0.75) (xy 0.15 0) (xy 0.65 -0.75) (xy -0.5 -0.75))
       (width 0))) ${p.VCC})
     (pad "" smd custom
-    (at -4.445 -3.81 ${p.rot})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
+    (at -4.265004 -3.81 ${p.rot})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -373,7 +385,7 @@ module.exports = {
           (xy 0.5 0.75) (xy -0.65 0.75) (xy -0.15 0) (xy -0.65 -0.75) (xy 0.5 -0.75))
       (width 0))) ${p.P2})
     (pad "" smd custom
-    (at -4.445 -3.81 ${p.rot + 180})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
+    (at -4.265004 -3.81 ${p.rot + 180})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -381,7 +393,7 @@ module.exports = {
           (xy -0.5 0.75) (xy 0.65 0.75) (xy 0.15 0) (xy 0.65 -0.75) (xy -0.5 -0.75))
       (width 0))) ${p.P21})
     (pad "" smd custom
-    (at -4.445 -1.27 ${p.rot})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
+    (at -4.265004 -1.27 ${p.rot})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -389,7 +401,7 @@ module.exports = {
           (xy 0.5 0.75) (xy -0.65 0.75) (xy -0.15 0) (xy -0.65 -0.75) (xy 0.5 -0.75))
       (width 0))) ${p.P3})
     (pad "" smd custom
-    (at -4.445 -1.27 ${p.rot + 180})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
+    (at -4.265004 -1.27 ${p.rot + 180})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -397,7 +409,7 @@ module.exports = {
           (xy -0.5 0.75) (xy 0.65 0.75) (xy 0.15 0) (xy 0.65 -0.75) (xy -0.5 -0.75))
       (width 0))) ${p.P20})
     (pad "" smd custom
-    (at -4.445 1.27 ${p.rot})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
+    (at -4.265004 1.27 ${p.rot})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -405,7 +417,7 @@ module.exports = {
           (xy 0.5 0.75) (xy -0.65 0.75) (xy -0.15 0) (xy -0.65 -0.75) (xy 0.5 -0.75))
       (width 0))) ${p.P4})
     (pad "" smd custom
-    (at -4.445 1.27 ${p.rot + 180})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
+    (at -4.265004 1.27 ${p.rot + 180})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -413,7 +425,7 @@ module.exports = {
           (xy -0.5 0.75) (xy 0.65 0.75) (xy 0.15 0) (xy 0.65 -0.75) (xy -0.5 -0.75))
       (width 0))) ${p.P19})
     (pad "" smd custom
-    (at -4.445 3.81 ${p.rot})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
+    (at -4.265004 3.81 ${p.rot})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -421,7 +433,7 @@ module.exports = {
           (xy 0.5 0.75) (xy -0.65 0.75) (xy -0.15 0) (xy -0.65 -0.75) (xy 0.5 -0.75))
       (width 0))) ${p.P5})
     (pad "" smd custom
-    (at -4.445 3.81 ${p.rot + 180})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
+    (at -4.265004 3.81 ${p.rot + 180})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -429,7 +441,7 @@ module.exports = {
           (xy -0.5 0.75) (xy 0.65 0.75) (xy 0.15 0) (xy 0.65 -0.75) (xy -0.5 -0.75))
       (width 0))) ${p.P18})
     (pad "" smd custom
-    (at -4.445 6.35 ${p.rot})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
+    (at -4.265004 6.35 ${p.rot})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -437,7 +449,7 @@ module.exports = {
           (xy 0.5 0.75) (xy -0.65 0.75) (xy -0.15 0) (xy -0.65 -0.75) (xy 0.5 -0.75))
       (width 0))) ${p.P6})
     (pad "" smd custom
-    (at -4.445 6.35 ${p.rot + 180})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
+    (at -4.265004 6.35 ${p.rot + 180})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -445,7 +457,7 @@ module.exports = {
           (xy -0.5 0.75) (xy 0.65 0.75) (xy 0.15 0) (xy 0.65 -0.75) (xy -0.5 -0.75))
       (width 0))) ${p.P15})
     (pad "" smd custom
-    (at -4.445 8.89 ${p.rot})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
+    (at -4.265004 8.89 ${p.rot})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -453,7 +465,7 @@ module.exports = {
           (xy 0.5 0.75) (xy -0.65 0.75) (xy -0.15 0) (xy -0.65 -0.75) (xy 0.5 -0.75))
       (width 0))) ${p.P7})
     (pad "" smd custom
-    (at -4.445 8.89 ${p.rot + 180})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
+    (at -4.265004 8.89 ${p.rot + 180})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -461,7 +473,7 @@ module.exports = {
           (xy -0.5 0.75) (xy 0.65 0.75) (xy 0.15 0) (xy 0.65 -0.75) (xy -0.5 -0.75))
       (width 0))) ${p.P14})
     (pad "" smd custom
-    (at -4.445 11.43 ${p.rot})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
+    (at -4.265004 11.43 ${p.rot})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -469,7 +481,7 @@ module.exports = {
           (xy 0.5 0.75) (xy -0.65 0.75) (xy -0.15 0) (xy -0.65 -0.75) (xy 0.5 -0.75))
       (width 0))) ${p.P8})
     (pad "" smd custom
-    (at -4.445 11.43 ${p.rot + 180})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
+    (at -4.265004 11.43 ${p.rot + 180})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -477,7 +489,7 @@ module.exports = {
           (xy -0.5 0.75) (xy 0.65 0.75) (xy 0.15 0) (xy 0.65 -0.75) (xy -0.5 -0.75))
       (width 0))) ${p.P16})
     (pad "" smd custom
-    (at -4.445 13.97 ${p.rot})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
+    (at -4.265004 13.97 ${p.rot})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -485,7 +497,7 @@ module.exports = {
           (xy 0.5 0.75) (xy -0.65 0.75) (xy -0.15 0) (xy -0.65 -0.75) (xy 0.5 -0.75))
       (width 0))) ${p.P9})
     (pad "" smd custom
-    (at -4.445 13.97 ${p.rot + 180})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
+    (at -4.265004 13.97 ${p.rot + 180})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -495,7 +507,7 @@ module.exports = {
 
     ${"" /* Right-hand jumpers (F & B) */}
     (pad "" smd custom
-      (at 4.445 -13.97 ${p.rot + 180})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
+      (at 4.264994 -13.97 ${p.rot + 180})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -503,7 +515,7 @@ module.exports = {
             (xy 0.5 0.75) (xy -0.65 0.75) (xy -0.15 0) (xy -0.65 -0.75) (xy 0.5 -0.75))
       (width 0))) ${p.RAW})
     (pad "" smd custom
-      (at 4.445 -13.97 ${p.rot})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
+      (at 4.264994 -13.97 ${p.rot})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -511,7 +523,7 @@ module.exports = {
             (xy -0.5 0.75) (xy 0.65 0.75) (xy 0.15 0) (xy 0.65 -0.75) (xy -0.5 -0.75))
       (width 0))) ${p.P1})
     (pad "" smd custom
-      (at 4.445 -11.43 ${p.rot + 180})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
+      (at 4.264994 -11.43 ${p.rot + 180})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -519,7 +531,7 @@ module.exports = {
             (xy 0.5 0.75) (xy -0.65 0.75) (xy -0.15 0) (xy -0.65 -0.75) (xy 0.5 -0.75))
       (width 0))) ${p.GND})
     (pad "" smd custom
-      (at 4.445 -11.43 ${p.rot})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
+      (at 4.264994 -11.43 ${p.rot})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -527,7 +539,7 @@ module.exports = {
             (xy -0.5 0.75) (xy 0.65 0.75) (xy 0.15 0) (xy 0.65 -0.75) (xy -0.5 -0.75))
       (width 0))) ${p.P0})
     (pad "" smd custom
-      (at 4.445 -8.89 ${p.rot + 180})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
+      (at 4.264994 -8.89 ${p.rot + 180})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -535,7 +547,7 @@ module.exports = {
             (xy 0.5 0.75) (xy -0.65 0.75) (xy -0.15 0) (xy -0.65 -0.75) (xy 0.5 -0.75))
       (width 0))) ${p.RST})
     (pad "" smd custom
-      (at 4.445 -8.89 ${p.rot})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
+      (at 4.264994 -8.89 ${p.rot})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -543,7 +555,7 @@ module.exports = {
             (xy -0.5 0.75) (xy 0.65 0.75) (xy 0.15 0) (xy 0.65 -0.75) (xy -0.5 -0.75))
       (width 0))) ${p.GND})
     (pad "" smd custom
-      (at 4.445 -6.35 ${p.rot + 180})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
+      (at 4.264994 -6.35 ${p.rot + 180})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -551,7 +563,7 @@ module.exports = {
             (xy 0.5 0.75) (xy -0.65 0.75) (xy -0.15 0) (xy -0.65 -0.75) (xy 0.5 -0.75))
       (width 0))) ${p.VCC})
     (pad "" smd custom
-      (at 4.445 -6.35 ${p.rot})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
+      (at 4.264994 -6.35 ${p.rot})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -559,7 +571,7 @@ module.exports = {
             (xy -0.5 0.75) (xy 0.65 0.75) (xy 0.15 0) (xy 0.65 -0.75) (xy -0.5 -0.75))
       (width 0))) ${p.GND})
     (pad "" smd custom
-      (at 4.445 -3.81 ${p.rot + 180})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
+      (at 4.264994 -3.81 ${p.rot + 180})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -567,7 +579,7 @@ module.exports = {
             (xy 0.5 0.75) (xy -0.65 0.75) (xy -0.15 0) (xy -0.65 -0.75) (xy 0.5 -0.75))
       (width 0))) ${p.P21})
     (pad "" smd custom
-      (at 4.445 -3.81 ${p.rot})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
+      (at 4.264994 -3.81 ${p.rot})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -575,7 +587,7 @@ module.exports = {
             (xy -0.5 0.75) (xy 0.65 0.75) (xy 0.15 0) (xy 0.65 -0.75) (xy -0.5 -0.75))
       (width 0))) ${p.P2})
     (pad "" smd custom
-      (at 4.445 -1.27 ${p.rot + 180})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
+      (at 4.264994 -1.27 ${p.rot + 180})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -583,7 +595,7 @@ module.exports = {
             (xy 0.5 0.75) (xy -0.65 0.75) (xy -0.15 0) (xy -0.65 -0.75) (xy 0.5 -0.75))
       (width 0))) ${p.P20})
     (pad "" smd custom
-      (at 4.445 -1.27 ${p.rot})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
+      (at 4.264994 -1.27 ${p.rot})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -591,7 +603,7 @@ module.exports = {
             (xy -0.5 0.75) (xy 0.65 0.75) (xy 0.15 0) (xy 0.65 -0.75) (xy -0.5 -0.75))
       (width 0))) ${p.P3})
     (pad "" smd custom
-      (at 4.445 1.27 ${p.rot + 180})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
+      (at 4.264994 1.27 ${p.rot + 180})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -599,7 +611,7 @@ module.exports = {
             (xy 0.5 0.75) (xy -0.65 0.75) (xy -0.15 0) (xy -0.65 -0.75) (xy 0.5 -0.75))
       (width 0))) ${p.P19})
     (pad "" smd custom
-      (at 4.445 1.27 ${p.rot})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
+      (at 4.264994 1.27 ${p.rot})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -607,7 +619,7 @@ module.exports = {
             (xy -0.5 0.75) (xy 0.65 0.75) (xy 0.15 0) (xy 0.65 -0.75) (xy -0.5 -0.75))
       (width 0))) ${p.P4})
     (pad "" smd custom
-      (at 4.445 3.81 ${p.rot + 180})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
+      (at 4.264994 3.81 ${p.rot + 180})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -615,7 +627,7 @@ module.exports = {
             (xy 0.5 0.75) (xy -0.65 0.75) (xy -0.15 0) (xy -0.65 -0.75) (xy 0.5 -0.75))
       (width 0))) ${p.P18})
     (pad "" smd custom
-      (at 4.445 3.81 ${p.rot})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
+      (at 4.264994 3.81 ${p.rot})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -623,7 +635,7 @@ module.exports = {
             (xy -0.5 0.75) (xy 0.65 0.75) (xy 0.15 0) (xy 0.65 -0.75) (xy -0.5 -0.75))
       (width 0))) ${p.P5})
     (pad "" smd custom
-      (at 4.445 6.35 ${p.rot + 180})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
+      (at 4.264994 6.35 ${p.rot + 180})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -631,7 +643,7 @@ module.exports = {
             (xy 0.5 0.75) (xy -0.65 0.75) (xy -0.15 0) (xy -0.65 -0.75) (xy 0.5 -0.75))
       (width 0))) ${p.P15})
     (pad "" smd custom
-      (at 4.445 6.35 ${p.rot})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
+      (at 4.264994 6.35 ${p.rot})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -639,7 +651,7 @@ module.exports = {
             (xy -0.5 0.75) (xy 0.65 0.75) (xy 0.15 0) (xy 0.65 -0.75) (xy -0.5 -0.75))
       (width 0))) ${p.P6})
     (pad "" smd custom
-      (at 4.445 8.89 ${p.rot + 180})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
+      (at 4.264994 8.89 ${p.rot + 180})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -647,7 +659,7 @@ module.exports = {
             (xy 0.5 0.75) (xy -0.65 0.75) (xy -0.15 0) (xy -0.65 -0.75) (xy 0.5 -0.75))
       (width 0))) ${p.P14})
     (pad "" smd custom
-      (at 4.445 8.89 ${p.rot})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
+      (at 4.264994 8.89 ${p.rot})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -655,7 +667,7 @@ module.exports = {
             (xy -0.5 0.75) (xy 0.65 0.75) (xy 0.15 0) (xy 0.65 -0.75) (xy -0.5 -0.75))
       (width 0))) ${p.P7})
     (pad "" smd custom
-      (at 4.445 11.43 ${p.rot + 180})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
+      (at 4.264994 11.43 ${p.rot + 180})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -663,7 +675,7 @@ module.exports = {
             (xy 0.5 0.75) (xy -0.65 0.75) (xy -0.15 0) (xy -0.65 -0.75) (xy 0.5 -0.75))
       (width 0))) ${p.P16})
     (pad "" smd custom
-      (at 4.445 11.43 ${p.rot})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
+      (at 4.264994 11.43 ${p.rot})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -671,7 +683,7 @@ module.exports = {
             (xy -0.5 0.75) (xy 0.65 0.75) (xy 0.15 0) (xy 0.65 -0.75) (xy -0.5 -0.75))
       (width 0))) ${p.P8})
     (pad "" smd custom
-      (at 4.445 13.97 ${p.rot + 180})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
+      (at 4.264994 13.97 ${p.rot + 180})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -679,7 +691,7 @@ module.exports = {
             (xy 0.5 0.75) (xy -0.65 0.75) (xy -0.15 0) (xy -0.65 -0.75) (xy 0.5 -0.75))
       (width 0))) ${p.P10})
     (pad "" smd custom
-      (at 4.445 13.97 ${p.rot})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
+      (at 4.264994 13.97 ${p.rot})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -687,7 +699,7 @@ module.exports = {
             (xy -0.5 0.75) (xy 0.65 0.75) (xy 0.15 0) (xy 0.65 -0.75) (xy -0.5 -0.75))
       (width 0))) ${p.P9})
     (pad "" smd custom
-      (at 5.895 -13.97 ${p.rot + 180})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
+      (at 5.715 -13.97 ${p.rot + 180})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -695,7 +707,7 @@ module.exports = {
             (xy 1 0) (xy 0.5 0.75) (xy -0.5 0.75) (xy -0.5 -0.75) (xy 0.5 -0.75))
       (width 0))))
     (pad "" smd custom
-      (at 5.895 -13.97 ${p.rot})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
+      (at 5.715 -13.97 ${p.rot})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -703,7 +715,7 @@ module.exports = {
             (xy -1 0) (xy -0.5 0.75) (xy 0.5 0.75) (xy 0.5 -0.75) (xy -0.5 -0.75))
       (width 0))))
     (pad "" smd custom
-      (at 5.895 -11.43 ${p.rot + 180})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
+      (at 5.715 -11.43 ${p.rot + 180})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -711,7 +723,7 @@ module.exports = {
             (xy 1 0) (xy 0.5 0.75) (xy -0.5 0.75) (xy -0.5 -0.75) (xy 0.5 -0.75))
       (width 0))))
     (pad "" smd custom
-      (at 5.895 -11.43 ${p.rot})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
+      (at 5.715 -11.43 ${p.rot})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -719,7 +731,7 @@ module.exports = {
             (xy -1 0) (xy -0.5 0.75) (xy 0.5 0.75) (xy 0.5 -0.75) (xy -0.5 -0.75))
       (width 0))))
     (pad "" smd custom
-      (at 5.895 -8.89 ${p.rot + 180})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
+      (at 5.715 -8.89 ${p.rot + 180})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -727,7 +739,7 @@ module.exports = {
             (xy 1 0) (xy 0.5 0.75) (xy -0.5 0.75) (xy -0.5 -0.75) (xy 0.5 -0.75))
       (width 0))))
     (pad "" smd custom
-      (at 5.895 -8.89 ${p.rot})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
+      (at 5.715 -8.89 ${p.rot})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -735,7 +747,7 @@ module.exports = {
             (xy -1 0) (xy -0.5 0.75) (xy 0.5 0.75) (xy 0.5 -0.75) (xy -0.5 -0.75))
       (width 0))))
     (pad "" smd custom
-      (at 5.895 -6.35 ${p.rot + 180})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
+      (at 5.715 -6.35 ${p.rot + 180})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -743,7 +755,7 @@ module.exports = {
             (xy 1 0) (xy 0.5 0.75) (xy -0.5 0.75) (xy -0.5 -0.75) (xy 0.5 -0.75))
       (width 0))))
     (pad "" smd custom
-      (at 5.895 -6.35 ${p.rot})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
+      (at 5.715 -6.35 ${p.rot})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -751,7 +763,7 @@ module.exports = {
             (xy -1 0) (xy -0.5 0.75) (xy 0.5 0.75) (xy 0.5 -0.75) (xy -0.5 -0.75))
       (width 0))))
     (pad "" smd custom
-      (at 5.895 -3.81 ${p.rot + 180})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
+      (at 5.715 -3.81 ${p.rot + 180})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -759,7 +771,7 @@ module.exports = {
             (xy 1 0) (xy 0.5 0.75) (xy -0.5 0.75) (xy -0.5 -0.75) (xy 0.5 -0.75))
       (width 0))))
     (pad "" smd custom
-      (at 5.895 -3.81 ${p.rot})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
+      (at 5.715 -3.81 ${p.rot})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -767,7 +779,7 @@ module.exports = {
             (xy -1 0) (xy -0.5 0.75) (xy 0.5 0.75) (xy 0.5 -0.75) (xy -0.5 -0.75))
       (width 0))))
     (pad "" smd custom
-      (at 5.895 -1.27 ${p.rot + 180})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
+      (at 5.715 -1.27 ${p.rot + 180})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -775,7 +787,7 @@ module.exports = {
             (xy 1 0) (xy 0.5 0.75) (xy -0.5 0.75) (xy -0.5 -0.75) (xy 0.5 -0.75))
       (width 0))))
     (pad "" smd custom
-      (at 5.895 -1.27 ${p.rot})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
+      (at 5.715 -1.27 ${p.rot})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -783,7 +795,7 @@ module.exports = {
             (xy -1 0) (xy -0.5 0.75) (xy 0.5 0.75) (xy 0.5 -0.75) (xy -0.5 -0.75))
       (width 0))))
     (pad "" smd custom
-      (at 5.895 1.27 ${p.rot + 180})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
+      (at 5.715 1.27 ${p.rot + 180})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -791,7 +803,7 @@ module.exports = {
             (xy 1 0) (xy 0.5 0.75) (xy -0.5 0.75) (xy -0.5 -0.75) (xy 0.5 -0.75))
       (width 0))))
     (pad "" smd custom
-      (at 5.895 1.27 ${p.rot})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
+      (at 5.715 1.27 ${p.rot})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -799,7 +811,7 @@ module.exports = {
             (xy -1 0) (xy -0.5 0.75) (xy 0.5 0.75) (xy 0.5 -0.75) (xy -0.5 -0.75))
       (width 0))))
     (pad "" smd custom
-      (at 5.895 3.81 ${p.rot + 180})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
+      (at 5.715 3.81 ${p.rot + 180})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -807,7 +819,7 @@ module.exports = {
             (xy 1 0) (xy 0.5 0.75) (xy -0.5 0.75) (xy -0.5 -0.75) (xy 0.5 -0.75))
       (width 0))))
     (pad "" smd custom
-      (at 5.895 3.81 ${p.rot})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
+      (at 5.715 3.81 ${p.rot})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -815,7 +827,7 @@ module.exports = {
             (xy -1 0) (xy -0.5 0.75) (xy 0.5 0.75) (xy 0.5 -0.75) (xy -0.5 -0.75))
       (width 0))))
     (pad "" smd custom
-      (at 5.895 6.35 ${p.rot + 180})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
+      (at 5.715 6.35 ${p.rot + 180})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -823,7 +835,7 @@ module.exports = {
             (xy 1 0) (xy 0.5 0.75) (xy -0.5 0.75) (xy -0.5 -0.75) (xy 0.5 -0.75))
       (width 0))))
     (pad "" smd custom
-      (at 5.895 6.35 ${p.rot})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
+      (at 5.715 6.35 ${p.rot})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -831,7 +843,7 @@ module.exports = {
             (xy -1 0) (xy -0.5 0.75) (xy 0.5 0.75) (xy 0.5 -0.75) (xy -0.5 -0.75))
       (width 0))))
     (pad "" smd custom
-      (at 5.895 8.89 ${p.rot + 180})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
+      (at 5.715 8.89 ${p.rot + 180})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -839,7 +851,7 @@ module.exports = {
             (xy 1 0) (xy 0.5 0.75) (xy -0.5 0.75) (xy -0.5 -0.75) (xy 0.5 -0.75))
       (width 0))))
     (pad "" smd custom
-      (at 5.895 8.89 ${p.rot})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
+      (at 5.715 8.89 ${p.rot})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -847,7 +859,7 @@ module.exports = {
             (xy -1 0) (xy -0.5 0.75) (xy 0.5 0.75) (xy 0.5 -0.75) (xy -0.5 -0.75))
       (width 0))))
     (pad "" smd custom
-      (at 5.895 11.43 ${p.rot + 180})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
+      (at 5.715 11.43 ${p.rot + 180})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -855,7 +867,7 @@ module.exports = {
             (xy 1 0) (xy 0.5 0.75) (xy -0.5 0.75) (xy -0.5 -0.75) (xy 0.5 -0.75))
       (width 0))))
     (pad "" smd custom
-      (at 5.895 11.43 ${p.rot})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
+      (at 5.715 11.43 ${p.rot})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -863,7 +875,7 @@ module.exports = {
             (xy -1 0) (xy -0.5 0.75) (xy 0.5 0.75) (xy 0.5 -0.75) (xy -0.5 -0.75))
       (width 0))))
     (pad "" smd custom
-      (at 5.895 13.97 ${p.rot + 180})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
+      (at 5.715 13.97 ${p.rot + 180})(size 0.3 0.3)(layers "F.Cu" "F.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
@@ -871,7 +883,7 @@ module.exports = {
             (xy 1 0) (xy 0.5 0.75) (xy -0.5 0.75) (xy -0.5 -0.75) (xy 0.5 -0.75))
       (width 0))))
     (pad "" smd custom
-      (at 5.895 13.97 ${p.rot})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
+      (at 5.715 13.97 ${p.rot})(size 0.3 0.3)(layers "B.Cu" "B.Mask")
       (zone_connect 0)
       (options (clearance outline)(anchor rect))
       (primitives
