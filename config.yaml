@@ -2,6 +2,8 @@ units:
   ks: 15
   kc: 18.5
   kp: kc + 1
+  ep: 6
+  screw_size: 2
 points:
   key:
     height: kc
@@ -11,7 +13,7 @@ points:
   zones:
     matrix:
       anchor:
-        rotate: 7
+        rotate: 8
         shift: [50, -150]
       columns:
         outer:
@@ -81,46 +83,87 @@ outlines:
       operation: stack
       points:
         - ref: matrix_outer_top
-          shift: [-0.75ks, 0.75ks]
+          shift: [-0.5kc, 0.5kc]
         - ref: matrix_outer_top
-          shift: [0.5ks, 0.75ks]
+          shift: [0.5kc, 0.5kc]
         - ref: matrix_pinky_top
-          shift: [-0.5ks, 0.75ks]
+          shift: [-0.5kc, 0.5kc]
         - ref: matrix_pinky_top
-          shift: [0.5ks, 0.75ks]
+          shift: [0.5kc, 0.5kc]
         - ref: matrix_ring_top
-          shift: [-0.5ks, 0.75ks]
+          shift: [-0.5kc, 0.5kc]
         - ref: matrix_ring_top
-          shift: [0.5ks, 0.75ks]
+          shift: [0.5kc, 0.5kc]
         - ref: matrix_middle_top
-          shift: [-0.5ks, 0.75ks + 1]
+          shift: [-0.5kc, 0.5kc]
         - ref: matrix_middle_top
-          shift: [0.5ks, 0.75ks + 1]
+          shift: [0.5kc, 0.5kc]
         - ref: matrix_index_top
-          shift: [-0.5ks, 0.75ks]
+          shift: [-0.5kc, 0.5kc]
         - ref: matrix_index_top
-          shift: [0.5ks, 0.75ks]
+          shift: [0.5kc, 0.5kc]
         - ref: matrix_inner_top
-          shift: [-0.5ks, 0.75ks]
+          shift: [-0.5kc, 0.5kc]
         - ref: matrix_inner_top
-          shift: [2.4ks, 0.75ks]
+          shift: [2kc - (ep / 2), 0.5kc]
         - ref: matrix_inner_bottom
-          shift: [2.4ks, -0.5ks]
+          shift: [2kc - (ep / 2), -0.75kc]
         - ref: thumbfan_outer_cluster
-          shift: [-1ks, 0.75ks + 2]
+          shift: [-0.75kc, 0.5kc]
         - ref: thumbfan_outer_cluster
-          shift: [1ks, 0.75ks + 2]
+          shift: [0.75kc, 0.5kc]
         - ref: thumbfan_outer_cluster
-          shift: [1ks, -3ks - 5]
+          shift: [0.75kc, -3kc]
         - ref: matrix_outer_mod
-          shift: [-0.75ks, -0.75ks]
-      expand: 5
+          shift: [-0.5kc, -0.5kc]
+      expand: ep
       joints: round
+  holes:
+    top_left:
+      what: circle
+      radius: screw_size
+      where:
+        - ref: matrix_outer_top
+          shift: [-0.5kc - 1, 0.5kc + 1]
+    top_middle:
+      what: circle
+      radius: screw_size
+      where:
+        - ref: matrix_middle_top
+          shift: [0, 0.5kc + 2]
+    top_right:
+      what: circle
+      radius: screw_size
+      where:
+        - ref: matrix_inner_top
+          shift: [2kc - (ep / 2) + 1, 0.5kc + 1]
+    right_middle:
+      what: circle
+      radius: screw_size
+      where:
+        - ref: matrix_inner_bottom
+          shift: [2kc - (ep / 2) + 1, -0.5kc - (ep / 2) - 1]
+    bottom_middle:
+      what: circle
+      radius: screw_size
+      where:
+        - ref: thumbfan_outer_cluster
+          shift: [0.75kc + 1, -3kc - 1]
+    bottom_left:
+      what: circle
+      radius: screw_size
+      where:
+        - ref: matrix_outer_mod
+          shift: [-0.5kc - 1, -0.5kc - 1]
+  drilled_board:
+    - name: board
+    - operation: subtract
+      name: holes
 pcbs:
   janus:
     outlines:
       main:
-        outline: board
+        outline: drilled_board
     footprints:
       ks27:
         what: ks27
@@ -155,4 +198,31 @@ pcbs:
           CS: P1
         where:
           ref: matrix_inner_top
-          shift: [1kc + 3, -4]
+          shift: [1kc + 3, -6]
+      rev_jstph:
+        what: rev_jstph
+        params:
+          pos: BPOS
+          neg: GND
+        where:
+          ref: matrix_inner_home
+          shift: [2kc - 3, -5]
+          rotate: 180
+      rev_slider:
+        what: rev_slider
+        params:
+          from: BPOS
+          to: RAW
+        where:
+          ref: matrix_inner_bottom
+          shift: [2kc + 1, 0]
+          rotate: -90
+      rev_reset:
+        what: rev_button
+        params:
+          from: GND
+          to: RST
+        where:
+          ref: matrix_inner_bottom
+          shift: [1kc + 3, 0]
+          rotate: -90
