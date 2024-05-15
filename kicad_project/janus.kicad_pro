@@ -37,9 +37,9 @@
         "other_text_thickness": 0.15,
         "other_text_upright": false,
         "pads": {
-          "drill": 0.762,
-          "height": 1.524,
-          "width": 1.524
+          "drill": 0.0,
+          "height": 0.1,
+          "width": 0.1
         },
         "silk_line_width": 0.12,
         "silk_text_italic": false,
@@ -444,6 +444,102 @@
       {
         "netclass": "Default",
         "pattern": "BPOS"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "1"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "2"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "3"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "4"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "5"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "6"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "7"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "8"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "9"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "10"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "11"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "12"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "13"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "14"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "15"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "16"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "17"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "18"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "19"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "20"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "21"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "22"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "23"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "24"
       }
     ]
   },
@@ -452,7 +548,7 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "",
+      "plot": "./janus-gerbers/",
       "pos_files": "",
       "specctra_dsn": "",
       "step": "",
