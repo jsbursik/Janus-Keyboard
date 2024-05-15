@@ -2,7 +2,15 @@
   "dependencies": {
     "ergogen": "^4.1.0"
   },
+  "watch": {
+    "build": "config.yaml"
+  },
   "scripts": {
-    "build": "npx ergogen ."
+    "watch": "npm-watch",
+    "build": "npx ergogen .",
+    "pcb-update": "cp -u output/pcbs/* kicad_project/"
+  },
+  "devDependencies": {
+    "npm-watch": "^0.13.0"
   }
 }
