@@ -1291,7 +1291,7 @@
 			(uuid "ca6baea3-aad9-4fa8-ab4a-f193fefc976b")
 		)
 		(pad "2" smd rect
-			(at 5.875 5.750002 10)
+			(at 5.875 5.750003 10)
 			(size 2.6 2.6)
 			(layers "B.Cu" "B.Paste" "B.Mask")
 			(net 8 "pinky_bottom")
@@ -2941,7 +2941,7 @@
 			(uuid "9e511365-63de-4a78-a135-3eb0d9d1dafd")
 		)
 		(pad "2" smd rect
-			(at 5.875 5.750002 10)
+			(at 5.875 5.750003 10)
 			(size 2.6 2.6)
 			(layers "B.Cu" "B.Paste" "B.Mask")
 			(net 10 "pinky_top")
@@ -3239,7 +3239,7 @@
 			(uuid "b97127cc-766f-4415-83e2-02689d90e3ad")
 		)
 		(pad "2" smd rect
-			(at 5.875 5.750002 10)
+			(at 5.875 5.750003 10)
 			(size 2.6 2.6)
 			(layers "B.Cu" "B.Paste" "B.Mask")
 			(net 5 "outer_top")
@@ -3835,7 +3835,7 @@
 			(uuid "d4093c02-a063-4e86-b8b3-74c195567a04")
 		)
 		(pad "2" smd rect
-			(at 5.875 5.750002 10)
+			(at 5.875 5.750003 10)
 			(size 2.6 2.6)
 			(layers "B.Cu" "B.Paste" "B.Mask")
 			(net 2 "outer_mod")
@@ -4903,7 +4903,7 @@
 			(uuid "97bad9a0-4f46-4efb-bd8b-7318181ee7bd")
 		)
 		(pad "1" thru_hole rect
-			(at -3.810002 0 280)
+			(at -3.810003 0 280)
 			(size 1.778 1.778)
 			(drill 0.9906)
 			(layers "*.Cu" "*.Mask")
@@ -4940,7 +4940,7 @@
 			(uuid "c7012e54-76f4-4650-a50b-bd783ef2fe17")
 		)
 		(pad "2" thru_hole circle
-			(at 3.810002 0 280)
+			(at 3.810003 0 280)
 			(size 1.905 1.905)
 			(drill 0.9906)
 			(layers "*.Cu" "*.Mask")
@@ -5015,7 +5015,7 @@
 		)
 		(attr through_hole)
 		(fp_line
-			(start 0.250007 -0.399999)
+			(start 0.250006 -0.399999)
 			(end 0.25 0.4)
 			(stroke
 				(width 0.1)
@@ -5046,7 +5046,7 @@
 		)
 		(fp_line
 			(start -0.35 0)
-			(end 0.250007 -0.399999)
+			(end 0.250006 -0.399999)
 			(stroke
 				(width 0.1)
 				(type solid)
@@ -5085,7 +5085,7 @@
 			(uuid "175d6457-7089-48b8-aa8b-647398aeb138")
 		)
 		(fp_line
-			(start 0.250007 -0.399999)
+			(start 0.250006 -0.399999)
 			(end 0.25 0.4)
 			(stroke
 				(width 0.1)
@@ -5116,7 +5116,7 @@
 		)
 		(fp_line
 			(start -0.35 0)
-			(end 0.250007 -0.399999)
+			(end 0.250006 -0.399999)
 			(stroke
 				(width 0.1)
 				(type solid)
@@ -5407,7 +5407,7 @@
 			(uuid "3f2f0915-0142-4d8b-a334-1e44d867fa9b")
 		)
 		(pad "1" thru_hole rect
-			(at -3.810002 0 280)
+			(at -3.810003 0 280)
 			(size 1.778 1.778)
 			(drill 0.9906)
 			(layers "*.Cu" "*.Mask")
@@ -5444,7 +5444,7 @@
 			(uuid "a16b7bc8-de0e-4ca6-808d-3f640031b8cc")
 		)
 		(pad "2" thru_hole circle
-			(at 3.810002 0 280)
+			(at 3.810003 0 280)
 			(size 1.905 1.905)
 			(drill 0.9906)
 			(layers "*.Cu" "*.Mask")
@@ -5911,7 +5911,7 @@
 			(uuid "5dc85952-8d3d-4211-b615-de78cf36d6f5")
 		)
 		(pad "1" thru_hole rect
-			(at -3.810002 0 280)
+			(at -3.810003 0 280)
 			(size 1.778 1.778)
 			(drill 0.9906)
 			(layers "*.Cu" "*.Mask")
@@ -5948,7 +5948,7 @@
 			(uuid "36750bf6-1403-499d-82b9-487bce53c5d1")
 		)
 		(pad "2" thru_hole circle
-			(at 3.810002 0 280)
+			(at 3.810003 0 280)
 			(size 1.905 1.905)
 			(drill 0.9906)
 			(layers "*.Cu" "*.Mask")
@@ -7297,7 +7297,7 @@
 			(uuid "e85c1e99-6f37-4007-8f89-05a0d6cf3dca")
 		)
 		(pad "2" smd rect
-			(at 5.875 5.750002 10)
+			(at 5.875 5.750003 10)
 			(size 2.6 2.6)
 			(layers "B.Cu" "B.Paste" "B.Mask")
 			(net 9 "pinky_home")
@@ -11217,7 +11217,7 @@
 			(uuid "9006efd1-2244-46c3-a046-e191071b3ace")
 		)
 		(pad "1" thru_hole rect
-			(at -3.810002 0 280)
+			(at -3.810003 0 280)
 			(size 1.778 1.778)
 			(drill 0.9906)
 			(layers "*.Cu" "*.Mask")
@@ -11254,7 +11254,7 @@
 			(uuid "9bdb339c-815e-45d8-b57d-db285d499aee")
 		)
 		(pad "2" thru_hole circle
-			(at 3.810002 0 280)
+			(at 3.810003 0 280)
 			(size 1.905 1.905)
 			(drill 0.9906)
 			(layers "*.Cu" "*.Mask")
@@ -11547,7 +11547,7 @@
 			(uuid "bf190d1f-173f-44d0-9b08-094e5c842999")
 		)
 		(pad "2" smd rect
-			(at 5.875 5.750002 10)
+			(at 5.875 5.750003 10)
 			(size 2.6 2.6)
 			(layers "B.Cu" "B.Paste" "B.Mask")
 			(net 4 "outer_home")
@@ -11794,7 +11794,7 @@
 			(uuid "dc5da06d-15f0-4525-9c85-4aedf3909fcd")
 		)
 		(pad "" np_thru_hole circle
-			(at -4.4 4.700002)
+			(at -4.4 4.700003)
 			(size 3 3)
 			(drill 3)
 			(layers "*.Cu" "*.Mask")
@@ -12065,7 +12065,7 @@
 			(uuid "fc33e41c-108b-4c56-9934-940607defed1")
 		)
 		(pad "1" thru_hole rect
-			(at -3.810002 0 280)
+			(at -3.810003 0 280)
 			(size 1.778 1.778)
 			(drill 0.9906)
 			(layers "*.Cu" "*.Mask")
@@ -12102,7 +12102,7 @@
 			(uuid "78a8bef5-f5a7-43f4-90b8-16ebe876004b")
 		)
 		(pad "2" thru_hole circle
-			(at 3.810002 0 280)
+			(at 3.810003 0 280)
 			(size 1.905 1.905)
 			(drill 0.9906)
 			(layers "*.Cu" "*.Mask")
@@ -12647,7 +12647,7 @@
 			(uuid "49bd4dfb-723e-4ba0-9fde-99e00ebec394")
 		)
 		(pad "2" smd rect
-			(at 5.875 5.750002 10)
+			(at 5.875 5.750003 10)
 			(size 2.6 2.6)
 			(layers "B.Cu" "B.Paste" "B.Mask")
 			(net 3 "outer_bottom")
@@ -12867,7 +12867,7 @@
 			(uuid "c7f7882c-3cea-46f4-8f87-0f803c07b741")
 		)
 		(pad "1" thru_hole rect
-			(at -3.810002 0 280)
+			(at -3.810003 0 280)
 			(size 1.778 1.778)
 			(drill 0.9906)
 			(layers "*.Cu" "*.Mask")
@@ -12904,7 +12904,7 @@
 			(uuid "798feaad-6e74-4303-a69d-910cc8c42a4e")
 		)
 		(pad "2" thru_hole circle
-			(at 3.810002 0 280)
+			(at 3.810003 0 280)
 			(size 1.905 1.905)
 			(drill 0.9906)
 			(layers "*.Cu" "*.Mask")
@@ -13277,7 +13277,7 @@
 		)
 		(attr through_hole)
 		(fp_line
-			(start 0.250007 -0.399999)
+			(start 0.250006 -0.399999)
 			(end 0.25 0.4)
 			(stroke
 				(width 0.1)
@@ -13308,7 +13308,7 @@
 		)
 		(fp_line
 			(start -0.35 0)
-			(end 0.250007 -0.399999)
+			(end 0.250006 -0.399999)
 			(stroke
 				(width 0.1)
 				(type solid)
@@ -13347,7 +13347,7 @@
 			(uuid "ce6cc32a-88ab-4e51-a5af-b15ea28476ea")
 		)
 		(fp_line
-			(start 0.250007 -0.399999)
+			(start 0.250006 -0.399999)
 			(end 0.25 0.4)
 			(stroke
 				(width 0.1)
@@ -13378,7 +13378,7 @@
 		)
 		(fp_line
 			(start -0.35 0)
-			(end 0.250007 -0.399999)
+			(end 0.250006 -0.399999)
 			(stroke
 				(width 0.1)
 				(type solid)
@@ -14815,7 +14815,7 @@
 			(uuid "cbab2789-df07-4e2e-8572-83714120bd85")
 		)
 		(pad "1" thru_hole rect
-			(at -3.810002 0 280)
+			(at -3.810003 0 280)
 			(size 1.778 1.778)
 			(drill 0.9906)
 			(layers "*.Cu" "*.Mask")
@@ -14852,7 +14852,7 @@
 			(uuid "f571278b-60b4-49bb-8f46-b574b9046c87")
 		)
 		(pad "2" thru_hole circle
-			(at 3.810002 0 280)
+			(at 3.810003 0 280)
 			(size 1.905 1.905)
 			(drill 0.9906)
 			(layers "*.Cu" "*.Mask")
@@ -15145,7 +15145,7 @@
 			(uuid "8c243986-a0ac-4bac-90c6-39586c06fb9f")
 		)
 		(pad "2" smd rect
-			(at 5.875 5.750002 10)
+			(at 5.875 5.750003 10)
 			(size 2.6 2.6)
 			(layers "B.Cu" "B.Paste" "B.Mask")
 			(net 7 "pinky_mod")
@@ -15392,7 +15392,7 @@
 			(uuid "78ee2ca8-c5e4-4a4a-92e8-9af919a143b3")
 		)
 		(pad "" np_thru_hole circle
-			(at -4.4 4.700002)
+			(at -4.4 4.700003)
 			(size 3 3)
 			(drill 3)
 			(layers "*.Cu" "*.Mask")
@@ -15663,7 +15663,7 @@
 			(uuid "8a225ae0-9a27-4a8b-8bd9-f9b329ff00ea")
 		)
 		(pad "1" thru_hole rect
-			(at -3.810002 0 280)
+			(at -3.810003 0 280)
 			(size 1.778 1.778)
 			(drill 0.9906)
 			(layers "*.Cu" "*.Mask")
@@ -15700,7 +15700,7 @@
 			(uuid "b3975de9-ba9f-4b31-84e0-01e6034cd180")
 		)
 		(pad "2" thru_hole circle
-			(at 3.810002 0 280)
+			(at 3.810003 0 280)
 			(size 1.905 1.905)
 			(drill 0.9906)
 			(layers "*.Cu" "*.Mask")
@@ -16744,7 +16744,7 @@
 			(uuid "23af488d-de97-4c56-b436-ae5a34a10c62")
 		)
 		(pad "" np_thru_hole circle
-			(at -4.4 4.700002)
+			(at -4.4 4.700003)
 			(size 3 3)
 			(drill 3)
 			(layers "*.Cu" "*.Mask")
@@ -17964,7 +17964,7 @@
 	)
 	(gr_circle
 		(center 286.289351 163.160023)
-		(end 287.789353 163.160042)
+		(end 287.439351 163.160023)
 		(stroke
 			(width 0.15)
 			(type solid)
@@ -18036,7 +18036,7 @@
 	)
 	(gr_circle
 		(center 147.327132 197.760642)
-		(end 148.827124 197.760641)
+		(end 148.477132 197.760642)
 		(stroke
 			(width 0.15)
 			(type solid)
@@ -18047,7 +18047,7 @@
 	)
 	(gr_circle
 		(center 133.608916 119.960821)
-		(end 135.10892 119.960834)
+		(end 134.758916 119.960821)
 		(stroke
 			(width 0.15)
 			(type solid)
@@ -18058,7 +18058,7 @@
 	)
 	(gr_circle
 		(center 231.339027 183.056517)
-		(end 232.839017 183.056535)
+		(end 232.489027 183.056517)
 		(stroke
 			(width 0.15)
 			(type solid)
@@ -18099,7 +18099,7 @@
 	)
 	(gr_circle
 		(center 294.063507 205.886364)
-		(end 295.563506 205.886364)
+		(end 295.213507 205.886364)
 		(stroke
 			(width 0.15)
 			(type solid)
@@ -18110,7 +18110,7 @@
 	)
 	(gr_circle
 		(center 286.289344 100.660034)
-		(end 287.789351 100.660035)
+		(end 287.439344 100.660034)
 		(stroke
 			(width 0.15)
 			(type solid)
@@ -18205,7 +18205,7 @@
 	)
 	(gr_circle
 		(center 202.192508 98.449463)
-		(end 203.692511 98.449455)
+		(end 203.342508 98.449463)
 		(stroke
 			(width 0.15)
 			(type solid)
