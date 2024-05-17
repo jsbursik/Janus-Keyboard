@@ -2,8 +2,10 @@ units:
   ks: 15
   kc: 18.5
   kp: kc + 1
-  ep: 6
-  screw_size: 1.5
+  board_padding: 6
+  screw_radius: 0.75
+  standoff_inner_radius: 1.55
+  standoff_wall_radius:  
 points:
   key:
     height: kc
@@ -105,9 +107,9 @@ outlines:
         - ref: matrix_inner_top
           shift: [-0.5kc, 0.5kc]
         - ref: matrix_inner_top
-          shift: [2kc - (ep / 2), 0.5kc]
+          shift: [2kc - (board_padding / 2), 0.5kc]
         - ref: matrix_inner_bottom
-          shift: [2kc - (ep / 2), -0.75kc]
+          shift: [2kc - (board_padding / 2), -0.75kc]
         - ref: thumbfan_outer_cluster
           shift: [-0.75kc, 0.5kc]
         - ref: thumbfan_outer_cluster
@@ -116,51 +118,141 @@ outlines:
           shift: [0.75kc, -3kc]
         - ref: matrix_outer_mod
           shift: [-0.5kc, -0.5kc]
-      expand: ep
+      expand: board_padding
       joints: round
+  board_xl:
+    - what: outline
+      name: board
+      expand: 2
   holes:
-    top_left:
+    top_left_hole:
       what: circle
-      radius: screw_size
+      radius: screw_radius
       where:
         - ref: matrix_outer_top
           shift: [-0.5kc - 1, 0.5kc + 1]
-    top_middle:
+    top_middle_hole:
       what: circle
-      radius: screw_size
+      radius: screw_radius
       where:
         - ref: matrix_middle_top
           shift: [0, 0.5kc + 2]
-    top_right:
+    top_right_hole:
       what: circle
-      radius: screw_size
+      radius: screw_radius
       where:
         - ref: matrix_inner_top
-          shift: [2kc - (ep / 2) + 1, 0.5kc + 1]
-    right_middle:
+          shift: [2kc - (board_padding / 2) + 1, 0.5kc + 1]
+    right_middle_hole:
       what: circle
-      radius: screw_size
+      radius: screw_radius
       where:
         - ref: matrix_inner_bottom
-          shift: [2kc - (ep / 2) + 1, -0.5kc - (ep / 2) - 1]
-    bottom_right:
+          shift: [2kc - (board_padding / 2) + 1, -0.5kc - (board_padding / 2) - 1]
+    bottom_right_hole:
       what: circle
-      radius: screw_size
+      radius: screw_radius
       where:
         - ref: thumbfan_outer_cluster
           shift: [0.75kc + 1, 0.5kc + 1]
-    bottom_middle:
+    bottom_middle_hole:
       what: circle
-      radius: screw_size
+      radius: screw_radius
       where:
         - ref: thumbfan_outer_cluster
           shift: [0.75kc + 1, -3kc - 1]
-    bottom_left:
+    bottom_left_hole:
       what: circle
-      radius: screw_size
+      radius: screw_radius
       where:
         - ref: matrix_outer_mod
           shift: [-0.5kc - 1, -0.5kc - 1]
+  standoffs_inner:
+    top_left_standoff:
+      what: circle
+      radius: standoff_radius
+      where:
+        - ref: matrix_outer_top
+          shift: [-0.5kc - 1, 0.5kc + 1]
+    top_middle_standoff:
+      what: circle
+      radius: standoff_radius
+      where:
+        - ref: matrix_middle_top
+          shift: [0, 0.5kc + 2]
+    top_right_standoff:
+      what: circle
+      radius: standoff_radius
+      where:
+        - ref: matrix_inner_top
+          shift: [2kc - (board_padding / 2) + 1, 0.5kc + 1]
+    right_middle_standoff:
+      what: circle
+      radius: standoff_radius
+      where:
+        - ref: matrix_inner_bottom
+          shift: [2kc - (board_padding / 2) + 1, -0.5kc - (board_padding / 2) - 1]
+    bottom_right_standoff:
+      what: circle
+      radius: standoff_radius
+      where:
+        - ref: thumbfan_outer_cluster
+          shift: [0.75kc + 1, 0.5kc + 1]
+    bottom_middle_standoff:
+      what: circle
+      radius: standoff_radius
+      where:
+        - ref: thumbfan_outer_cluster
+          shift: [0.75kc + 1, -3kc - 1]
+    bottom_left_standoff:
+      what: circle
+      radius: standoff_radius
+      where:
+        - ref: matrix_outer_mod
+          shift: [-0.5kc - 1, -0.5kc - 1]
+  standoffs_outer:
+    top_left_standoff:
+      what: circle
+      radius: standoff_radius
+      where:
+        - ref: matrix_outer_top
+          shift: [-0.5kc - 1, 0.5kc + 1]
+    top_middle_standoff:
+      what: circle
+      radius: standoff_radius
+      where:
+        - ref: matrix_middle_top
+          shift: [0, 0.5kc + 2]
+    top_right_standoff:
+      what: circle
+      radius: standoff_radius
+      where:
+        - ref: matrix_inner_top
+          shift: [2kc - (board_padding / 2) + 1, 0.5kc + 1]
+    right_middle_standoff:
+      what: circle
+      radius: standoff_radius
+      where:
+        - ref: matrix_inner_bottom
+          shift: [2kc - (board_padding / 2) + 1, -0.5kc - (board_padding / 2) - 1]
+    bottom_right_standoff:
+      what: circle
+      radius: standoff_radius
+      where:
+        - ref: thumbfan_outer_cluster
+          shift: [0.75kc + 1, 0.5kc + 1]
+    bottom_middle_standoff:
+      what: circle
+      radius: standoff_radius
+      where:
+        - ref: thumbfan_outer_cluster
+          shift: [0.75kc + 1, -3kc - 1]
+    bottom_left_standoff:
+      what: circle
+      radius: standoff_radius
+      where:
+        - ref: matrix_outer_mod
+          shift: [-0.5kc - 1, -0.5kc - 1]  
   drilled_board:
     - name: board
     - operation: subtract
@@ -232,3 +324,43 @@ pcbs:
           ref: matrix_inner_bottom
           shift: [1kc + 3, 0]
           rotate: -90
+cases:
+  _xl_bottom:
+    - name: board_xl
+      extrude: 1
+  _inside_cut:
+    - name: board
+      extrude: 5.6
+  _outside_wall:
+    - name: board_xl
+      extrude: 5.6
+  _wall:
+    - what: case
+      name: _outside_wall
+      operation: add
+    - what: case
+      name: _inside_cut
+      operation: subtract
+  _standoff_inner:
+    - name: holes
+      extrude: 4
+  _standoff_outer:
+    - name: standoffs
+      extrude: 4
+  _standoffs:
+    - what: case
+      name: _standoff_outer
+      operation: add
+    - what: case
+      name: _standoff_inner
+      operation: subtract
+  case:
+    - what: case
+      name: _xl_bottom
+      operation: add
+    - what: case
+      name: _wall
+      operation: add
+    - what: case
+      name: _standoffs
+      operation: add
