@@ -3,9 +3,9 @@ units:
   kc: 18.5 # DSA keycap size
   kp: kc + 1 # Padding so keycaps don't touch
   board_padding: 6
-  screw_radius: 0.75 # M2 screws are ~1.8mm
+  screw_radius: 1.15 # M2 screws are ~1.8mm, spec is 2mm
   insert_radius: 1.55 # Brass threaded insert radius is ~3.48mm, this radius should be snug
-  insert_wall_radius: 3.05 # This is the plastic AROUND the threaded inserts
+  insert_wall_radius: insert_radius + 1.5 # This is the plastic AROUND the threaded inserts
 points:
   key:
     height: kc
@@ -358,10 +358,10 @@ cases:
   _case_bottom: # 1mm thick case bottom
     - name: _board_xl
       extrude: 1
-  _case_wall: # 4mm tall internals, + 1.6mm for pcb height
+  _case_wall: # 1mm floor, 3mm space for components, + 1.6mm for pcb height
     - name: wall
       extrude: 5.6
-  _standoffs: # 4mm tall standoffs, so the board sits flush with the walls
+  _standoffs: # 3mm tall standoffs, so the board sits flush with the walls
     - name: inserts
       extrude: 4
   case: # Put the floor, walls, and standoffs together
