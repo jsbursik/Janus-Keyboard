@@ -1457,14 +1457,14 @@
 
         
       (module gateron-ks27 (layer "F.Cu")
-      (at 145.64783640000002 143.5235646 -20)
+      (at 145.64783640000002 143.5235646 -110)
       
       
-      (fp_text reference "S23" (at 0.1 -8.5 -20) (layer "F.SilkS") hide
+      (fp_text reference "S23" (at 0.1 -8.5 -110) (layer "F.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)))
       )
     
-      (fp_text value "ks27" (at 0 8.5 -20) (layer "F.SilkS") hide
+      (fp_text value "ks27" (at 0 8.5 -110) (layer "F.SilkS") hide
         (effects (font (size 1 1) (thickness 0.15)))
       )
     
@@ -1505,10 +1505,10 @@
           (pad "" np_thru_hole circle (at 2.6 -5.75) (size 3 3) (drill 3) (layers *.Cu *.Mask))
           
           
-          (pad "1" smd rect (at -7.675 4.7 -20) (size 2.6 2.6) (layers B.Cu B.Paste B.Mask) (net 21 "P20"))
-          (pad "2" smd rect (at 5.875 5.75 -20) (size 2.6 2.6) (layers B.Cu B.Paste B.Mask) (net 29 "inner_cluster"))
-          (pad "1" smd rect (at -7.675 -4.7 -20) (size 2.6 2.6) (layers F.Cu F.Paste F.Mask) (net 21 "P20"))
-          (pad "2" smd rect (at 5.875 -5.75 -20) (size 2.6 2.6) (layers F.Cu F.Paste F.Mask) (net 29 "inner_cluster"))
+          (pad "1" smd rect (at -7.675 4.7 -110) (size 2.6 2.6) (layers B.Cu B.Paste B.Mask) (net 21 "P20"))
+          (pad "2" smd rect (at 5.875 5.75 -110) (size 2.6 2.6) (layers B.Cu B.Paste B.Mask) (net 29 "inner_cluster"))
+          (pad "1" smd rect (at -7.675 -4.7 -110) (size 2.6 2.6) (layers F.Cu F.Paste F.Mask) (net 21 "P20"))
+          (pad "2" smd rect (at 5.875 -5.75 -110) (size 2.6 2.6) (layers F.Cu F.Paste F.Mask) (net 29 "inner_cluster"))
         )
         
 
@@ -2488,7 +2488,7 @@
     (module ComboDiode (layer F.Cu) (tedit 5B24D78E)
 
 
-        (at 156.15719080000002 140.9635902 -110)
+        (at 148.2078108 154.032919 -200)
 
         
         (fp_text reference "D23" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -2511,14 +2511,14 @@
         (fp_line (start -0.75 0) (end -0.35 0) (layer B.SilkS) (width 0.1))
     
         
-        (pad 1 smd rect (at -1.65 0 -110) (size 0.9 1.2) (layers F.Cu F.Paste F.Mask) (net 33 "P9"))
-        (pad 2 smd rect (at 1.65 0 -110) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 29 "inner_cluster"))
-        (pad 1 smd rect (at -1.65 0 -110) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 33 "P9"))
-        (pad 2 smd rect (at 1.65 0 -110) (size 0.9 1.2) (layers F.Cu F.Paste F.Mask) (net 29 "inner_cluster"))
+        (pad 1 smd rect (at -1.65 0 -200) (size 0.9 1.2) (layers F.Cu F.Paste F.Mask) (net 33 "P9"))
+        (pad 2 smd rect (at 1.65 0 -200) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 29 "inner_cluster"))
+        (pad 1 smd rect (at -1.65 0 -200) (size 0.9 1.2) (layers B.Cu B.Paste B.Mask) (net 33 "P9"))
+        (pad 2 smd rect (at 1.65 0 -200) (size 0.9 1.2) (layers F.Cu F.Paste F.Mask) (net 29 "inner_cluster"))
         
         
-        (pad 1 thru_hole rect (at -3.81 0 -110) (size 1.778 1.778) (drill 0.9906) (layers *.Cu *.Mask) (net 33 "P9"))
-        (pad 2 thru_hole circle (at 3.81 0 -110) (size 1.905 1.905) (drill 0.9906) (layers *.Cu *.Mask) (net 29 "inner_cluster"))
+        (pad 1 thru_hole rect (at -3.81 0 -200) (size 1.778 1.778) (drill 0.9906) (layers *.Cu *.Mask) (net 33 "P9"))
+        (pad 2 thru_hole circle (at 3.81 0 -200) (size 1.905 1.905) (drill 0.9906) (layers *.Cu *.Mask) (net 29 "inner_cluster"))
     )
   
     
