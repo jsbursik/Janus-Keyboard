@@ -1,11 +1,11 @@
 units:
-  ks: 15
-  kc: 18.5
-  kp: kc + 1
+  ks: 15 # KS-17 switch size
+  kc: 18.5 # DSA keycap size
+  kp: kc + 1 # Padding so keycaps don't touch
   board_padding: 6
-  screw_radius: 0.75
-  standoff_inner_radius: 1.55
-  standoff_wall_radius:  
+  screw_radius: 0.75 # M2 screws are ~1.8mm
+  insert_radius: 1.55 # Brass threaded insert radius is ~3.48mm, this radius should be snug
+  insert_wall_radius: 3.05 # This is the plastic AROUND the threaded inserts
 points:
   key:
     height: kc
@@ -16,7 +16,7 @@ points:
     matrix:
       anchor:
         rotate: 8
-        shift: [50, -150]
+        shift: [50, -150] # For Kicad - this puts it closer to the center
       columns:
         outer:
           key.splay: 2
@@ -58,13 +58,14 @@ points:
       columns:
         inner:
           key.column_net: P20
+          key.rotate: -90 # Rotated counter-clockwise to make routing easier
         home:
-          key.height: 1.5kc
+          key.height: 1.5kc # I'm  aware that this looks wrong in ergogen because of the rotate
           key.shift: [0, 0.25kc]
           key.rotate: -90
           key.column_net: P19
         outer:
-          key.height: 1.5kc
+          key.height: 1.5kc # I'm  aware that this looks wrong in ergogen because of the rotate
           key.shift: [0, 0.25kc]
           key.rotate: -90
           key.column_net: P18
@@ -72,15 +73,16 @@ points:
         cluster:
           row_net: P9
 outlines:
-  switches:
+  switches: # Just to help me see in the web viewer
     - what: rectangle
       where: true
       size: [ks, ks]
-  keycaps:
+  keycaps: # Just to help me see in the web viewer
     - what: rectangle
       where: true
       size: [kc, kc]
-  board:
+
+  board: # Defining the board outline and adding the padding (6mm)
     - what: polygon
       operation: stack
       points:
@@ -119,144 +121,171 @@ outlines:
         - ref: matrix_outer_mod
           shift: [-0.5kc, -0.5kc]
       expand: board_padding
-      joints: round
-  board_xl:
+      joints: round # Makes it look nice
+  # --------------------------------------------------------
+  # Files with "_" prefix don't generate output.
+  #
+  # _board_case_clearance - this is the PCB outline + 1.5mm,
+  # otherwise the PCB ends up very snug in the case.
+  #
+  # _board_xl - this is the outer wall of the case.
+  # --------------------------------------------------------
+  _board_case_clearance:
     - what: outline
       name: board
+      expand: 1.5
+  _board_xl:
+    - what: outline
+      name: _board_case_clearance
       expand: 2
-  holes:
-    top_left_hole:
+
+  _board_holes: # Holes for screws to go through PCB
+    top_left:
       what: circle
       radius: screw_radius
       where:
         - ref: matrix_outer_top
           shift: [-0.5kc - 1, 0.5kc + 1]
-    top_middle_hole:
+    top_middle:
       what: circle
       radius: screw_radius
       where:
         - ref: matrix_middle_top
           shift: [0, 0.5kc + 2]
-    top_right_hole:
+    top_right:
       what: circle
       radius: screw_radius
       where:
         - ref: matrix_inner_top
           shift: [2kc - (board_padding / 2) + 1, 0.5kc + 1]
-    right_middle_hole:
+    right_middle:
       what: circle
       radius: screw_radius
       where:
         - ref: matrix_inner_bottom
           shift: [2kc - (board_padding / 2) + 1, -0.5kc - (board_padding / 2) - 1]
-    bottom_right_hole:
+    bottom_right:
       what: circle
       radius: screw_radius
       where:
         - ref: thumbfan_outer_cluster
           shift: [0.75kc + 1, 0.5kc + 1]
-    bottom_middle_hole:
+    bottom_middle:
       what: circle
       radius: screw_radius
       where:
         - ref: thumbfan_outer_cluster
           shift: [0.75kc + 1, -3kc - 1]
-    bottom_left_hole:
+    bottom_left:
       what: circle
       radius: screw_radius
       where:
         - ref: matrix_outer_mod
           shift: [-0.5kc - 1, -0.5kc - 1]
-  standoffs_inner:
-    top_left_standoff:
+
+  _insert_holes: # Holes for threaded inserts to go in
+    top_left:
       what: circle
-      radius: standoff_radius
+      radius: insert_radius
       where:
         - ref: matrix_outer_top
           shift: [-0.5kc - 1, 0.5kc + 1]
-    top_middle_standoff:
+    top_middle:
       what: circle
-      radius: standoff_radius
+      radius: insert_radius
       where:
         - ref: matrix_middle_top
           shift: [0, 0.5kc + 2]
-    top_right_standoff:
+    top_right:
       what: circle
-      radius: standoff_radius
+      radius: insert_radius
       where:
         - ref: matrix_inner_top
           shift: [2kc - (board_padding / 2) + 1, 0.5kc + 1]
-    right_middle_standoff:
+    right_middle:
       what: circle
-      radius: standoff_radius
+      radius: insert_radius
       where:
         - ref: matrix_inner_bottom
           shift: [2kc - (board_padding / 2) + 1, -0.5kc - (board_padding / 2) - 1]
-    bottom_right_standoff:
+    bottom_right:
       what: circle
-      radius: standoff_radius
+      radius: insert_radius
       where:
         - ref: thumbfan_outer_cluster
           shift: [0.75kc + 1, 0.5kc + 1]
-    bottom_middle_standoff:
+    bottom_middle:
       what: circle
-      radius: standoff_radius
+      radius: insert_radius
       where:
         - ref: thumbfan_outer_cluster
           shift: [0.75kc + 1, -3kc - 1]
-    bottom_left_standoff:
+    bottom_left:
       what: circle
-      radius: standoff_radius
+      radius: insert_radius
       where:
         - ref: matrix_outer_mod
           shift: [-0.5kc - 1, -0.5kc - 1]
-  standoffs_outer:
-    top_left_standoff:
+
+  _insert_walls: # The walls to go AROUND the threaded inserts
+    top_left:
       what: circle
-      radius: standoff_radius
+      radius: insert_wall_radius
       where:
         - ref: matrix_outer_top
           shift: [-0.5kc - 1, 0.5kc + 1]
-    top_middle_standoff:
+    top_middle:
       what: circle
-      radius: standoff_radius
+      radius: insert_wall_radius
       where:
         - ref: matrix_middle_top
           shift: [0, 0.5kc + 2]
-    top_right_standoff:
+    top_right:
       what: circle
-      radius: standoff_radius
+      radius: insert_wall_radius
       where:
         - ref: matrix_inner_top
           shift: [2kc - (board_padding / 2) + 1, 0.5kc + 1]
-    right_middle_standoff:
+    right_middle:
       what: circle
-      radius: standoff_radius
+      radius: insert_wall_radius
       where:
         - ref: matrix_inner_bottom
           shift: [2kc - (board_padding / 2) + 1, -0.5kc - (board_padding / 2) - 1]
-    bottom_right_standoff:
+    bottom_right:
       what: circle
-      radius: standoff_radius
+      radius: insert_wall_radius
       where:
         - ref: thumbfan_outer_cluster
           shift: [0.75kc + 1, 0.5kc + 1]
-    bottom_middle_standoff:
+    bottom_middle:
       what: circle
-      radius: standoff_radius
+      radius: insert_wall_radius
       where:
         - ref: thumbfan_outer_cluster
           shift: [0.75kc + 1, -3kc - 1]
-    bottom_left_standoff:
+    bottom_left:
       what: circle
-      radius: standoff_radius
+      radius: insert_wall_radius
       where:
         - ref: matrix_outer_mod
-          shift: [-0.5kc - 1, -0.5kc - 1]  
-  drilled_board:
+          shift: [-0.5kc - 1, -0.5kc - 1]
+
+  inserts: # Make a big circle, subtract little circle = standoffs
+    - name: _insert_walls
+    - operation: subtract
+      name: _insert_holes
+
+  wall: # Make big board outline, subtract normal board outline = a case wall
+    - name: _board_xl
+    - operation: subtract
+      name: _board_case_clearance
+
+  drilled_board: # Drill the M2 screw holes in the board
     - name: board
     - operation: subtract
-      name: holes
+      name: _board_holes
+
 pcbs:
   janus:
     outlines:
@@ -267,12 +296,12 @@ pcbs:
         what: ks27
         where: true
         params:
-          keycaps: true
-          reverse: true
-          hotswap: true
+          keycaps: true # Adds keycap reference in KiCad (User.Dwgs layer)
+          hotswap: true # Adds pads and holes for hotswap socket
+          reverse: true # Adds pads and holes on both sides so you can make a reversible PCB
           from: "{{column_net}}"
           to: "{{colrow}}"
-      diode:
+      diode: # Need these since we don't have enough pins for 25 keys
         what: diode
         where: true
         params:
@@ -281,12 +310,12 @@ pcbs:
         adjust:
           shift: [9, 6]
           rotate: -90
-      rev_nano:
+      rev_nano: # This allows you to use the same thru-holes on either side of the board for the nice!nano v2
         what: rev_nano
         where:
           ref: matrix_inner_top
           shift: [1kc + 3, -2]
-      rev_view:
+      rev_view: # Like above, lets you use the nice!vier on either side of the board
         what: niceview
         params:
           side: "F"
@@ -297,7 +326,7 @@ pcbs:
         where:
           ref: matrix_inner_top
           shift: [1kc + 3, -6]
-      rev_jstph:
+      rev_jstph: # Mainly just adds silk screen to both sides of the board to ensure proper polarity
         what: rev_jstph
         params:
           pos: BPOS
@@ -306,7 +335,7 @@ pcbs:
           ref: matrix_inner_home
           shift: [2kc - 3, -5]
           rotate: 180
-      rev_slider:
+      rev_slider: # Adds a power slider to both sides of the board
         what: rev_slider
         params:
           from: BPOS
@@ -315,7 +344,7 @@ pcbs:
           ref: matrix_inner_bottom
           shift: [2kc + 1, 0]
           rotate: -90
-      rev_reset:
+      rev_reset: # Adds a reset button to both sides of the board
         what: rev_button
         params:
           from: GND
@@ -324,42 +353,23 @@ pcbs:
           ref: matrix_inner_bottom
           shift: [1kc + 3, 0]
           rotate: -90
+
 cases:
-  _xl_bottom:
-    - name: board_xl
+  _case_bottom: # 1mm thick case bottom
+    - name: _board_xl
       extrude: 1
-  _inside_cut:
-    - name: board
+  _case_wall: # 4mm tall internals, + 1.6mm for pcb height
+    - name: wall
       extrude: 5.6
-  _outside_wall:
-    - name: board_xl
-      extrude: 5.6
-  _wall:
-    - what: case
-      name: _outside_wall
-      operation: add
-    - what: case
-      name: _inside_cut
-      operation: subtract
-  _standoff_inner:
-    - name: holes
+  _standoffs: # 4mm tall standoffs, so the board sits flush with the walls
+    - name: inserts
       extrude: 4
-  _standoff_outer:
-    - name: standoffs
-      extrude: 4
-  _standoffs:
+  case: # Put the floor, walls, and standoffs together
     - what: case
-      name: _standoff_outer
+      name: _case_bottom
       operation: add
     - what: case
-      name: _standoff_inner
-      operation: subtract
-  case:
-    - what: case
-      name: _xl_bottom
-      operation: add
-    - what: case
-      name: _wall
+      name: _case_wall
       operation: add
     - what: case
       name: _standoffs
