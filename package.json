@@ -8,9 +8,11 @@
   "scripts": {
     "watch": "npm-watch",
     "build": "npx ergogen .",
-    "pcb-update": "cp -u output/pcbs/* kicad_project/"
+    "pcb-update": "cp -u output/pcbs/* kicad_project/",
+    "convert": "for i in output/cases/*.jscad; do npx @jscad/cli@1 \"$i\" -of stla; done"
   },
   "devDependencies": {
+    "@jscad/cli": "^1.10.0",
     "npm-watch": "^0.13.0"
   }
 }
