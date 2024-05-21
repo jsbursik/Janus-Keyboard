@@ -5,7 +5,9 @@ units:
   board_padding: 6
   screw_radius: 1.15 # M2 screws are ~1.8mm, spec is 2mm
   insert_radius: 1.55 # Brass threaded insert radius is ~3.48mm, this radius should be snug
-  insert_wall_radius: insert_radius + 1.5 # This is the plastic AROUND the threaded inserts
+  insert_wall_radius: insert_radius + 2.5 # This is the plastic AROUND the threaded inserts
+  insert_print_clearance: 0.1
+  case_clearance: 0.3
 points:
   key:
     height: kc
@@ -133,7 +135,7 @@ outlines:
   _board_case_clearance:
     - what: outline
       name: board
-      expand: 1.5
+      expand: case_clearance
   _board_xl:
     - what: outline
       name: _board_case_clearance
@@ -186,43 +188,43 @@ outlines:
   _insert_holes: # Holes for threaded inserts to go in
     top_left:
       what: circle
-      radius: insert_radius
+      radius: insert_radius + insert_print_clearance
       where:
         - ref: matrix_outer_top
           shift: [-0.5kc - 1, 0.5kc + 1]
     top_middle:
       what: circle
-      radius: insert_radius
+      radius: insert_radius + insert_print_clearance
       where:
         - ref: matrix_middle_top
           shift: [0, 0.5kc + 2]
     top_right:
       what: circle
-      radius: insert_radius
+      radius: insert_radius + insert_print_clearance
       where:
         - ref: matrix_inner_top
           shift: [2kc - (board_padding / 2) + 1, 0.5kc + 1]
     right_middle:
       what: circle
-      radius: insert_radius
+      radius: insert_radius + insert_print_clearance
       where:
         - ref: matrix_inner_bottom
           shift: [2kc - (board_padding / 2) + 1, -0.5kc - (board_padding / 2) - 1]
     bottom_right:
       what: circle
-      radius: insert_radius
+      radius: insert_radius + insert_print_clearance
       where:
         - ref: thumbfan_outer_cluster
           shift: [0.75kc + 1, 0.5kc + 1]
     bottom_middle:
       what: circle
-      radius: insert_radius
+      radius: insert_radius + insert_print_clearance
       where:
         - ref: thumbfan_outer_cluster
           shift: [0.75kc + 1, -3kc - 1]
     bottom_left:
       what: circle
-      radius: insert_radius
+      radius: insert_radius + insert_print_clearance
       where:
         - ref: matrix_outer_mod
           shift: [-0.5kc - 1, -0.5kc - 1]
@@ -270,6 +272,13 @@ outlines:
       where:
         - ref: matrix_outer_mod
           shift: [-0.5kc - 1, -0.5kc - 1]
+
+  _slider_hole:
+    - what: rectangle
+      size: [2, 8]
+      where:
+        - ref: matrix_inner_bottom
+          shift: [2kc + 4 + case_clearance, 0]
 
   inserts: # Make a big circle, subtract little circle = standoffs
     - name: _insert_walls
@@ -361,6 +370,10 @@ cases:
   _case_wall: # 1mm floor, 3mm space for components, + 1.6mm for pcb height
     - name: wall
       extrude: 5.6
+  _slider_cutout:
+    - name: _slider_hole
+      extrude: 2.6
+      shift: [0, 0, 3]
   _standoffs: # 3mm tall standoffs, so the board sits flush with the walls
     - name: inserts
       extrude: 4
@@ -371,6 +384,9 @@ cases:
     - what: case
       name: _case_wall
       operation: add
+    - what: case
+      name: _slider_cutout
+      operation: subtract
     - what: case
       name: _standoffs
       operation: add
