@@ -1,6 +1,6 @@
 units:
-  ks: 15 # KS-17 switch size
-  kc: 18.5 # DSA keycap size
+  ks: 15 # KS-27 switch size
+  kc: 18.2 # DSA keycap size
   kp: kc + 1 # Padding so keycaps don't touch
   board_padding: 6
   screw_radius: 1.15 # M2 screws are ~1.8mm, spec is 2mm
@@ -17,32 +17,26 @@ points:
   zones:
     matrix:
       anchor:
-        rotate: 8
+        rotate: 0
         shift: [50, -150] # For Kicad - this puts it closer to the center
       columns:
         outer:
-          key.splay: 2
-          key.column_net: P15
         pinky:
           key.stagger: 2
-          key.column_net: P14
         ring:
-          key.stagger: 4
-          key.splay: -2
-          key.column_net: P16
+          key.spread: kp + 1
+          key.splay: -4
+          key.stagger: 6
         middle:
           key.stagger: 3
-          key.column_net: P10
+          rows.mod.skip: true
         index:
           key.splay: -4
           key.stagger: -3
           rows.mod.skip: true
-          key.column_net: P20
         inner:
-          key.splay: -4
           key.stagger: -3
           rows.mod.skip: true
-          key.column_net: P19
       rows:
         mod:
           row_net: P9
@@ -52,24 +46,30 @@ points:
           row_net: P7
         top:
           row_net: P6
+        number:
     thumbfan:
       anchor:
-        ref: matrix_inner_bottom
-        shift: [0, -1kp - 10]
-        rotate: -20
+        ref: matrix_index_bottom
+        shift: [0, -1kc - 6]
+        rotate: -6
       columns:
+        mod:
         inner:
+          key.splay: -8
+          key.shift: [2, -1]
           key.column_net: P20
           key.rotate: -90 # Rotated counter-clockwise to make routing easier
         home:
+          key.splay: -8
           key.height: 1.5kc # I'm  aware that this looks wrong in ergogen because of the rotate
-          key.shift: [0, 0.25kc]
-          key.rotate: -90
+          key.shift: [4, 0.25kc - 2]
+          key.rotate: 0
           key.column_net: P19
         outer:
+          key.splay: -8
           key.height: 1.5kc # I'm  aware that this looks wrong in ergogen because of the rotate
-          key.shift: [0, 0.25kc]
-          key.rotate: -90
+          key.shift: [6, 0.25kc - 3]
+          key.rotate: 0
           key.column_net: P18
       rows:
         cluster:
@@ -294,99 +294,3 @@ outlines:
     - name: board
     - operation: subtract
       name: _board_holes
-
-pcbs:
-  janus:
-    outlines:
-      main:
-        outline: drilled_board
-    footprints:
-      ks27:
-        what: ks27
-        where: true
-        params:
-          keycaps: true # Adds keycap reference in KiCad (User.Dwgs layer)
-          hotswap: true # Adds pads and holes for hotswap socket
-          reverse: true # Adds pads and holes on both sides so you can make a reversible PCB
-          from: "{{column_net}}"
-          to: "{{colrow}}"
-      diode: # Need these since we don't have enough pins for 25 keys
-        what: diode
-        where: true
-        params:
-          from: "{{colrow}}"
-          to: "{{row_net}}"
-        adjust:
-          shift: [9, 6]
-          rotate: -90
-      rev_nano: # This allows you to use the same thru-holes on either side of the board for the nice!nano v2
-        what: rev_nano
-        where:
-          ref: matrix_inner_top
-          shift: [1kc + 3, -2]
-      rev_view: # Like above, lets you use the nice!vier on either side of the board
-        what: niceview
-        params:
-          side: "F"
-          reverse: true
-          MOSI: P2
-          SCK: P3
-          CS: P1
-        where:
-          ref: matrix_inner_top
-          shift: [1kc + 3, -6]
-      rev_jstph: # Mainly just adds silk screen to both sides of the board to ensure proper polarity
-        what: rev_jstph
-        params:
-          pos: BPOS
-          neg: GND
-        where:
-          ref: matrix_inner_home
-          shift: [2kc - 3, -5]
-          rotate: 180
-      rev_slider: # Adds a power slider to both sides of the board
-        what: rev_slider
-        params:
-          from: BPOS
-          to: RAW
-        where:
-          ref: matrix_inner_bottom
-          shift: [2kc + 1, 0]
-          rotate: -90
-      rev_reset: # Adds a reset button to both sides of the board
-        what: rev_button
-        params:
-          from: GND
-          to: RST
-        where:
-          ref: matrix_inner_bottom
-          shift: [1kc + 3, 0]
-          rotate: -90
-
-cases:
-  _case_bottom: # 1mm thick case bottom
-    - name: _board_xl
-      extrude: 1
-  _case_wall: # 1mm floor, 3mm space for components, + 1.6mm for pcb height
-    - name: wall
-      extrude: 5.6
-  _slider_cutout:
-    - name: _slider_hole
-      extrude: 2.6
-      shift: [0, 0, 3]
-  _standoffs: # 3mm tall standoffs, so the board sits flush with the walls
-    - name: inserts
-      extrude: 4
-  case: # Put the floor, walls, and standoffs together
-    - what: case
-      name: _case_bottom
-      operation: add
-    - what: case
-      name: _case_wall
-      operation: add
-    - what: case
-      name: _slider_cutout
-      operation: subtract
-    - what: case
-      name: _standoffs
-      operation: add
