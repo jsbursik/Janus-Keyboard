@@ -1,7 +1,7 @@
 units:
   ks: 15 # KS-27 switch size (roughly)
-  ks_w: 14.5 # ACTUAL KS-27 width for keyplate
-  ks_h: 14 # ACTUAL KS-27 height for keyplate
+  ks_w: 14.25 # ACTUAL KS-27 width for keyplate
+  ks_h: 13.95 # ACTUAL KS-27 height for keyplate
   kc: 18.2 # DSA keycap size
   kp: kc + 1 # Padding so keycaps don't touch
   board_padding: 6
@@ -27,12 +27,10 @@ points:
         ring:
           key.spread: kp + 1
           key.splay: -3
-          key.stagger: 4
         middle:
           rows.mod.skip: true
         index:
           key.splay: -2
-          key.stagger: -3
           rows.mod.skip: true
         inner:
           rows.mod.skip: true
@@ -311,7 +309,7 @@ outlines:
 cases:
   _case_wall:
     - name: wall
-      extrude: 4
+      extrude: 5
   _case_keyplate:
     - name: keyplate
       extrude: 1
