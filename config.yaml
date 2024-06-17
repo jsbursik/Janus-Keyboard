@@ -20,17 +20,20 @@ points:
     matrix:
       anchor:
         rotate: 0
-        # shift: [50, -150] # For Kicad - this puts it closer to the center
+        shift: [50, -150] # For Kicad - this puts it closer to the center
       columns:
         outer:
         pinky:
         ring:
-          key.spread: kp + 1
-          key.splay: -3
+          key.splay: -2
+          key.spread: kp + 0.2
+          key.stagger: -0.35
         middle:
           rows.mod.skip: true
         index:
           key.splay: -2
+          key.spread: kp + 0.2
+          key.stagger: -0.35
           rows.mod.skip: true
         inner:
           rows.mod.skip: true
@@ -150,12 +153,6 @@ outlines:
       where:
         - ref: matrix_outer_number
           shift: [-0.5kc - 1, 0.5kc + 1]
-    top_middle:
-      what: circle
-      radius: screw_radius
-      where:
-        - ref: matrix_middle_number
-          shift: [-0.5kc, 0.5kc + 2]
     top_right:
       what: circle
       radius: screw_radius
@@ -187,15 +184,6 @@ outlines:
         - ref: matrix_outer_mod
           shift: [-0.5kc - 1, -0.5kc - 1]
 
-  keyplate:
-    - name: _board_case_clearance
-    - operation: subtract
-      name: switches
-  keyplate_drilled:
-    - name: keyplate
-    - operation: subtract
-      name: _board_holes
-
   _insert_holes: # Holes for threaded inserts to go in
     top_left:
       what: circle
@@ -203,12 +191,6 @@ outlines:
       where:
         - ref: matrix_outer_top
           shift: [-0.5kc - 1, 0.5kc + 1]
-    top_middle:
-      what: circle
-      radius: insert_radius + insert_print_clearance
-      where:
-        - ref: matrix_middle_top
-          shift: [0, 0.5kc + 2]
     top_right:
       what: circle
       radius: insert_radius + insert_print_clearance
@@ -247,12 +229,6 @@ outlines:
       where:
         - ref: matrix_outer_top
           shift: [-0.5kc - 1, 0.5kc + 1]
-    top_middle:
-      what: circle
-      radius: insert_wall_radius
-      where:
-        - ref: matrix_middle_top
-          shift: [0, 0.5kc + 2]
     top_right:
       what: circle
       radius: insert_wall_radius
@@ -291,6 +267,35 @@ outlines:
         - ref: matrix_inner_bottom
           shift: [2kc + 4 + case_clearance, 0]
 
+  _supports:
+    left:
+      what: circle
+      radius: 2
+      where:
+        ref: matrix_pinky_home
+        shift: [-2, 0.5kc + 0.6]
+    middle:
+      what: circle
+      radius: 2
+      where:
+        ref: matrix_middle_home
+        shift: [-2, 0.5kc + 0.6]
+    right:
+      what: circle
+      radius: 2
+      where:
+        ref: matrix_inner_home
+        shift: [-2, 0.5kc + 0.6]
+
+  keyplate:
+    - name: _board_case_clearance
+    - operation: subtract
+      name: switches
+  keyplate_drilled:
+    - name: keyplate
+    - operation: subtract
+      name: _board_holes
+
   inserts: # Make a big circle, subtract little circle = standoffs
     - name: _insert_walls
     - operation: subtract
@@ -305,6 +310,74 @@ outlines:
     - name: board
     - operation: subtract
       name: _board_holes
+
+pcbs:
+  janus:
+    outlines:
+      main:
+        outline: drilled_board
+    footprints:
+      ks27:
+        what: ks27
+        where: true
+        params:
+          keycaps: true # Adds keycap reference in KiCad (User.Dwgs layer)
+          hotswap: true # Adds pads and holes for hotswap socket
+          reverse: true # Adds pads and holes on both sides so you can make a reversible PCB
+          from: "{{column_net}}"
+          to: "{{colrow}}"
+      diode: # Need these since we don't have enough pins for 25 keys
+        what: diode
+        where: true
+        params:
+          from: "{{colrow}}"
+          to: "{{row_net}}"
+        adjust:
+          shift: [9, 6]
+          rotate: -90
+      rev_nano: # This allows you to use the same thru-holes on either side of the board for the nice!nano v2
+        what: rev_nano
+        where:
+          ref: matrix_inner_number
+          shift: [1kc + 3, -2]
+      rev_view: # Like above, lets you use the nice!vier on either side of the board
+        what: niceview
+        params:
+          side: "F"
+          reverse: true
+          MOSI: P2
+          SCK: P3
+          CS: P1
+        where:
+          ref: matrix_inner_number
+          shift: [1kc + 3, -6]
+      rev_jstph: # Mainly just adds silk screen to both sides of the board to ensure proper polarity
+        what: rev_jstph
+        params:
+          pos: BPOS
+          neg: GND
+        where:
+          ref: matrix_inner_top
+          shift: [2kc - 3, -5]
+          rotate: 180
+      rev_slider: # Adds a power slider to both sides of the board
+        what: rev_slider
+        params:
+          from: BPOS
+          to: RAW
+        where:
+          ref: matrix_inner_home
+          shift: [2kc + 1, 0]
+          rotate: -90
+      rev_reset: # Adds a reset button to both sides of the board
+        what: rev_button
+        params:
+          from: GND
+          to: RST
+        where:
+          ref: matrix_inner_home
+          shift: [1kc + 3, 0]
+          rotate: -90
 
 cases:
   _case_wall:
