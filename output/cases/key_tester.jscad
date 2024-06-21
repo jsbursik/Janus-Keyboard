@@ -9,67 +9,67 @@ function wall_extrude_5_outline_fn(){
 function keyplate_extrude_1_outline_fn(){
     return new CSG.Path2D([[34.6,-159.1],[34.6,-64.1]]).appendArc([40.9,-57.8],{"radius":6.3,"clockwise":true,"large":false}).appendPoint([78.3,-57.8]).appendArc([78.4269848,-57.8012799],{"radius":6.3,"clockwise":true,"large":false}).appendPoint([82.6303949,-57.8860224]).appendArc([82.7232769,-57.8885803],{"radius":6.3,"clockwise":true,"large":false}).appendPoint([120.1004938,-59.1938214]).appendArc([120.2273566,-59.1995322],{"radius":6.3,"clockwise":true,"large":false}).appendPoint([124.425249,-59.43092]).appendArc([124.5179852,-59.4367179],{"radius":6.3,"clockwise":true,"large":false}).appendPoint([143.6709707,-60.7760252]).appendPoint([186.0676871,-63.7406924]).appendArc([191.9128748,-70.4648116],{"radius":6.3,"clockwise":true,"large":false}).appendPoint([186.7384016,-144.4632261]).appendPoint([192.1490437,-156.1425557]).appendPoint([205.7820431,-165.33813]).appendArc([207.4820645,-174.083982],{"radius":6.3,"clockwise":true,"large":false}).appendPoint([192.2160983,-196.7167077]).appendArc([183.401716,-198.3698448],{"radius":6.3,"clockwise":true,"large":false}).appendPoint([167.7008744,-187.474763]).appendPoint([150.7980985,-179.2614934]).appendPoint([134.3354952,-173.9124693]).appendPoint([115.5165404,-170.6785379]).appendPoint([40.4567468,-165.3843875]).appendArc([34.6,-159.1],{"radius":6.3,"clockwise":true,"large":false}).close().innerToCAG()
 .subtract(
-    new CSG.Path2D([[142.8850205,-153.0061919],[138.4815283,-166.5587472]]).appendPoint([151.7487667,-170.8695343]).appendPoint([156.1522589,-157.316979]).appendPoint([142.8850205,-153.0061919]).close().innerToCAG()
+    new CSG.Path2D([[165.5952484,-156.212033],[159.2607853,-169.1996069]]).appendPoint([171.7989622,-175.3148844]).appendPoint([178.1334253,-162.3273105]).appendPoint([165.5952484,-156.212033]).close().innerToCAG()
 .union(
-    new CSG.Path2D([[121.1836979,-148.8067763],[118.7092114,-162.8402868]]).appendPoint([132.4472795,-165.2626789]).appendPoint([134.921766,-151.2291684]).appendPoint([121.1836979,-148.8067763]).close().innerToCAG()
+    new CSG.Path2D([[61.975,-156.975],[76.425,-156.975]]).appendPoint([76.425,-143.025]).appendPoint([61.975,-143.025]).appendPoint([61.975,-156.975]).close().innerToCAG()
 ).union(
-    new CSG.Path2D([[185.2836152,-166.9815109],[177.3151163,-178.7952963]]).appendPoint([188.8801904,-186.5960373]).appendPoint([196.8486893,-174.7822519]).appendPoint([185.2836152,-166.9815109]).close().innerToCAG()
+    new CSG.Path2D([[42.775,-156.975],[57.225,-156.975]]).appendPoint([57.225,-143.025]).appendPoint([42.775,-143.025]).appendPoint([42.775,-156.975]).close().innerToCAG()
 ).union(
-    new CSG.Path2D([[103.1045015,-80.9889468],[117.3458208,-81.4862646]]).appendPoint([117.8326687,-67.5447626]).appendPoint([103.5913494,-67.0474448]).appendPoint([103.1045015,-80.9889468]).close().innerToCAG()
+    new CSG.Path2D([[61.975,-80.175],[76.425,-80.175]]).appendPoint([76.425,-66.225]).appendPoint([61.975,-66.225]).appendPoint([61.975,-80.175]).close().innerToCAG()
 ).union(
-    new CSG.Path2D([[102.4344312,-100.1772507],[116.6757505,-100.6745685]]).appendPoint([117.1625984,-86.7330665]).appendPoint([102.9212791,-86.2357487]).appendPoint([102.4344312,-100.1772507]).close().innerToCAG()
+    new CSG.Path2D([[61.975,-99.375],[76.425,-99.375]]).appendPoint([76.425,-85.425]).appendPoint([61.975,-85.425]).appendPoint([61.975,-99.375]).close().innerToCAG()
 ).union(
-    new CSG.Path2D([[101.7643609,-119.3655546],[116.0056802,-119.8628724]]).appendPoint([116.4925281,-105.9213704]).appendPoint([102.2512088,-105.4240526]).appendPoint([101.7643609,-119.3655546]).close().innerToCAG()
+    new CSG.Path2D([[61.975,-118.575],[76.425,-118.575]]).appendPoint([76.425,-104.625]).appendPoint([61.975,-104.625]).appendPoint([61.975,-118.575]).close().innerToCAG()
 ).union(
-    new CSG.Path2D([[101.0942906,-138.5538585],[115.3356099,-139.0511763]]).appendPoint([115.8224578,-125.1096743]).appendPoint([101.5811385,-124.6123565]).appendPoint([101.0942906,-138.5538585]).close().innerToCAG()
+    new CSG.Path2D([[61.975,-137.775],[76.425,-137.775]]).appendPoint([76.425,-123.825]).appendPoint([61.975,-123.825]).appendPoint([61.975,-137.775]).close().innerToCAG()
 ).union(
-    new CSG.Path2D([[83.9161976,-80.3188765],[98.1575169,-80.8161943]]).appendPoint([98.6443648,-66.8746923]).appendPoint([84.4030455,-66.3773745]).appendPoint([83.9161976,-80.3188765]).close().innerToCAG()
+    new CSG.Path2D([[42.775,-80.175],[57.225,-80.175]]).appendPoint([57.225,-66.225]).appendPoint([42.775,-66.225]).appendPoint([42.775,-80.175]).close().innerToCAG()
 ).union(
-    new CSG.Path2D([[83.2461273,-99.5071804],[97.4874466,-100.0044982]]).appendPoint([97.9742945,-86.0629962]).appendPoint([83.7329752,-85.5656784]).appendPoint([83.2461273,-99.5071804]).close().innerToCAG()
+    new CSG.Path2D([[42.775,-99.375],[57.225,-99.375]]).appendPoint([57.225,-85.425]).appendPoint([42.775,-85.425]).appendPoint([42.775,-99.375]).close().innerToCAG()
 ).union(
-    new CSG.Path2D([[82.576057,-118.6954843],[96.8173763,-119.1928021]]).appendPoint([97.3042242,-105.2513001]).appendPoint([83.0629049,-104.7539823]).appendPoint([82.576057,-118.6954843]).close().innerToCAG()
+    new CSG.Path2D([[42.775,-118.575],[57.225,-118.575]]).appendPoint([57.225,-104.625]).appendPoint([42.775,-104.625]).appendPoint([42.775,-118.575]).close().innerToCAG()
 ).union(
-    new CSG.Path2D([[81.9059867,-137.8837882],[96.147306,-138.381106]]).appendPoint([96.6341539,-124.439604]).appendPoint([82.3928346,-123.9422862]).appendPoint([81.9059867,-137.8837882]).close().innerToCAG()
+    new CSG.Path2D([[42.775,-137.775],[57.225,-137.775]]).appendPoint([57.225,-123.825]).appendPoint([42.775,-123.825]).appendPoint([42.775,-137.775]).close().innerToCAG()
 ).union(
-    new CSG.Path2D([[81.2359164,-157.0720921],[95.4772357,-157.5694099]]).appendPoint([95.9640836,-143.6279079]).appendPoint([81.7227643,-143.1305901]).appendPoint([81.2359164,-157.0720921]).close().innerToCAG()
+    new CSG.Path2D([[103.0045624,-80.9854569],[117.4457598,-81.4897546]]).appendPoint([117.9326078,-67.5482525]).appendPoint([103.4914104,-67.0439548]).appendPoint([103.0045624,-80.9854569]).close().innerToCAG()
 ).union(
-    new CSG.Path2D([[165.5514112,-156.3019124],[159.3046224,-169.1097275]]).appendPoint([171.8427994,-175.225005]).appendPoint([178.0895882,-162.4171899]).appendPoint([165.5514112,-156.3019124]).close().innerToCAG()
+    new CSG.Path2D([[102.3344921,-100.1737608],[116.7756895,-100.6780585]]).appendPoint([117.2625375,-86.7365564]).appendPoint([102.8213401,-86.2322587]).appendPoint([102.3344921,-100.1737608]).close().innerToCAG()
 ).union(
-    new CSG.Path2D([[62.075,-156.975],[76.325,-156.975]]).appendPoint([76.325,-143.025]).appendPoint([62.075,-143.025]).appendPoint([62.075,-156.975]).close().innerToCAG()
+    new CSG.Path2D([[101.6644218,-119.3620647],[116.1056192,-119.8663624]]).appendPoint([116.5924672,-105.9248603]).appendPoint([102.1512698,-105.4205626]).appendPoint([101.6644218,-119.3620647]).close().innerToCAG()
 ).union(
-    new CSG.Path2D([[42.875,-156.975],[57.125,-156.975]]).appendPoint([57.125,-143.025]).appendPoint([42.875,-143.025]).appendPoint([42.875,-156.975]).close().innerToCAG()
+    new CSG.Path2D([[100.9943515,-138.5503686],[115.4355489,-139.0546663]]).appendPoint([115.9223969,-125.1131642]).appendPoint([101.4811995,-124.6088665]).appendPoint([100.9943515,-138.5503686]).close().innerToCAG()
 ).union(
-    new CSG.Path2D([[62.075,-80.175],[76.325,-80.175]]).appendPoint([76.325,-66.225]).appendPoint([62.075,-66.225]).appendPoint([62.075,-80.175]).close().innerToCAG()
+    new CSG.Path2D([[83.8162585,-80.3153866],[98.2574559,-80.8196843]]).appendPoint([98.7443039,-66.8781822]).appendPoint([84.3031065,-66.3738845]).appendPoint([83.8162585,-80.3153866]).close().innerToCAG()
 ).union(
-    new CSG.Path2D([[62.075,-99.375],[76.325,-99.375]]).appendPoint([76.325,-85.425]).appendPoint([62.075,-85.425]).appendPoint([62.075,-99.375]).close().innerToCAG()
+    new CSG.Path2D([[83.1461882,-99.5036905],[97.5873856,-100.0079882]]).appendPoint([98.0742336,-86.0664861]).appendPoint([83.6330362,-85.5621884]).appendPoint([83.1461882,-99.5036905]).close().innerToCAG()
 ).union(
-    new CSG.Path2D([[62.075,-118.575],[76.325,-118.575]]).appendPoint([76.325,-104.625]).appendPoint([62.075,-104.625]).appendPoint([62.075,-118.575]).close().innerToCAG()
+    new CSG.Path2D([[82.4761179,-118.6919944],[96.9173153,-119.1962921]]).appendPoint([97.4041633,-105.25479]).appendPoint([82.9629659,-104.7504923]).appendPoint([82.4761179,-118.6919944]).close().innerToCAG()
 ).union(
-    new CSG.Path2D([[62.075,-137.775],[76.325,-137.775]]).appendPoint([76.325,-123.825]).appendPoint([62.075,-123.825]).appendPoint([62.075,-137.775]).close().innerToCAG()
+    new CSG.Path2D([[81.8060476,-137.8802983],[96.247245,-138.384596]]).appendPoint([96.734093,-124.4430939]).appendPoint([82.2928956,-123.9387962]).appendPoint([81.8060476,-137.8802983]).close().innerToCAG()
 ).union(
-    new CSG.Path2D([[42.875,-80.175],[57.125,-80.175]]).appendPoint([57.125,-66.225]).appendPoint([42.875,-66.225]).appendPoint([42.875,-80.175]).close().innerToCAG()
+    new CSG.Path2D([[81.1359773,-157.0686022],[95.5771747,-157.5728999]]).appendPoint([96.0640227,-143.6313978]).appendPoint([81.6228253,-143.1271001]).appendPoint([81.1359773,-157.0686022]).close().innerToCAG()
 ).union(
-    new CSG.Path2D([[42.875,-99.375],[57.125,-99.375]]).appendPoint([57.125,-85.425]).appendPoint([42.875,-85.425]).appendPoint([42.875,-99.375]).close().innerToCAG()
+    new CSG.Path2D([[142.9159222,-152.9110862],[138.4506266,-166.6538529]]).appendPoint([151.717865,-170.96464]).appendPoint([156.1831606,-157.2218733]).appendPoint([142.9159222,-152.9110862]).close().innerToCAG()
 ).union(
-    new CSG.Path2D([[42.875,-118.575],[57.125,-118.575]]).appendPoint([57.125,-104.625]).appendPoint([42.875,-104.625]).appendPoint([42.875,-118.575]).close().innerToCAG()
+    new CSG.Path2D([[185.3395345,-166.8986071],[177.259197,-178.8782001]]).appendPoint([188.8242711,-186.6789411]).appendPoint([196.9046086,-174.6993481]).appendPoint([185.3395345,-166.8986071]).close().innerToCAG()
 ).union(
-    new CSG.Path2D([[42.875,-137.775],[57.125,-137.775]]).appendPoint([57.125,-123.825]).appendPoint([42.875,-123.825]).appendPoint([42.875,-137.775]).close().innerToCAG()
+    new CSG.Path2D([[143.9808464,-83.2273312],[158.395647,-84.2353123]]).appendPoint([159.3687498,-70.3192938]).appendPoint([144.9539492,-69.3113127]).appendPoint([143.9808464,-83.2273312]).close().innerToCAG()
 ).union(
-    new CSG.Path2D([[144.0806028,-83.2343069],[158.2958906,-84.2283366]]).appendPoint([159.2689934,-70.3123181]).appendPoint([145.0537056,-69.3182884]).appendPoint([144.0806028,-83.2343069]).close().innerToCAG()
+    new CSG.Path2D([[142.6415221,-102.380561],[157.0563227,-103.3885421]]).appendPoint([158.0294255,-89.4725236]).appendPoint([143.6146249,-88.4645425]).appendPoint([142.6415221,-102.380561]).close().innerToCAG()
 ).union(
-    new CSG.Path2D([[142.7412785,-102.3875367],[156.9565663,-103.3815664]]).appendPoint([157.9296691,-89.4655479]).appendPoint([143.7143813,-88.4715182]).appendPoint([142.7412785,-102.3875367]).close().innerToCAG()
+    new CSG.Path2D([[141.3021978,-121.5337908],[155.7169984,-122.5417719]]).appendPoint([156.6901012,-108.6257534]).appendPoint([142.2753006,-107.6177723]).appendPoint([141.3021978,-121.5337908]).close().innerToCAG()
 ).union(
-    new CSG.Path2D([[141.4019542,-121.5407665],[155.617242,-122.5347962]]).appendPoint([156.5903448,-108.6187777]).appendPoint([142.375057,-107.624748]).appendPoint([141.4019542,-121.5407665]).close().innerToCAG()
+    new CSG.Path2D([[139.9628735,-140.6870206],[154.3776741,-141.6950017]]).appendPoint([155.3507769,-127.7789832]).appendPoint([140.9359763,-126.7710021]).appendPoint([139.9628735,-140.6870206]).close().innerToCAG()
 ).union(
-    new CSG.Path2D([[124.927373,-81.8949826],[139.1426608,-82.8890123]]).appendPoint([140.1157636,-68.9729938]).appendPoint([125.9004758,-67.9789641]).appendPoint([124.927373,-81.8949826]).close().innerToCAG()
+    new CSG.Path2D([[124.8276166,-81.8880069],[139.2424172,-82.895988]]).appendPoint([140.21552,-68.9799695]).appendPoint([125.8007194,-67.9719884]).appendPoint([124.8276166,-81.8880069]).close().innerToCAG()
 ).union(
-    new CSG.Path2D([[123.5880487,-101.0482124],[137.8033365,-102.0422421]]).appendPoint([138.7764393,-88.1262236]).appendPoint([124.5611515,-87.1321939]).appendPoint([123.5880487,-101.0482124]).close().innerToCAG()
+    new CSG.Path2D([[123.4882923,-101.0412367],[137.9030929,-102.0492178]]).appendPoint([138.8761957,-88.1331993]).appendPoint([124.4613951,-87.1252182]).appendPoint([123.4882923,-101.0412367]).close().innerToCAG()
 ).union(
-    new CSG.Path2D([[122.2487244,-120.2014422],[136.4640122,-121.1954719]]).appendPoint([137.437115,-107.2794534]).appendPoint([123.2218272,-106.2854237]).appendPoint([122.2487244,-120.2014422]).close().innerToCAG()
+    new CSG.Path2D([[122.148968,-120.1944665],[136.5637686,-121.2024476]]).appendPoint([137.5368714,-107.2864291]).appendPoint([123.1220708,-106.278448]).appendPoint([122.148968,-120.1944665]).close().innerToCAG()
 ).union(
-    new CSG.Path2D([[140.0626299,-140.6939963],[154.2779177,-141.688026]]).appendPoint([155.2510205,-127.7720075]).appendPoint([141.0357327,-126.7779778]).appendPoint([140.0626299,-140.6939963]).close().innerToCAG()
+    new CSG.Path2D([[120.8096437,-139.3476963],[135.2244443,-140.3556774]]).appendPoint([136.1975471,-126.4396589]).appendPoint([121.7827465,-125.4316778]).appendPoint([120.8096437,-139.3476963]).close().innerToCAG()
 ).union(
-    new CSG.Path2D([[120.9094001,-139.354672],[135.1246879,-140.3487017]]).appendPoint([136.0977907,-126.4326832]).appendPoint([121.8825029,-125.4386535]).appendPoint([120.9094001,-139.354672]).close().innerToCAG()
+    new CSG.Path2D([[121.2010627,-148.7082955],[118.6918465,-162.9387676]]).appendPoint([132.4299147,-165.3611597]).appendPoint([134.9391309,-151.1306876]).appendPoint([121.2010627,-148.7082955]).close().innerToCAG()
 )).extrude({ offset: [0, 0, 1] });
 }
 
