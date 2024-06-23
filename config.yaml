@@ -1,6 +1,8 @@
 units:
-  ks: 15 # KS-17 switch size
-  kc: 18.5 # DSA keycap size
+  ks: 15 # KS-27 switch size (roughly)
+  ks_w: 14.45 # ACTUAL KS-27 width for keyplate
+  ks_h: 13.95 # ACTUAL KS-27 height for keyplate
+  kc: 18.2 # DSA keycap size
   kp: kc + 1 # Padding so keycaps don't touch
   board_padding: 6
   screw_radius: 1.15 # M2 screws are ~1.8mm, spec is 2mm
@@ -17,32 +19,30 @@ points:
   zones:
     matrix:
       anchor:
-        rotate: 8
+        rotate: 0
         shift: [50, -150] # For Kicad - this puts it closer to the center
       columns:
         outer:
-          key.splay: 2
           key.column_net: P15
         pinky:
-          key.stagger: 2
           key.column_net: P14
         ring:
-          key.stagger: 4
           key.splay: -2
+          key.spread: kp + 0.2
+          key.stagger: -0.35
           key.column_net: P16
         middle:
-          key.stagger: 3
+          rows.mod.skip: true
           key.column_net: P10
         index:
-          key.splay: -4
-          key.stagger: -3
-          rows.mod.skip: true
-          key.column_net: P20
-        inner:
-          key.splay: -4
-          key.stagger: -3
+          key.splay: -2
+          key.spread: kp + 0.2
+          key.stagger: -0.35
           rows.mod.skip: true
           key.column_net: P19
+        inner:
+          rows.mod.skip: true
+          key.column_net: P20
       rows:
         mod:
           row_net: P9
@@ -52,23 +52,32 @@ points:
           row_net: P7
         top:
           row_net: P6
+        number:
+          row_net: P5
     thumbfan:
       anchor:
-        ref: matrix_inner_bottom
-        shift: [0, -1kp - 10]
-        rotate: -20
+        ref: matrix_index_bottom
+        shift: [0, -1kc - 6]
+        rotate: -6
       columns:
+        mod:
+          key.rotate: -90
+          key.column_net: P10
         inner:
-          key.column_net: P20
-          key.rotate: -90 # Rotated counter-clockwise to make routing easier
-        home:
-          key.height: 1.5kc # I'm  aware that this looks wrong in ergogen because of the rotate
-          key.shift: [0, 0.25kc]
+          key.splay: -8
+          key.shift: [2, -1]
           key.rotate: -90
           key.column_net: P19
+        home:
+          key.splay: -8
+          key.width: 1.5kc
+          key.shift: [4, 0.25kc - 2]
+          key.rotate: -90
+          key.column_net: P20
         outer:
-          key.height: 1.5kc # I'm  aware that this looks wrong in ergogen because of the rotate
-          key.shift: [0, 0.25kc]
+          key.splay: -8
+          key.width: 1.5kc
+          key.shift: [6, 0.25kc - 3]
           key.rotate: -90
           key.column_net: P18
       rows:
@@ -78,7 +87,7 @@ outlines:
   switches: # Just to help me see in the web viewer
     - what: rectangle
       where: true
-      size: [ks, ks]
+      size: [ks_w, ks_h]
   keycaps: # Just to help me see in the web viewer
     - what: rectangle
       where: true
@@ -88,38 +97,46 @@ outlines:
     - what: polygon
       operation: stack
       points:
-        - ref: matrix_outer_top
+        - ref: matrix_outer_number
           shift: [-0.5kc, 0.5kc]
-        - ref: matrix_outer_top
+        - ref: matrix_outer_number
           shift: [0.5kc, 0.5kc]
-        - ref: matrix_pinky_top
+        - ref: matrix_pinky_number
           shift: [-0.5kc, 0.5kc]
-        - ref: matrix_pinky_top
+        - ref: matrix_pinky_number
           shift: [0.5kc, 0.5kc]
-        - ref: matrix_ring_top
+        - ref: matrix_ring_number
           shift: [-0.5kc, 0.5kc]
-        - ref: matrix_ring_top
+        - ref: matrix_ring_number
           shift: [0.5kc, 0.5kc]
-        - ref: matrix_middle_top
+        - ref: matrix_middle_number
           shift: [-0.5kc, 0.5kc]
-        - ref: matrix_middle_top
+        - ref: matrix_middle_number
           shift: [0.5kc, 0.5kc]
-        - ref: matrix_index_top
+        - ref: matrix_index_number
           shift: [-0.5kc, 0.5kc]
-        - ref: matrix_index_top
+        - ref: matrix_index_number
           shift: [0.5kc, 0.5kc]
-        - ref: matrix_inner_top
+        - ref: matrix_inner_number
           shift: [-0.5kc, 0.5kc]
-        - ref: matrix_inner_top
+        - ref: matrix_inner_number
           shift: [2kc - (board_padding / 2), 0.5kc]
         - ref: matrix_inner_bottom
-          shift: [2kc - (board_padding / 2), -0.75kc]
+          shift: [2kc - (board_padding / 2), -0.5kc]
+        - ref: thumbfan_outer_cluster
+          shift: [-0.75kc, -0.5kc]
         - ref: thumbfan_outer_cluster
           shift: [-0.75kc, 0.5kc]
         - ref: thumbfan_outer_cluster
           shift: [0.75kc, 0.5kc]
-        - ref: thumbfan_outer_cluster
-          shift: [0.75kc, -3kc]
+        - ref: thumbfan_home_cluster
+          shift: [0.75kc, 0.5kc]
+        - ref: thumbfan_inner_cluster
+          shift: [0.5kc, 0.5kc]
+        - ref: thumbfan_inner_cluster
+          shift: [0.5kc, -0.5kc]
+        - ref: thumbfan_mod_cluster
+          shift: [0.5kc, -0.5kc]
         - ref: matrix_outer_mod
           shift: [-0.5kc, -0.5kc]
       expand: board_padding
@@ -146,26 +163,20 @@ outlines:
       what: circle
       radius: screw_radius
       where:
-        - ref: matrix_outer_top
+        - ref: matrix_outer_number
           shift: [-0.5kc - 1, 0.5kc + 1]
-    top_middle:
-      what: circle
-      radius: screw_radius
-      where:
-        - ref: matrix_middle_top
-          shift: [0, 0.5kc + 2]
     top_right:
       what: circle
       radius: screw_radius
       where:
-        - ref: matrix_inner_top
+        - ref: matrix_inner_number
           shift: [2kc - (board_padding / 2) + 1, 0.5kc + 1]
     right_middle:
       what: circle
       radius: screw_radius
       where:
         - ref: matrix_inner_bottom
-          shift: [2kc - (board_padding / 2) + 1, -0.5kc - (board_padding / 2) - 1]
+          shift: [2kc - (board_padding / 2) + 5, -0.5kc - (board_padding / 2) - 4]
     bottom_right:
       what: circle
       radius: screw_radius
@@ -176,8 +187,8 @@ outlines:
       what: circle
       radius: screw_radius
       where:
-        - ref: thumbfan_outer_cluster
-          shift: [0.75kc + 1, -3kc - 1]
+        - ref: thumbfan_mod_cluster
+          shift: [0.5kc + 1, -0.5kc - 1]
     bottom_left:
       what: circle
       radius: screw_radius
@@ -192,12 +203,6 @@ outlines:
       where:
         - ref: matrix_outer_top
           shift: [-0.5kc - 1, 0.5kc + 1]
-    top_middle:
-      what: circle
-      radius: insert_radius + insert_print_clearance
-      where:
-        - ref: matrix_middle_top
-          shift: [0, 0.5kc + 2]
     top_right:
       what: circle
       radius: insert_radius + insert_print_clearance
@@ -236,12 +241,6 @@ outlines:
       where:
         - ref: matrix_outer_top
           shift: [-0.5kc - 1, 0.5kc + 1]
-    top_middle:
-      what: circle
-      radius: insert_wall_radius
-      where:
-        - ref: matrix_middle_top
-          shift: [0, 0.5kc + 2]
     top_right:
       what: circle
       radius: insert_wall_radius
@@ -279,6 +278,35 @@ outlines:
       where:
         - ref: matrix_inner_bottom
           shift: [2kc + 4 + case_clearance, 0]
+
+  _supports:
+    left:
+      what: circle
+      radius: 2
+      where:
+        ref: matrix_pinky_home
+        shift: [-2, 0.5kc + 0.6]
+    middle:
+      what: circle
+      radius: 2
+      where:
+        ref: matrix_middle_home
+        shift: [-2, 0.5kc + 0.6]
+    right:
+      what: circle
+      radius: 2
+      where:
+        ref: matrix_inner_home
+        shift: [-2, 0.5kc + 0.6]
+
+  keyplate:
+    - name: _board_case_clearance
+    - operation: subtract
+      name: switches
+  keyplate_drilled:
+    - name: keyplate
+    - operation: subtract
+      name: _board_holes
 
   inserts: # Make a big circle, subtract little circle = standoffs
     - name: _insert_walls
@@ -322,7 +350,7 @@ pcbs:
       rev_nano: # This allows you to use the same thru-holes on either side of the board for the nice!nano v2
         what: rev_nano
         where:
-          ref: matrix_inner_top
+          ref: matrix_inner_number
           shift: [1kc + 3, -2]
       rev_view: # Like above, lets you use the nice!vier on either side of the board
         what: niceview
@@ -333,7 +361,7 @@ pcbs:
           SCK: P3
           CS: P1
         where:
-          ref: matrix_inner_top
+          ref: matrix_inner_number
           shift: [1kc + 3, -6]
       rev_jstph: # Mainly just adds silk screen to both sides of the board to ensure proper polarity
         what: rev_jstph
@@ -341,7 +369,7 @@ pcbs:
           pos: BPOS
           neg: GND
         where:
-          ref: matrix_inner_home
+          ref: matrix_inner_top
           shift: [2kc - 3, -5]
           rotate: 180
       rev_slider: # Adds a power slider to both sides of the board
@@ -350,7 +378,7 @@ pcbs:
           from: BPOS
           to: RAW
         where:
-          ref: matrix_inner_bottom
+          ref: matrix_inner_home
           shift: [2kc + 1, 0]
           rotate: -90
       rev_reset: # Adds a reset button to both sides of the board
@@ -359,34 +387,29 @@ pcbs:
           from: GND
           to: RST
         where:
-          ref: matrix_inner_bottom
+          ref: matrix_inner_home
           shift: [1kc + 3, 0]
           rotate: -90
 
 cases:
-  _case_bottom: # 1mm thick case bottom
-    - name: _board_xl
-      extrude: 1
-  _case_wall: # 1mm floor, 3mm space for components, + 1.6mm for pcb height
+  _case_wall:
     - name: wall
-      extrude: 5.6
-  _slider_cutout:
-    - name: _slider_hole
-      extrude: 2.6
-      shift: [0, 0, 3]
-  _standoffs: # 3mm tall standoffs, so the board sits flush with the walls
-    - name: inserts
-      extrude: 4
-  case: # Put the floor, walls, and standoffs together
-    - what: case
-      name: _case_bottom
-      operation: add
+      extrude: 5
+  _case_keyplate:
+    - name: keyplate
+      extrude: 1
+  # --------------------------------------------------------
+  #
+  # This "key_tester" is basically a keyplate with a wall.
+  # I will print it as is, then flip it upside down and
+  # put switches with keycaps into the keyplate to get a
+  # feel for whether or not I like the layout.
+  #
+  # --------------------------------------------------------
+  key_tester:
     - what: case
       name: _case_wall
       operation: add
     - what: case
-      name: _slider_cutout
-      operation: subtract
-    - what: case
-      name: _standoffs
+      name: _case_keyplate
       operation: add
