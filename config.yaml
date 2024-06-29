@@ -201,20 +201,20 @@ outlines:
       what: circle
       radius: insert_radius + insert_print_clearance
       where:
-        - ref: matrix_outer_top
+        - ref: matrix_outer_number
           shift: [-0.5kc - 1, 0.5kc + 1]
     top_right:
       what: circle
       radius: insert_radius + insert_print_clearance
       where:
-        - ref: matrix_inner_top
+        - ref: matrix_inner_number
           shift: [2kc - (board_padding / 2) + 1, 0.5kc + 1]
     right_middle:
       what: circle
       radius: insert_radius + insert_print_clearance
       where:
         - ref: matrix_inner_bottom
-          shift: [2kc - (board_padding / 2) + 1, -0.5kc - (board_padding / 2) - 1]
+          shift: [2kc - (board_padding / 2) + 5, -0.5kc - (board_padding / 2) - 4]
     bottom_right:
       what: circle
       radius: insert_radius + insert_print_clearance
@@ -225,8 +225,8 @@ outlines:
       what: circle
       radius: insert_radius + insert_print_clearance
       where:
-        - ref: thumbfan_outer_cluster
-          shift: [0.75kc + 1, -3kc - 1]
+        - ref: thumbfan_mod_cluster
+          shift: [0.5kc + 1, -0.5kc - 1]
     bottom_left:
       what: circle
       radius: insert_radius + insert_print_clearance
@@ -239,20 +239,20 @@ outlines:
       what: circle
       radius: insert_wall_radius
       where:
-        - ref: matrix_outer_top
+        - ref: matrix_outer_number
           shift: [-0.5kc - 1, 0.5kc + 1]
     top_right:
       what: circle
       radius: insert_wall_radius
       where:
-        - ref: matrix_inner_top
+        - ref: matrix_inner_number
           shift: [2kc - (board_padding / 2) + 1, 0.5kc + 1]
     right_middle:
       what: circle
       radius: insert_wall_radius
       where:
         - ref: matrix_inner_bottom
-          shift: [2kc - (board_padding / 2) + 1, -0.5kc - (board_padding / 2) - 1]
+          shift: [2kc - (board_padding / 2) + 5, -0.5kc - (board_padding / 2) - 4]
     bottom_right:
       what: circle
       radius: insert_wall_radius
@@ -263,8 +263,8 @@ outlines:
       what: circle
       radius: insert_wall_radius
       where:
-        - ref: thumbfan_outer_cluster
-          shift: [0.75kc + 1, -3kc - 1]
+        - ref: thumbfan_mod_cluster
+          shift: [0.5kc + 1, -0.5kc - 1]
     bottom_left:
       what: circle
       radius: insert_wall_radius
@@ -276,10 +276,10 @@ outlines:
     - what: rectangle
       size: [2, 8]
       where:
-        - ref: matrix_inner_bottom
+        - ref: matrix_inner_home
           shift: [2kc + 4 + case_clearance, 0]
 
-  _supports:
+  _board_supports:
     left:
       what: circle
       radius: 2
@@ -298,15 +298,6 @@ outlines:
       where:
         ref: matrix_inner_home
         shift: [-2, 0.5kc + 0.6]
-
-  keyplate:
-    - name: _board_case_clearance
-    - operation: subtract
-      name: switches
-  keyplate_drilled:
-    - name: keyplate
-    - operation: subtract
-      name: _board_holes
 
   inserts: # Make a big circle, subtract little circle = standoffs
     - name: _insert_walls
@@ -392,24 +383,35 @@ pcbs:
           rotate: -90
 
 cases:
+  _case_bottom:
+    - name: _board_case_clearance
+      extrude: 1
   _case_wall:
     - name: wall
-      extrude: 5
-  _case_keyplate:
-    - name: keyplate
-      extrude: 1
-  # --------------------------------------------------------
-  #
-  # This "key_tester" is basically a keyplate with a wall.
-  # I will print it as is, then flip it upside down and
-  # put switches with keycaps into the keyplate to get a
-  # feel for whether or not I like the layout.
-  #
-  # --------------------------------------------------------
-  key_tester:
+      extrude: 5.6
+  _standoffs:
+    - name: inserts
+      extrude: 4
+  _supports:
+    - name: _board_supports
+      extrude: 4
+  _slider_cutout:
+    - name: _slider_hole
+      extrude: 2.6
+      shift: [0,0,3]
+  case:
+    - what: case
+      name: _case_bottom
+      operation: add
     - what: case
       name: _case_wall
       operation: add
     - what: case
-      name: _case_keyplate
+      name: _slider_cutout
+      operation: subtract
+    - what: case
+      name: _standoffs
+      operation: add
+    - what: case
+      name: _supports
       operation: add
