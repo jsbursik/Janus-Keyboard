@@ -7,7 +7,7 @@
   },
   "scripts": {
     "watch": "npm-watch",
-    "build": "npx ergogen .",
+    "build": "npx ergogen . --debug",
     "pcb-update": "cp -u output/pcbs/* kicad_project/",
     "convert": "for i in output/cases/*.jscad; do npx @jscad/cli@1 \"$i\" -of stla; done"
   },

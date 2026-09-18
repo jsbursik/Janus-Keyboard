@@ -10,5 +10,13 @@ $default_width: 18
 $default_padding: 19
 $default_autobind: 10
 ks: 15
-kc: 18.5
-kp: 19.5
+ks_w: 14.45
+ks_h: 13.95
+kc: 18.2
+kp: 19.2
+board_padding: 6
+screw_radius: 1.15
+insert_radius: 1.55
+insert_wall_radius: 4.05
+insert_print_clearance: 0.1
+case_clearance: 0.3

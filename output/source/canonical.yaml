@@ -1,7 +1,15 @@
 units:
     ks: 15
-    kc: 18.5
+    ks_w: 14.45
+    ks_h: 13.95
+    kc: 18.2
     kp: kc + 1
+    board_padding: 6
+    screw_radius: 1.15
+    insert_radius: 1.55
+    insert_wall_radius: insert_radius + 2.5
+    insert_print_clearance: 0.1
+    case_clearance: 0.3
 points:
     key:
         height: kc
@@ -11,63 +19,575 @@ points:
     zones:
         matrix:
             anchor:
-                rotate: 7
+                rotate: 0
                 shift:
                     - 50
                     - -150
             columns:
                 outer:
                     key:
-                        splay: 2
+                        column_net: P15
                 pinky:
                     key:
-                        stagger: 2
+                        column_net: P14
                 ring:
                     key:
-                        stagger: 4
                         splay: -2
+                        spread: kp + 0.2
+                        stagger: -0.35
+                        column_net: P16
                 middle:
+                    rows:
+                        mod:
+                            skip: true
                     key:
-                        stagger: 3
+                        column_net: P10
                 index:
                     key:
-                        splay: -4
-                        stagger: -3
+                        splay: -2
+                        spread: kp + 0.2
+                        stagger: -0.35
+                        column_net: P19
                     rows:
                         mod:
                             skip: true
                 inner:
-                    key:
-                        splay: -4
-                        stagger: -3
                     rows:
                         mod:
                             skip: true
+                    key:
+                        column_net: P20
             rows:
-                mod: null
-                bottom: null
-                home: null
-                top: null
+                mod:
+                    row_net: P9
+                bottom:
+                    row_net: P8
+                home:
+                    row_net: P7
+                top:
+                    row_net: P6
+                number:
+                    row_net: P5
         thumbfan:
             anchor:
-                ref: matrix_inner_bottom
+                ref: matrix_index_bottom
                 shift:
                     - 0
-                    - '-1kp - 10'
-                rotate: -20
+                    - '-1kc - 6'
+                rotate: -6
             columns:
-                inner: null
+                mod:
+                    key:
+                        rotate: -90
+                        column_net: P10
+                inner:
+                    key:
+                        splay: -8
+                        shift:
+                            - 2
+                            - -1
+                        rotate: -90
+                        column_net: P19
                 home:
                     key:
-                        height: 1.5kc
+                        splay: -8
+                        width: 1.5kc
                         shift:
-                            - 0
-                            - 0.25kc
+                            - 4
+                            - 0.25kc - 2
+                        rotate: -90
+                        column_net: P20
                 outer:
                     key:
-                        height: 1.5kc
+                        splay: -8
+                        width: 1.5kc
                         shift:
-                            - 0
-                            - 0.25kc
+                            - 6
+                            - 0.25kc - 3
+                        rotate: -90
+                        column_net: P18
             rows:
-                cluster: null
+                cluster:
+                    row_net: P9
+outlines:
+    switches:
+        -
+            what: rectangle
+            where: true
+            size:
+                - ks_w
+                - ks_h
+    keycaps:
+        -
+            what: rectangle
+            where: true
+            size:
+                - kc
+                - kc
+    board:
+        -
+            what: polygon
+            operation: stack
+            points:
+                -
+                    ref: matrix_outer_number
+                    shift:
+                        - '-0.5kc'
+                        - 0.5kc
+                -
+                    ref: matrix_outer_number
+                    shift:
+                        - 0.5kc
+                        - 0.5kc
+                -
+                    ref: matrix_pinky_number
+                    shift:
+                        - '-0.5kc'
+                        - 0.5kc
+                -
+                    ref: matrix_pinky_number
+                    shift:
+                        - 0.5kc
+                        - 0.5kc
+                -
+                    ref: matrix_ring_number
+                    shift:
+                        - '-0.5kc'
+                        - 0.5kc
+                -
+                    ref: matrix_ring_number
+                    shift:
+                        - 0.5kc
+                        - 0.5kc
+                -
+                    ref: matrix_middle_number
+                    shift:
+                        - '-0.5kc'
+                        - 0.5kc
+                -
+                    ref: matrix_middle_number
+                    shift:
+                        - 0.5kc
+                        - 0.5kc
+                -
+                    ref: matrix_index_number
+                    shift:
+                        - '-0.5kc'
+                        - 0.5kc
+                -
+                    ref: matrix_index_number
+                    shift:
+                        - 0.5kc
+                        - 0.5kc
+                -
+                    ref: matrix_inner_number
+                    shift:
+                        - '-0.5kc'
+                        - 0.5kc
+                -
+                    ref: matrix_inner_number
+                    shift:
+                        - 2kc - (board_padding / 2)
+                        - 0.5kc
+                -
+                    ref: matrix_inner_bottom
+                    shift:
+                        - 2kc - (board_padding / 2)
+                        - '-0.5kc'
+                -
+                    ref: thumbfan_outer_cluster
+                    shift:
+                        - '-0.75kc'
+                        - '-0.5kc'
+                -
+                    ref: thumbfan_outer_cluster
+                    shift:
+                        - '-0.75kc'
+                        - 0.5kc
+                -
+                    ref: thumbfan_outer_cluster
+                    shift:
+                        - 0.75kc
+                        - 0.5kc
+                -
+                    ref: thumbfan_home_cluster
+                    shift:
+                        - 0.75kc
+                        - 0.5kc
+                -
+                    ref: thumbfan_inner_cluster
+                    shift:
+                        - 0.5kc
+                        - 0.5kc
+                -
+                    ref: thumbfan_inner_cluster
+                    shift:
+                        - 0.5kc
+                        - '-0.5kc'
+                -
+                    ref: thumbfan_mod_cluster
+                    shift:
+                        - 0.5kc
+                        - '-0.5kc'
+                -
+                    ref: matrix_outer_mod
+                    shift:
+                        - '-0.5kc'
+                        - '-0.5kc'
+            expand: board_padding
+            joints: round
+    _board_case_clearance:
+        -
+            what: outline
+            name: board
+            expand: case_clearance
+    _board_xl:
+        -
+            what: outline
+            name: _board_case_clearance
+            expand: 2
+    _board_holes:
+        top_left:
+            what: circle
+            radius: screw_radius
+            where:
+                -
+                    ref: matrix_outer_number
+                    shift:
+                        - '-0.5kc - 1'
+                        - 0.5kc + 1
+        top_right:
+            what: circle
+            radius: screw_radius
+            where:
+                -
+                    ref: matrix_inner_number
+                    shift:
+                        - 2kc - (board_padding / 2) + 1
+                        - 0.5kc + 1
+        right_middle:
+            what: circle
+            radius: screw_radius
+            where:
+                -
+                    ref: matrix_inner_bottom
+                    shift:
+                        - 2kc - (board_padding / 2) + 5
+                        - '-0.5kc - (board_padding / 2) - 4'
+        bottom_right:
+            what: circle
+            radius: screw_radius
+            where:
+                -
+                    ref: thumbfan_outer_cluster
+                    shift:
+                        - 0.75kc + 1
+                        - 0.5kc + 1
+        bottom_middle:
+            what: circle
+            radius: screw_radius
+            where:
+                -
+                    ref: thumbfan_mod_cluster
+                    shift:
+                        - 0.5kc + 1
+                        - '-0.5kc - 1'
+        bottom_left:
+            what: circle
+            radius: screw_radius
+            where:
+                -
+                    ref: matrix_outer_mod
+                    shift:
+                        - '-0.5kc - 1'
+                        - '-0.5kc - 1'
+    _insert_holes:
+        top_left:
+            what: circle
+            radius: insert_radius + insert_print_clearance
+            where:
+                -
+                    ref: matrix_outer_number
+                    shift:
+                        - '-0.5kc - 1'
+                        - 0.5kc + 1
+        top_right:
+            what: circle
+            radius: insert_radius + insert_print_clearance
+            where:
+                -
+                    ref: matrix_inner_number
+                    shift:
+                        - 2kc - (board_padding / 2) + 1
+                        - 0.5kc + 1
+        right_middle:
+            what: circle
+            radius: insert_radius + insert_print_clearance
+            where:
+                -
+                    ref: matrix_inner_bottom
+                    shift:
+                        - 2kc - (board_padding / 2) + 5
+                        - '-0.5kc - (board_padding / 2) - 4'
+        bottom_right:
+            what: circle
+            radius: insert_radius + insert_print_clearance
+            where:
+                -
+                    ref: thumbfan_outer_cluster
+                    shift:
+                        - 0.75kc + 1
+                        - 0.5kc + 1
+        bottom_middle:
+            what: circle
+            radius: insert_radius + insert_print_clearance
+            where:
+                -
+                    ref: thumbfan_mod_cluster
+                    shift:
+                        - 0.5kc + 1
+                        - '-0.5kc - 1'
+        bottom_left:
+            what: circle
+            radius: insert_radius + insert_print_clearance
+            where:
+                -
+                    ref: matrix_outer_mod
+                    shift:
+                        - '-0.5kc - 1'
+                        - '-0.5kc - 1'
+    _insert_walls:
+        top_left:
+            what: circle
+            radius: insert_wall_radius
+            where:
+                -
+                    ref: matrix_outer_number
+                    shift:
+                        - '-0.5kc - 1'
+                        - 0.5kc + 1
+        top_right:
+            what: circle
+            radius: insert_wall_radius
+            where:
+                -
+                    ref: matrix_inner_number
+                    shift:
+                        - 2kc - (board_padding / 2) + 1
+                        - 0.5kc + 1
+        right_middle:
+            what: circle
+            radius: insert_wall_radius
+            where:
+                -
+                    ref: matrix_inner_bottom
+                    shift:
+                        - 2kc - (board_padding / 2) + 5
+                        - '-0.5kc - (board_padding / 2) - 4'
+        bottom_right:
+            what: circle
+            radius: insert_wall_radius
+            where:
+                -
+                    ref: thumbfan_outer_cluster
+                    shift:
+                        - 0.75kc + 1
+                        - 0.5kc + 1
+        bottom_middle:
+            what: circle
+            radius: insert_wall_radius
+            where:
+                -
+                    ref: thumbfan_mod_cluster
+                    shift:
+                        - 0.5kc + 1
+                        - '-0.5kc - 1'
+        bottom_left:
+            what: circle
+            radius: insert_wall_radius
+            where:
+                -
+                    ref: matrix_outer_mod
+                    shift:
+                        - '-0.5kc - 1'
+                        - '-0.5kc - 1'
+    _slider_hole:
+        -
+            what: rectangle
+            size:
+                - 2
+                - 8
+            where:
+                -
+                    ref: matrix_inner_home
+                    shift:
+                        - 2kc + 4 + case_clearance
+                        - 0
+    _board_supports:
+        left:
+            what: circle
+            radius: 2
+            where:
+                ref: matrix_pinky_home
+                shift:
+                    - -2
+                    - 0.5kc + 0.6
+        middle:
+            what: circle
+            radius: 2
+            where:
+                ref: matrix_middle_home
+                shift:
+                    - -2
+                    - 0.5kc + 0.6
+        right:
+            what: circle
+            radius: 2
+            where:
+                ref: matrix_inner_home
+                shift:
+                    - -2
+                    - 0.5kc + 0.6
+    inserts:
+        -
+            name: _insert_walls
+        -
+            operation: subtract
+            name: _insert_holes
+    wall:
+        -
+            name: _board_xl
+        -
+            operation: subtract
+            name: _board_case_clearance
+    drilled_board:
+        -
+            name: board
+        -
+            operation: subtract
+            name: _board_holes
+pcbs:
+    janus:
+        outlines:
+            main:
+                outline: drilled_board
+        footprints:
+            ks27:
+                what: ks27
+                where: true
+                params:
+                    keycaps: true
+                    hotswap: true
+                    reverse: true
+                    from: '{{column_net}}'
+                    to: '{{colrow}}'
+            diode:
+                what: diode
+                where: true
+                params:
+                    from: '{{colrow}}'
+                    to: '{{row_net}}'
+                adjust:
+                    shift:
+                        - 9
+                        - 6
+                    rotate: -90
+            rev_nano:
+                what: rev_nano
+                where:
+                    ref: matrix_inner_number
+                    shift:
+                        - 1kc + 3
+                        - -2
+            rev_view:
+                what: niceview
+                params:
+                    side: F
+                    reverse: true
+                    MOSI: P2
+                    SCK: P3
+                    CS: P1
+                where:
+                    ref: matrix_inner_number
+                    shift:
+                        - 1kc + 3
+                        - -6
+            rev_jstph:
+                what: rev_jstph
+                params:
+                    pos: BPOS
+                    neg: GND
+                where:
+                    ref: matrix_inner_top
+                    shift:
+                        - 2kc - 3
+                        - -5
+                    rotate: 180
+            rev_slider:
+                what: rev_slider
+                params:
+                    from: BPOS
+                    to: RAW
+                where:
+                    ref: matrix_inner_home
+                    shift:
+                        - 2kc + 1
+                        - 0
+                    rotate: -90
+            rev_reset:
+                what: rev_button
+                params:
+                    from: GND
+                    to: RST
+                where:
+                    ref: matrix_inner_home
+                    shift:
+                        - 1kc + 3
+                        - 0
+                    rotate: -90
+cases:
+    _case_bottom:
+        -
+            name: _board_case_clearance
+            extrude: 1
+    _case_wall:
+        -
+            name: wall
+            extrude: 5.6
+    _standoffs:
+        -
+            name: inserts
+            extrude: 4
+    _supports:
+        -
+            name: _board_supports
+            extrude: 4
+    _slider_cutout:
+        -
+            name: _slider_hole
+            extrude: 2.6
+            shift:
+                - 0
+                - 0
+                - 3
+    case:
+        -
+            what: case
+            name: _case_bottom
+            operation: add
+        -
+            what: case
+            name: _case_wall
+            operation: add
+        -
+            what: case
+            name: _slider_cutout
+            operation: subtract
+        -
+            what: case
+            name: _standoffs
+            operation: add
+        -
+            what: case
+            name: _supports
+            operation: add

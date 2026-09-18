@@ -1,0 +1,10 @@
+{
+	"autodeskProduct": "Fusion360",
+	"type": "script",
+	"author": "jsbursik",
+	"description": {
+		"": "Builds the Janus case as a parametric Fusion body from ergogen's outline DXFs."
+	},
+	"supportedOS": "windows|mac",
+	"editEnabled": true
+}

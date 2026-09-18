@@ -1,11 +1,11 @@
 matrix_outer_mod:
     x: 50
     'y': -150
-    r: 9
+    r: 0
     meta:
         stagger: 0
-        spread: 19.5
-        splay: 2
+        spread: 19.2
+        splay: 0
         origin:
             - 0
             - 0
@@ -15,78 +15,91 @@ matrix_outer_mod:
             - 0
         rotate: 0
         adjust: {}
-        width: 18.5
-        height: 18.5
-        padding: 19.5
+        width: 18.2
+        height: 18.2
+        padding: 19.2
         autobind: 10
         skip: false
         asym: both
         colrow: outer_mod
         name: matrix_outer_mod
+        column_net: P15
+        row_net: P9
         zone:
             columns:
                 outer:
                     key:
-                        splay: 2
+                        column_net: P15
                     rows: {}
                     name: outer
                 pinky:
                     key:
-                        stagger: 2
+                        column_net: P14
                     rows: {}
                     name: pinky
                 ring:
                     key:
-                        stagger: 4
                         splay: -2
+                        spread: kp + 0.2
+                        stagger: -0.35
+                        column_net: P16
                     rows: {}
                     name: ring
                 middle:
+                    rows:
+                        mod:
+                            skip: true
                     key:
-                        stagger: 3
-                    rows: {}
+                        column_net: P10
                     name: middle
                 index:
                     key:
-                        splay: -4
-                        stagger: -3
+                        splay: -2
+                        spread: kp + 0.2
+                        stagger: -0.35
+                        column_net: P19
                     rows:
                         mod:
                             skip: true
                     name: index
                 inner:
-                    key:
-                        splay: -4
-                        stagger: -3
                     rows:
                         mod:
                             skip: true
+                    key:
+                        column_net: P20
                     name: inner
             rows:
-                mod: {}
-                bottom: {}
-                home: {}
-                top: {}
+                mod:
+                    row_net: P9
+                bottom:
+                    row_net: P8
+                home:
+                    row_net: P7
+                top:
+                    row_net: P6
+                number:
+                    row_net: P5
             name: matrix
         col:
             key:
-                splay: 2
+                column_net: P15
             rows: {}
             name: outer
         row: mod
         bind:
             - 10
-            - 0
+            - 10
             - 0
             - 0
 matrix_outer_bottom:
-    x: 46.9495279
-    'y': -130.7400774
-    r: 9
+    x: 50
+    'y': -130.8
+    r: 0
     meta:
         stagger: 0
-        spread: 19.5
-        splay: 2
+        spread: 19.2
+        splay: 0
         origin:
             - 0
             - 0
@@ -96,62 +109,75 @@ matrix_outer_bottom:
             - 0
         rotate: 0
         adjust: {}
-        width: 18.5
-        height: 18.5
-        padding: 19.5
+        width: 18.2
+        height: 18.2
+        padding: 19.2
         autobind: 10
         skip: false
         asym: both
         colrow: outer_bottom
         name: matrix_outer_bottom
+        column_net: P15
+        row_net: P8
         zone:
             columns:
                 outer:
                     key:
-                        splay: 2
+                        column_net: P15
                     rows: {}
                     name: outer
                 pinky:
                     key:
-                        stagger: 2
+                        column_net: P14
                     rows: {}
                     name: pinky
                 ring:
                     key:
-                        stagger: 4
                         splay: -2
+                        spread: kp + 0.2
+                        stagger: -0.35
+                        column_net: P16
                     rows: {}
                     name: ring
                 middle:
+                    rows:
+                        mod:
+                            skip: true
                     key:
-                        stagger: 3
-                    rows: {}
+                        column_net: P10
                     name: middle
                 index:
                     key:
-                        splay: -4
-                        stagger: -3
+                        splay: -2
+                        spread: kp + 0.2
+                        stagger: -0.35
+                        column_net: P19
                     rows:
                         mod:
                             skip: true
                     name: index
                 inner:
-                    key:
-                        splay: -4
-                        stagger: -3
                     rows:
                         mod:
                             skip: true
+                    key:
+                        column_net: P20
                     name: inner
             rows:
-                mod: {}
-                bottom: {}
-                home: {}
-                top: {}
+                mod:
+                    row_net: P9
+                bottom:
+                    row_net: P8
+                home:
+                    row_net: P7
+                top:
+                    row_net: P6
+                number:
+                    row_net: P5
             name: matrix
         col:
             key:
-                splay: 2
+                column_net: P15
             rows: {}
             name: outer
         row: bottom
@@ -161,13 +187,13 @@ matrix_outer_bottom:
             - 10
             - 0
 matrix_outer_home:
-    x: 43.8990558
-    'y': -111.4801548
-    r: 9
+    x: 50
+    'y': -111.60000000000001
+    r: 0
     meta:
         stagger: 0
-        spread: 19.5
-        splay: 2
+        spread: 19.2
+        splay: 0
         origin:
             - 0
             - 0
@@ -177,62 +203,75 @@ matrix_outer_home:
             - 0
         rotate: 0
         adjust: {}
-        width: 18.5
-        height: 18.5
-        padding: 19.5
+        width: 18.2
+        height: 18.2
+        padding: 19.2
         autobind: 10
         skip: false
         asym: both
         colrow: outer_home
         name: matrix_outer_home
+        column_net: P15
+        row_net: P7
         zone:
             columns:
                 outer:
                     key:
-                        splay: 2
+                        column_net: P15
                     rows: {}
                     name: outer
                 pinky:
                     key:
-                        stagger: 2
+                        column_net: P14
                     rows: {}
                     name: pinky
                 ring:
                     key:
-                        stagger: 4
                         splay: -2
+                        spread: kp + 0.2
+                        stagger: -0.35
+                        column_net: P16
                     rows: {}
                     name: ring
                 middle:
+                    rows:
+                        mod:
+                            skip: true
                     key:
-                        stagger: 3
-                    rows: {}
+                        column_net: P10
                     name: middle
                 index:
                     key:
-                        splay: -4
-                        stagger: -3
+                        splay: -2
+                        spread: kp + 0.2
+                        stagger: -0.35
+                        column_net: P19
                     rows:
                         mod:
                             skip: true
                     name: index
                 inner:
-                    key:
-                        splay: -4
-                        stagger: -3
                     rows:
                         mod:
                             skip: true
+                    key:
+                        column_net: P20
                     name: inner
             rows:
-                mod: {}
-                bottom: {}
-                home: {}
-                top: {}
+                mod:
+                    row_net: P9
+                bottom:
+                    row_net: P8
+                home:
+                    row_net: P7
+                top:
+                    row_net: P6
+                number:
+                    row_net: P5
             name: matrix
         col:
             key:
-                splay: 2
+                column_net: P15
             rows: {}
             name: outer
         row: home
@@ -242,13 +281,13 @@ matrix_outer_home:
             - 10
             - 0
 matrix_outer_top:
-    x: 40.8485837
-    'y': -92.2202322
-    r: 9
+    x: 50
+    'y': -92.4
+    r: 0
     meta:
         stagger: 0
-        spread: 19.5
-        splay: 2
+        spread: 19.2
+        splay: 0
         origin:
             - 0
             - 0
@@ -258,77 +297,184 @@ matrix_outer_top:
             - 0
         rotate: 0
         adjust: {}
-        width: 18.5
-        height: 18.5
-        padding: 19.5
+        width: 18.2
+        height: 18.2
+        padding: 19.2
         autobind: 10
         skip: false
         asym: both
         colrow: outer_top
         name: matrix_outer_top
+        column_net: P15
+        row_net: P6
         zone:
             columns:
                 outer:
                     key:
-                        splay: 2
+                        column_net: P15
                     rows: {}
                     name: outer
                 pinky:
                     key:
-                        stagger: 2
+                        column_net: P14
                     rows: {}
                     name: pinky
                 ring:
                     key:
-                        stagger: 4
                         splay: -2
+                        spread: kp + 0.2
+                        stagger: -0.35
+                        column_net: P16
                     rows: {}
                     name: ring
                 middle:
+                    rows:
+                        mod:
+                            skip: true
                     key:
-                        stagger: 3
-                    rows: {}
+                        column_net: P10
                     name: middle
                 index:
                     key:
-                        splay: -4
-                        stagger: -3
+                        splay: -2
+                        spread: kp + 0.2
+                        stagger: -0.35
+                        column_net: P19
                     rows:
                         mod:
                             skip: true
                     name: index
                 inner:
-                    key:
-                        splay: -4
-                        stagger: -3
                     rows:
                         mod:
                             skip: true
+                    key:
+                        column_net: P20
                     name: inner
             rows:
-                mod: {}
-                bottom: {}
-                home: {}
-                top: {}
+                mod:
+                    row_net: P9
+                bottom:
+                    row_net: P8
+                home:
+                    row_net: P7
+                top:
+                    row_net: P6
+                number:
+                    row_net: P5
             name: matrix
         col:
             key:
-                splay: 2
+                column_net: P15
             rows: {}
             name: outer
         row: top
+        bind:
+            - 10
+            - 10
+            - 10
+            - 0
+matrix_outer_number:
+    x: 50
+    'y': -73.2
+    r: 0
+    meta:
+        stagger: 0
+        spread: 19.2
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 18.2
+        height: 18.2
+        padding: 19.2
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: outer_number
+        name: matrix_outer_number
+        column_net: P15
+        row_net: P5
+        zone:
+            columns:
+                outer:
+                    key:
+                        column_net: P15
+                    rows: {}
+                    name: outer
+                pinky:
+                    key:
+                        column_net: P14
+                    rows: {}
+                    name: pinky
+                ring:
+                    key:
+                        splay: -2
+                        spread: kp + 0.2
+                        stagger: -0.35
+                        column_net: P16
+                    rows: {}
+                    name: ring
+                middle:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        column_net: P10
+                    name: middle
+                index:
+                    key:
+                        splay: -2
+                        spread: kp + 0.2
+                        stagger: -0.35
+                        column_net: P19
+                    rows:
+                        mod:
+                            skip: true
+                    name: index
+                inner:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        column_net: P20
+                    name: inner
+            rows:
+                mod:
+                    row_net: P9
+                bottom:
+                    row_net: P8
+                home:
+                    row_net: P7
+                top:
+                    row_net: P6
+                number:
+                    row_net: P5
+            name: matrix
+        col:
+            key:
+                column_net: P15
+            rows: {}
+            name: outer
+        row: number
         bind:
             - 0
             - 10
             - 10
             - 0
 matrix_pinky_mod:
-    x: 68.9470537
-    'y': -144.9741512
-    r: 9
+    x: 69.2
+    'y': -150
+    r: 0
     meta:
-        stagger: 2
-        spread: 19.5
+        stagger: 0
+        spread: 19.2
         splay: 0
         origin:
             - 0
@@ -339,77 +485,90 @@ matrix_pinky_mod:
             - 0
         rotate: 0
         adjust: {}
-        width: 18.5
-        height: 18.5
-        padding: 19.5
+        width: 18.2
+        height: 18.2
+        padding: 19.2
         autobind: 10
         skip: false
         asym: both
         colrow: pinky_mod
         name: matrix_pinky_mod
+        column_net: P14
+        row_net: P9
         zone:
             columns:
                 outer:
                     key:
-                        splay: 2
+                        column_net: P15
                     rows: {}
                     name: outer
                 pinky:
                     key:
-                        stagger: 2
+                        column_net: P14
                     rows: {}
                     name: pinky
                 ring:
                     key:
-                        stagger: 4
                         splay: -2
+                        spread: kp + 0.2
+                        stagger: -0.35
+                        column_net: P16
                     rows: {}
                     name: ring
                 middle:
+                    rows:
+                        mod:
+                            skip: true
                     key:
-                        stagger: 3
-                    rows: {}
+                        column_net: P10
                     name: middle
                 index:
                     key:
-                        splay: -4
-                        stagger: -3
+                        splay: -2
+                        spread: kp + 0.2
+                        stagger: -0.35
+                        column_net: P19
                     rows:
                         mod:
                             skip: true
                     name: index
                 inner:
-                    key:
-                        splay: -4
-                        stagger: -3
                     rows:
                         mod:
                             skip: true
+                    key:
+                        column_net: P20
                     name: inner
             rows:
-                mod: {}
-                bottom: {}
-                home: {}
-                top: {}
+                mod:
+                    row_net: P9
+                bottom:
+                    row_net: P8
+                home:
+                    row_net: P7
+                top:
+                    row_net: P6
+                number:
+                    row_net: P5
             name: matrix
         col:
             key:
-                stagger: 2
+                column_net: P14
             rows: {}
             name: pinky
         row: mod
         bind:
             - 10
-            - 0
+            - 10
             - 0
             - 10
 matrix_pinky_bottom:
-    x: 65.8965816
-    'y': -125.7142286
-    r: 9
+    x: 69.2
+    'y': -130.8
+    r: 0
     meta:
-        stagger: 2
-        spread: 19.5
+        stagger: 0
+        spread: 19.2
         splay: 0
         origin:
             - 0
@@ -420,62 +579,75 @@ matrix_pinky_bottom:
             - 0
         rotate: 0
         adjust: {}
-        width: 18.5
-        height: 18.5
-        padding: 19.5
+        width: 18.2
+        height: 18.2
+        padding: 19.2
         autobind: 10
         skip: false
         asym: both
         colrow: pinky_bottom
         name: matrix_pinky_bottom
+        column_net: P14
+        row_net: P8
         zone:
             columns:
                 outer:
                     key:
-                        splay: 2
+                        column_net: P15
                     rows: {}
                     name: outer
                 pinky:
                     key:
-                        stagger: 2
+                        column_net: P14
                     rows: {}
                     name: pinky
                 ring:
                     key:
-                        stagger: 4
                         splay: -2
+                        spread: kp + 0.2
+                        stagger: -0.35
+                        column_net: P16
                     rows: {}
                     name: ring
                 middle:
+                    rows:
+                        mod:
+                            skip: true
                     key:
-                        stagger: 3
-                    rows: {}
+                        column_net: P10
                     name: middle
                 index:
                     key:
-                        splay: -4
-                        stagger: -3
+                        splay: -2
+                        spread: kp + 0.2
+                        stagger: -0.35
+                        column_net: P19
                     rows:
                         mod:
                             skip: true
                     name: index
                 inner:
-                    key:
-                        splay: -4
-                        stagger: -3
                     rows:
                         mod:
                             skip: true
+                    key:
+                        column_net: P20
                     name: inner
             rows:
-                mod: {}
-                bottom: {}
-                home: {}
-                top: {}
+                mod:
+                    row_net: P9
+                bottom:
+                    row_net: P8
+                home:
+                    row_net: P7
+                top:
+                    row_net: P6
+                number:
+                    row_net: P5
             name: matrix
         col:
             key:
-                stagger: 2
+                column_net: P14
             rows: {}
             name: pinky
         row: bottom
@@ -485,12 +657,12 @@ matrix_pinky_bottom:
             - 10
             - 10
 matrix_pinky_home:
-    x: 62.846109500000004
-    'y': -106.454306
-    r: 9
+    x: 69.2
+    'y': -111.60000000000001
+    r: 0
     meta:
-        stagger: 2
-        spread: 19.5
+        stagger: 0
+        spread: 19.2
         splay: 0
         origin:
             - 0
@@ -501,62 +673,75 @@ matrix_pinky_home:
             - 0
         rotate: 0
         adjust: {}
-        width: 18.5
-        height: 18.5
-        padding: 19.5
+        width: 18.2
+        height: 18.2
+        padding: 19.2
         autobind: 10
         skip: false
         asym: both
         colrow: pinky_home
         name: matrix_pinky_home
+        column_net: P14
+        row_net: P7
         zone:
             columns:
                 outer:
                     key:
-                        splay: 2
+                        column_net: P15
                     rows: {}
                     name: outer
                 pinky:
                     key:
-                        stagger: 2
+                        column_net: P14
                     rows: {}
                     name: pinky
                 ring:
                     key:
-                        stagger: 4
                         splay: -2
+                        spread: kp + 0.2
+                        stagger: -0.35
+                        column_net: P16
                     rows: {}
                     name: ring
                 middle:
+                    rows:
+                        mod:
+                            skip: true
                     key:
-                        stagger: 3
-                    rows: {}
+                        column_net: P10
                     name: middle
                 index:
                     key:
-                        splay: -4
-                        stagger: -3
+                        splay: -2
+                        spread: kp + 0.2
+                        stagger: -0.35
+                        column_net: P19
                     rows:
                         mod:
                             skip: true
                     name: index
                 inner:
-                    key:
-                        splay: -4
-                        stagger: -3
                     rows:
                         mod:
                             skip: true
+                    key:
+                        column_net: P20
                     name: inner
             rows:
-                mod: {}
-                bottom: {}
-                home: {}
-                top: {}
+                mod:
+                    row_net: P9
+                bottom:
+                    row_net: P8
+                home:
+                    row_net: P7
+                top:
+                    row_net: P6
+                number:
+                    row_net: P5
             name: matrix
         col:
             key:
-                stagger: 2
+                column_net: P14
             rows: {}
             name: pinky
         row: home
@@ -566,12 +751,12 @@ matrix_pinky_home:
             - 10
             - 10
 matrix_pinky_top:
-    x: 59.795637400000004
-    'y': -87.1943834
-    r: 9
+    x: 69.2
+    'y': -92.4
+    r: 0
     meta:
-        stagger: 2
-        spread: 19.5
+        stagger: 0
+        spread: 19.2
         splay: 0
         origin:
             - 0
@@ -582,77 +767,184 @@ matrix_pinky_top:
             - 0
         rotate: 0
         adjust: {}
-        width: 18.5
-        height: 18.5
-        padding: 19.5
+        width: 18.2
+        height: 18.2
+        padding: 19.2
         autobind: 10
         skip: false
         asym: both
         colrow: pinky_top
         name: matrix_pinky_top
+        column_net: P14
+        row_net: P6
         zone:
             columns:
                 outer:
                     key:
-                        splay: 2
+                        column_net: P15
                     rows: {}
                     name: outer
                 pinky:
                     key:
-                        stagger: 2
+                        column_net: P14
                     rows: {}
                     name: pinky
                 ring:
                     key:
-                        stagger: 4
                         splay: -2
+                        spread: kp + 0.2
+                        stagger: -0.35
+                        column_net: P16
                     rows: {}
                     name: ring
                 middle:
+                    rows:
+                        mod:
+                            skip: true
                     key:
-                        stagger: 3
-                    rows: {}
+                        column_net: P10
                     name: middle
                 index:
                     key:
-                        splay: -4
-                        stagger: -3
+                        splay: -2
+                        spread: kp + 0.2
+                        stagger: -0.35
+                        column_net: P19
                     rows:
                         mod:
                             skip: true
                     name: index
                 inner:
-                    key:
-                        splay: -4
-                        stagger: -3
                     rows:
                         mod:
                             skip: true
+                    key:
+                        column_net: P20
                     name: inner
             rows:
-                mod: {}
-                bottom: {}
-                home: {}
-                top: {}
+                mod:
+                    row_net: P9
+                bottom:
+                    row_net: P8
+                home:
+                    row_net: P7
+                top:
+                    row_net: P6
+                number:
+                    row_net: P5
             name: matrix
         col:
             key:
-                stagger: 2
+                column_net: P14
             rows: {}
             name: pinky
         row: top
         bind:
-            - 0
             - 10
             - 10
-            - 0
-matrix_ring_mod:
-    x: 87.5812385
-    'y': -137.9729258
-    r: 7
+            - 10
+            - 10
+matrix_pinky_number:
+    x: 69.2
+    'y': -73.2
+    r: 0
     meta:
-        stagger: 4
-        spread: 19.5
+        stagger: 0
+        spread: 19.2
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 18.2
+        height: 18.2
+        padding: 19.2
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: pinky_number
+        name: matrix_pinky_number
+        column_net: P14
+        row_net: P5
+        zone:
+            columns:
+                outer:
+                    key:
+                        column_net: P15
+                    rows: {}
+                    name: outer
+                pinky:
+                    key:
+                        column_net: P14
+                    rows: {}
+                    name: pinky
+                ring:
+                    key:
+                        splay: -2
+                        spread: kp + 0.2
+                        stagger: -0.35
+                        column_net: P16
+                    rows: {}
+                    name: ring
+                middle:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        column_net: P10
+                    name: middle
+                index:
+                    key:
+                        splay: -2
+                        spread: kp + 0.2
+                        stagger: -0.35
+                        column_net: P19
+                    rows:
+                        mod:
+                            skip: true
+                    name: index
+                inner:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        column_net: P20
+                    name: inner
+            rows:
+                mod:
+                    row_net: P9
+                bottom:
+                    row_net: P8
+                home:
+                    row_net: P7
+                top:
+                    row_net: P6
+                number:
+                    row_net: P5
+            name: matrix
+        col:
+            key:
+                column_net: P14
+            rows: {}
+            name: pinky
+        row: number
+        bind:
+            - 0
+            - 0
+            - 10
+            - 10
+matrix_ring_mod:
+    x: 88.6
+    'y': -150.35
+    r: -2
+    meta:
+        stagger: -0.35
+        spread: 19.4
         splay: -2
         origin:
             - 0
@@ -663,63 +955,78 @@ matrix_ring_mod:
             - 0
         rotate: 0
         adjust: {}
-        width: 18.5
-        height: 18.5
-        padding: 19.5
+        width: 18.2
+        height: 18.2
+        padding: 19.2
         autobind: 10
         skip: false
         asym: both
         colrow: ring_mod
         name: matrix_ring_mod
+        column_net: P16
+        row_net: P9
         zone:
             columns:
                 outer:
                     key:
-                        splay: 2
+                        column_net: P15
                     rows: {}
                     name: outer
                 pinky:
                     key:
-                        stagger: 2
+                        column_net: P14
                     rows: {}
                     name: pinky
                 ring:
                     key:
-                        stagger: 4
                         splay: -2
+                        spread: kp + 0.2
+                        stagger: -0.35
+                        column_net: P16
                     rows: {}
                     name: ring
                 middle:
+                    rows:
+                        mod:
+                            skip: true
                     key:
-                        stagger: 3
-                    rows: {}
+                        column_net: P10
                     name: middle
                 index:
                     key:
-                        splay: -4
-                        stagger: -3
+                        splay: -2
+                        spread: kp + 0.2
+                        stagger: -0.35
+                        column_net: P19
                     rows:
                         mod:
                             skip: true
                     name: index
                 inner:
-                    key:
-                        splay: -4
-                        stagger: -3
                     rows:
                         mod:
                             skip: true
+                    key:
+                        column_net: P20
                     name: inner
             rows:
-                mod: {}
-                bottom: {}
-                home: {}
-                top: {}
+                mod:
+                    row_net: P9
+                bottom:
+                    row_net: P8
+                home:
+                    row_net: P7
+                top:
+                    row_net: P6
+                number:
+                    row_net: P5
             name: matrix
         col:
             key:
-                stagger: 4
                 splay: -2
+                spread: kp + 0.2
+                stagger: -0.35
+                column_net: P16
             rows: {}
             name: ring
         row: mod
@@ -727,14 +1034,14 @@ matrix_ring_mod:
             - 10
             - 0
             - 0
-            - 10
+            - 0
 matrix_ring_bottom:
-    x: 85.2047863
-    'y': -118.61827580000002
-    r: 7
+    x: 89.2700703
+    'y': -131.1616961
+    r: -2
     meta:
-        stagger: 4
-        spread: 19.5
+        stagger: -0.35
+        spread: 19.4
         splay: -2
         origin:
             - 0
@@ -745,63 +1052,78 @@ matrix_ring_bottom:
             - 0
         rotate: 0
         adjust: {}
-        width: 18.5
-        height: 18.5
-        padding: 19.5
+        width: 18.2
+        height: 18.2
+        padding: 19.2
         autobind: 10
         skip: false
         asym: both
         colrow: ring_bottom
         name: matrix_ring_bottom
+        column_net: P16
+        row_net: P8
         zone:
             columns:
                 outer:
                     key:
-                        splay: 2
+                        column_net: P15
                     rows: {}
                     name: outer
                 pinky:
                     key:
-                        stagger: 2
+                        column_net: P14
                     rows: {}
                     name: pinky
                 ring:
                     key:
-                        stagger: 4
                         splay: -2
+                        spread: kp + 0.2
+                        stagger: -0.35
+                        column_net: P16
                     rows: {}
                     name: ring
                 middle:
+                    rows:
+                        mod:
+                            skip: true
                     key:
-                        stagger: 3
-                    rows: {}
+                        column_net: P10
                     name: middle
                 index:
                     key:
-                        splay: -4
-                        stagger: -3
+                        splay: -2
+                        spread: kp + 0.2
+                        stagger: -0.35
+                        column_net: P19
                     rows:
                         mod:
                             skip: true
                     name: index
                 inner:
-                    key:
-                        splay: -4
-                        stagger: -3
                     rows:
                         mod:
                             skip: true
+                    key:
+                        column_net: P20
                     name: inner
             rows:
-                mod: {}
-                bottom: {}
-                home: {}
-                top: {}
+                mod:
+                    row_net: P9
+                bottom:
+                    row_net: P8
+                home:
+                    row_net: P7
+                top:
+                    row_net: P6
+                number:
+                    row_net: P5
             name: matrix
         col:
             key:
-                stagger: 4
                 splay: -2
+                spread: kp + 0.2
+                stagger: -0.35
+                column_net: P16
             rows: {}
             name: ring
         row: bottom
@@ -811,12 +1133,12 @@ matrix_ring_bottom:
             - 10
             - 10
 matrix_ring_home:
-    x: 82.82833409999999
-    'y': -99.26362580000003
-    r: 7
+    x: 89.9401406
+    'y': -111.9733922
+    r: -2
     meta:
-        stagger: 4
-        spread: 19.5
+        stagger: -0.35
+        spread: 19.4
         splay: -2
         origin:
             - 0
@@ -827,63 +1149,78 @@ matrix_ring_home:
             - 0
         rotate: 0
         adjust: {}
-        width: 18.5
-        height: 18.5
-        padding: 19.5
+        width: 18.2
+        height: 18.2
+        padding: 19.2
         autobind: 10
         skip: false
         asym: both
         colrow: ring_home
         name: matrix_ring_home
+        column_net: P16
+        row_net: P7
         zone:
             columns:
                 outer:
                     key:
-                        splay: 2
+                        column_net: P15
                     rows: {}
                     name: outer
                 pinky:
                     key:
-                        stagger: 2
+                        column_net: P14
                     rows: {}
                     name: pinky
                 ring:
                     key:
-                        stagger: 4
                         splay: -2
+                        spread: kp + 0.2
+                        stagger: -0.35
+                        column_net: P16
                     rows: {}
                     name: ring
                 middle:
+                    rows:
+                        mod:
+                            skip: true
                     key:
-                        stagger: 3
-                    rows: {}
+                        column_net: P10
                     name: middle
                 index:
                     key:
-                        splay: -4
-                        stagger: -3
+                        splay: -2
+                        spread: kp + 0.2
+                        stagger: -0.35
+                        column_net: P19
                     rows:
                         mod:
                             skip: true
                     name: index
                 inner:
-                    key:
-                        splay: -4
-                        stagger: -3
                     rows:
                         mod:
                             skip: true
+                    key:
+                        column_net: P20
                     name: inner
             rows:
-                mod: {}
-                bottom: {}
-                home: {}
-                top: {}
+                mod:
+                    row_net: P9
+                bottom:
+                    row_net: P8
+                home:
+                    row_net: P7
+                top:
+                    row_net: P6
+                number:
+                    row_net: P5
             name: matrix
         col:
             key:
-                stagger: 4
                 splay: -2
+                spread: kp + 0.2
+                stagger: -0.35
+                column_net: P16
             rows: {}
             name: ring
         row: home
@@ -893,12 +1230,12 @@ matrix_ring_home:
             - 10
             - 10
 matrix_ring_top:
-    x: 80.45188189999999
-    'y': -79.90897580000004
-    r: 7
+    x: 90.61021090000001
+    'y': -92.78508830000001
+    r: -2
     meta:
-        stagger: 4
-        spread: 19.5
+        stagger: -0.35
+        spread: 19.4
         splay: -2
         origin:
             - 0
@@ -909,79 +1246,94 @@ matrix_ring_top:
             - 0
         rotate: 0
         adjust: {}
-        width: 18.5
-        height: 18.5
-        padding: 19.5
+        width: 18.2
+        height: 18.2
+        padding: 19.2
         autobind: 10
         skip: false
         asym: both
         colrow: ring_top
         name: matrix_ring_top
+        column_net: P16
+        row_net: P6
         zone:
             columns:
                 outer:
                     key:
-                        splay: 2
+                        column_net: P15
                     rows: {}
                     name: outer
                 pinky:
                     key:
-                        stagger: 2
+                        column_net: P14
                     rows: {}
                     name: pinky
                 ring:
                     key:
-                        stagger: 4
                         splay: -2
+                        spread: kp + 0.2
+                        stagger: -0.35
+                        column_net: P16
                     rows: {}
                     name: ring
                 middle:
+                    rows:
+                        mod:
+                            skip: true
                     key:
-                        stagger: 3
-                    rows: {}
+                        column_net: P10
                     name: middle
                 index:
                     key:
-                        splay: -4
-                        stagger: -3
+                        splay: -2
+                        spread: kp + 0.2
+                        stagger: -0.35
+                        column_net: P19
                     rows:
                         mod:
                             skip: true
                     name: index
                 inner:
-                    key:
-                        splay: -4
-                        stagger: -3
                     rows:
                         mod:
                             skip: true
+                    key:
+                        column_net: P20
                     name: inner
             rows:
-                mod: {}
-                bottom: {}
-                home: {}
-                top: {}
+                mod:
+                    row_net: P9
+                bottom:
+                    row_net: P8
+                home:
+                    row_net: P7
+                top:
+                    row_net: P6
+                number:
+                    row_net: P5
             name: matrix
         col:
             key:
-                stagger: 4
                 splay: -2
+                spread: kp + 0.2
+                stagger: -0.35
+                column_net: P16
             rows: {}
             name: ring
         row: top
         bind:
-            - 0
             - 10
             - 10
-            - 0
-matrix_middle_mod:
-    x: 106.5702805
-    'y': -132.6188351
-    r: 7
+            - 10
+            - 10
+matrix_ring_number:
+    x: 91.28028120000002
+    'y': -73.59678440000002
+    r: -2
     meta:
-        stagger: 3
-        spread: 19.5
-        splay: 0
+        stagger: -0.35
+        spread: 19.4
+        splay: -2
         origin:
             - 0
             - 0
@@ -991,77 +1343,93 @@ matrix_middle_mod:
             - 0
         rotate: 0
         adjust: {}
-        width: 18.5
-        height: 18.5
-        padding: 19.5
+        width: 18.2
+        height: 18.2
+        padding: 19.2
         autobind: 10
         skip: false
         asym: both
-        colrow: middle_mod
-        name: matrix_middle_mod
+        colrow: ring_number
+        name: matrix_ring_number
+        column_net: P16
+        row_net: P5
         zone:
             columns:
                 outer:
                     key:
-                        splay: 2
+                        column_net: P15
                     rows: {}
                     name: outer
                 pinky:
                     key:
-                        stagger: 2
+                        column_net: P14
                     rows: {}
                     name: pinky
                 ring:
                     key:
-                        stagger: 4
                         splay: -2
+                        spread: kp + 0.2
+                        stagger: -0.35
+                        column_net: P16
                     rows: {}
                     name: ring
                 middle:
+                    rows:
+                        mod:
+                            skip: true
                     key:
-                        stagger: 3
-                    rows: {}
+                        column_net: P10
                     name: middle
                 index:
                     key:
-                        splay: -4
-                        stagger: -3
+                        splay: -2
+                        spread: kp + 0.2
+                        stagger: -0.35
+                        column_net: P19
                     rows:
                         mod:
                             skip: true
                     name: index
                 inner:
-                    key:
-                        splay: -4
-                        stagger: -3
                     rows:
                         mod:
                             skip: true
+                    key:
+                        column_net: P20
                     name: inner
             rows:
-                mod: {}
-                bottom: {}
-                home: {}
-                top: {}
+                mod:
+                    row_net: P9
+                bottom:
+                    row_net: P8
+                home:
+                    row_net: P7
+                top:
+                    row_net: P6
+                number:
+                    row_net: P5
             name: matrix
         col:
             key:
-                stagger: 3
+                splay: -2
+                spread: kp + 0.2
+                stagger: -0.35
+                column_net: P16
             rows: {}
-            name: middle
-        row: mod
+            name: ring
+        row: number
         bind:
+            - 0
+            - 0
             - 10
-            - 0
-            - 0
             - 10
 matrix_middle_bottom:
-    x: 104.19382829999999
-    'y': -113.26418510000002
-    r: 7
+    x: 108.4583742
+    'y': -131.8317664
+    r: -2
     meta:
-        stagger: 3
-        spread: 19.5
+        stagger: 0
+        spread: 19.2
         splay: 0
         origin:
             - 0
@@ -1072,77 +1440,92 @@ matrix_middle_bottom:
             - 0
         rotate: 0
         adjust: {}
-        width: 18.5
-        height: 18.5
-        padding: 19.5
+        width: 18.2
+        height: 18.2
+        padding: 19.2
         autobind: 10
         skip: false
         asym: both
         colrow: middle_bottom
         name: matrix_middle_bottom
+        column_net: P10
+        row_net: P8
         zone:
             columns:
                 outer:
                     key:
-                        splay: 2
+                        column_net: P15
                     rows: {}
                     name: outer
                 pinky:
                     key:
-                        stagger: 2
+                        column_net: P14
                     rows: {}
                     name: pinky
                 ring:
                     key:
-                        stagger: 4
                         splay: -2
+                        spread: kp + 0.2
+                        stagger: -0.35
+                        column_net: P16
                     rows: {}
                     name: ring
                 middle:
+                    rows:
+                        mod:
+                            skip: true
                     key:
-                        stagger: 3
-                    rows: {}
+                        column_net: P10
                     name: middle
                 index:
                     key:
-                        splay: -4
-                        stagger: -3
+                        splay: -2
+                        spread: kp + 0.2
+                        stagger: -0.35
+                        column_net: P19
                     rows:
                         mod:
                             skip: true
                     name: index
                 inner:
-                    key:
-                        splay: -4
-                        stagger: -3
                     rows:
                         mod:
                             skip: true
+                    key:
+                        column_net: P20
                     name: inner
             rows:
-                mod: {}
-                bottom: {}
-                home: {}
-                top: {}
+                mod:
+                    row_net: P9
+                bottom:
+                    row_net: P8
+                home:
+                    row_net: P7
+                top:
+                    row_net: P6
+                number:
+                    row_net: P5
             name: matrix
         col:
+            rows:
+                mod:
+                    skip: true
             key:
-                stagger: 3
-            rows: {}
+                column_net: P10
             name: middle
         row: bottom
         bind:
             - 10
             - 10
-            - 10
+            - 0
             - 10
 matrix_middle_home:
-    x: 101.81737609999999
-    'y': -93.90953510000003
-    r: 7
+    x: 109.1284445
+    'y': -112.6434625
+    r: -2
     meta:
-        stagger: 3
-        spread: 19.5
+        stagger: 0
+        spread: 19.2
         splay: 0
         origin:
             - 0
@@ -1153,63 +1536,78 @@ matrix_middle_home:
             - 0
         rotate: 0
         adjust: {}
-        width: 18.5
-        height: 18.5
-        padding: 19.5
+        width: 18.2
+        height: 18.2
+        padding: 19.2
         autobind: 10
         skip: false
         asym: both
         colrow: middle_home
         name: matrix_middle_home
+        column_net: P10
+        row_net: P7
         zone:
             columns:
                 outer:
                     key:
-                        splay: 2
+                        column_net: P15
                     rows: {}
                     name: outer
                 pinky:
                     key:
-                        stagger: 2
+                        column_net: P14
                     rows: {}
                     name: pinky
                 ring:
                     key:
-                        stagger: 4
                         splay: -2
+                        spread: kp + 0.2
+                        stagger: -0.35
+                        column_net: P16
                     rows: {}
                     name: ring
                 middle:
+                    rows:
+                        mod:
+                            skip: true
                     key:
-                        stagger: 3
-                    rows: {}
+                        column_net: P10
                     name: middle
                 index:
                     key:
-                        splay: -4
-                        stagger: -3
+                        splay: -2
+                        spread: kp + 0.2
+                        stagger: -0.35
+                        column_net: P19
                     rows:
                         mod:
                             skip: true
                     name: index
                 inner:
-                    key:
-                        splay: -4
-                        stagger: -3
                     rows:
                         mod:
                             skip: true
+                    key:
+                        column_net: P20
                     name: inner
             rows:
-                mod: {}
-                bottom: {}
-                home: {}
-                top: {}
+                mod:
+                    row_net: P9
+                bottom:
+                    row_net: P8
+                home:
+                    row_net: P7
+                top:
+                    row_net: P6
+                number:
+                    row_net: P5
             name: matrix
         col:
+            rows:
+                mod:
+                    skip: true
             key:
-                stagger: 3
-            rows: {}
+                column_net: P10
             name: middle
         row: home
         bind:
@@ -1218,12 +1616,12 @@ matrix_middle_home:
             - 10
             - 10
 matrix_middle_top:
-    x: 99.44092389999999
-    'y': -74.55488510000004
-    r: 7
+    x: 109.7985148
+    'y': -93.4551586
+    r: -2
     meta:
-        stagger: 3
-        spread: 19.5
+        stagger: 0
+        spread: 19.2
         splay: 0
         origin:
             - 0
@@ -1234,78 +1632,93 @@ matrix_middle_top:
             - 0
         rotate: 0
         adjust: {}
-        width: 18.5
-        height: 18.5
-        padding: 19.5
+        width: 18.2
+        height: 18.2
+        padding: 19.2
         autobind: 10
         skip: false
         asym: both
         colrow: middle_top
         name: matrix_middle_top
+        column_net: P10
+        row_net: P6
         zone:
             columns:
                 outer:
                     key:
-                        splay: 2
+                        column_net: P15
                     rows: {}
                     name: outer
                 pinky:
                     key:
-                        stagger: 2
+                        column_net: P14
                     rows: {}
                     name: pinky
                 ring:
                     key:
-                        stagger: 4
                         splay: -2
+                        spread: kp + 0.2
+                        stagger: -0.35
+                        column_net: P16
                     rows: {}
                     name: ring
                 middle:
+                    rows:
+                        mod:
+                            skip: true
                     key:
-                        stagger: 3
-                    rows: {}
+                        column_net: P10
                     name: middle
                 index:
                     key:
-                        splay: -4
-                        stagger: -3
+                        splay: -2
+                        spread: kp + 0.2
+                        stagger: -0.35
+                        column_net: P19
                     rows:
                         mod:
                             skip: true
                     name: index
                 inner:
-                    key:
-                        splay: -4
-                        stagger: -3
                     rows:
                         mod:
                             skip: true
+                    key:
+                        column_net: P20
                     name: inner
             rows:
-                mod: {}
-                bottom: {}
-                home: {}
-                top: {}
+                mod:
+                    row_net: P9
+                bottom:
+                    row_net: P8
+                home:
+                    row_net: P7
+                top:
+                    row_net: P6
+                number:
+                    row_net: P5
             name: matrix
         col:
+            rows:
+                mod:
+                    skip: true
             key:
-                stagger: 3
-            rows: {}
+                column_net: P10
             name: middle
         row: top
         bind:
-            - 0
-            - 0
             - 10
-            - 0
-matrix_index_bottom:
-    x: 125.2699873
-    'y': -113.7467455
-    r: 3
+            - 10
+            - 10
+            - 10
+matrix_middle_number:
+    x: 110.46858510000001
+    'y': -74.26685470000001
+    r: -2
     meta:
-        stagger: -3
-        spread: 19.5
-        splay: -4
+        stagger: 0
+        spread: 19.2
+        splay: 0
         origin:
             - 0
             - 0
@@ -1315,63 +1728,174 @@ matrix_index_bottom:
             - 0
         rotate: 0
         adjust: {}
-        width: 18.5
-        height: 18.5
-        padding: 19.5
+        width: 18.2
+        height: 18.2
+        padding: 19.2
         autobind: 10
         skip: false
         asym: both
-        colrow: index_bottom
-        name: matrix_index_bottom
+        colrow: middle_number
+        name: matrix_middle_number
+        column_net: P10
+        row_net: P5
         zone:
             columns:
                 outer:
                     key:
-                        splay: 2
+                        column_net: P15
                     rows: {}
                     name: outer
                 pinky:
                     key:
-                        stagger: 2
+                        column_net: P14
                     rows: {}
                     name: pinky
                 ring:
                     key:
-                        stagger: 4
                         splay: -2
+                        spread: kp + 0.2
+                        stagger: -0.35
+                        column_net: P16
                     rows: {}
                     name: ring
                 middle:
+                    rows:
+                        mod:
+                            skip: true
                     key:
-                        stagger: 3
-                    rows: {}
+                        column_net: P10
                     name: middle
                 index:
                     key:
-                        splay: -4
-                        stagger: -3
+                        splay: -2
+                        spread: kp + 0.2
+                        stagger: -0.35
+                        column_net: P19
                     rows:
                         mod:
                             skip: true
                     name: index
                 inner:
-                    key:
-                        splay: -4
-                        stagger: -3
                     rows:
                         mod:
                             skip: true
+                    key:
+                        column_net: P20
                     name: inner
             rows:
-                mod: {}
-                bottom: {}
-                home: {}
-                top: {}
+                mod:
+                    row_net: P9
+                bottom:
+                    row_net: P8
+                home:
+                    row_net: P7
+                top:
+                    row_net: P6
+                number:
+                    row_net: P5
+            name: matrix
+        col:
+            rows:
+                mod:
+                    skip: true
+            key:
+                column_net: P10
+            name: middle
+        row: number
+        bind:
+            - 0
+            - 0
+            - 10
+            - 10
+matrix_index_bottom:
+    x: 128.5035954
+    'y': -132.8936776
+    r: -4
+    meta:
+        stagger: -0.35
+        spread: 19.4
+        splay: -2
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 18.2
+        height: 18.2
+        padding: 19.2
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: index_bottom
+        name: matrix_index_bottom
+        column_net: P19
+        row_net: P8
+        zone:
+            columns:
+                outer:
+                    key:
+                        column_net: P15
+                    rows: {}
+                    name: outer
+                pinky:
+                    key:
+                        column_net: P14
+                    rows: {}
+                    name: pinky
+                ring:
+                    key:
+                        splay: -2
+                        spread: kp + 0.2
+                        stagger: -0.35
+                        column_net: P16
+                    rows: {}
+                    name: ring
+                middle:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        column_net: P10
+                    name: middle
+                index:
+                    key:
+                        splay: -2
+                        spread: kp + 0.2
+                        stagger: -0.35
+                        column_net: P19
+                    rows:
+                        mod:
+                            skip: true
+                    name: index
+                inner:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        column_net: P20
+                    name: inner
+            rows:
+                mod:
+                    row_net: P9
+                bottom:
+                    row_net: P8
+                home:
+                    row_net: P7
+                top:
+                    row_net: P6
+                number:
+                    row_net: P5
             name: matrix
         col:
             key:
-                splay: -4
-                stagger: -3
+                splay: -2
+                spread: kp + 0.2
+                stagger: -0.35
+                column_net: P19
             rows:
                 mod:
                     skip: true
@@ -1381,15 +1905,15 @@ matrix_index_bottom:
             - 10
             - 10
             - 0
-            - 10
+            - 0
 matrix_index_home:
-    x: 124.24943619999999
-    'y': -94.2734696
-    r: 3
+    x: 129.84291969999998
+    'y': -113.7404478
+    r: -4
     meta:
-        stagger: -3
-        spread: 19.5
-        splay: -4
+        stagger: -0.35
+        spread: 19.4
+        splay: -2
         origin:
             - 0
             - 0
@@ -1399,63 +1923,78 @@ matrix_index_home:
             - 0
         rotate: 0
         adjust: {}
-        width: 18.5
-        height: 18.5
-        padding: 19.5
+        width: 18.2
+        height: 18.2
+        padding: 19.2
         autobind: 10
         skip: false
         asym: both
         colrow: index_home
         name: matrix_index_home
+        column_net: P19
+        row_net: P7
         zone:
             columns:
                 outer:
                     key:
-                        splay: 2
+                        column_net: P15
                     rows: {}
                     name: outer
                 pinky:
                     key:
-                        stagger: 2
+                        column_net: P14
                     rows: {}
                     name: pinky
                 ring:
                     key:
-                        stagger: 4
                         splay: -2
+                        spread: kp + 0.2
+                        stagger: -0.35
+                        column_net: P16
                     rows: {}
                     name: ring
                 middle:
+                    rows:
+                        mod:
+                            skip: true
                     key:
-                        stagger: 3
-                    rows: {}
+                        column_net: P10
                     name: middle
                 index:
                     key:
-                        splay: -4
-                        stagger: -3
+                        splay: -2
+                        spread: kp + 0.2
+                        stagger: -0.35
+                        column_net: P19
                     rows:
                         mod:
                             skip: true
                     name: index
                 inner:
-                    key:
-                        splay: -4
-                        stagger: -3
                     rows:
                         mod:
                             skip: true
+                    key:
+                        column_net: P20
                     name: inner
             rows:
-                mod: {}
-                bottom: {}
-                home: {}
-                top: {}
+                mod:
+                    row_net: P9
+                bottom:
+                    row_net: P8
+                home:
+                    row_net: P7
+                top:
+                    row_net: P6
+                number:
+                    row_net: P5
             name: matrix
         col:
             key:
-                splay: -4
-                stagger: -3
+                splay: -2
+                spread: kp + 0.2
+                stagger: -0.35
+                column_net: P19
             rows:
                 mod:
                     skip: true
@@ -1467,13 +2006,13 @@ matrix_index_home:
             - 10
             - 10
 matrix_index_top:
-    x: 123.22888509999999
-    'y': -74.8001937
-    r: 3
+    x: 131.18224399999997
+    'y': -94.58721800000001
+    r: -4
     meta:
-        stagger: -3
-        spread: 19.5
-        splay: -4
+        stagger: -0.35
+        spread: 19.4
+        splay: -2
         origin:
             - 0
             - 0
@@ -1483,81 +2022,96 @@ matrix_index_top:
             - 0
         rotate: 0
         adjust: {}
-        width: 18.5
-        height: 18.5
-        padding: 19.5
+        width: 18.2
+        height: 18.2
+        padding: 19.2
         autobind: 10
         skip: false
         asym: both
         colrow: index_top
         name: matrix_index_top
+        column_net: P19
+        row_net: P6
         zone:
             columns:
                 outer:
                     key:
-                        splay: 2
+                        column_net: P15
                     rows: {}
                     name: outer
                 pinky:
                     key:
-                        stagger: 2
+                        column_net: P14
                     rows: {}
                     name: pinky
                 ring:
                     key:
-                        stagger: 4
                         splay: -2
+                        spread: kp + 0.2
+                        stagger: -0.35
+                        column_net: P16
                     rows: {}
                     name: ring
                 middle:
+                    rows:
+                        mod:
+                            skip: true
                     key:
-                        stagger: 3
-                    rows: {}
+                        column_net: P10
                     name: middle
                 index:
                     key:
-                        splay: -4
-                        stagger: -3
+                        splay: -2
+                        spread: kp + 0.2
+                        stagger: -0.35
+                        column_net: P19
                     rows:
                         mod:
                             skip: true
                     name: index
                 inner:
-                    key:
-                        splay: -4
-                        stagger: -3
                     rows:
                         mod:
                             skip: true
+                    key:
+                        column_net: P20
                     name: inner
             rows:
-                mod: {}
-                bottom: {}
-                home: {}
-                top: {}
+                mod:
+                    row_net: P9
+                bottom:
+                    row_net: P8
+                home:
+                    row_net: P7
+                top:
+                    row_net: P6
+                number:
+                    row_net: P5
             name: matrix
         col:
             key:
-                splay: -4
-                stagger: -3
+                splay: -2
+                spread: kp + 0.2
+                stagger: -0.35
+                column_net: P19
             rows:
                 mod:
                     skip: true
             name: index
         row: top
         bind:
-            - 0
-            - 0
             - 10
             - 10
-matrix_inner_bottom:
-    x: 146.2611442
-    'y': -115.69832889999999
-    r: -1
+            - 10
+            - 10
+matrix_index_number:
+    x: 132.52156829999996
+    'y': -75.43398820000002
+    r: -4
     meta:
-        stagger: -3
-        spread: 19.5
-        splay: -4
+        stagger: -0.35
+        spread: 19.4
+        splay: -2
         origin:
             - 0
             - 0
@@ -1567,66 +2121,177 @@ matrix_inner_bottom:
             - 0
         rotate: 0
         adjust: {}
-        width: 18.5
-        height: 18.5
-        padding: 19.5
+        width: 18.2
+        height: 18.2
+        padding: 19.2
         autobind: 10
         skip: false
         asym: both
-        colrow: inner_bottom
-        name: matrix_inner_bottom
+        colrow: index_number
+        name: matrix_index_number
+        column_net: P19
+        row_net: P5
         zone:
             columns:
                 outer:
                     key:
-                        splay: 2
+                        column_net: P15
                     rows: {}
                     name: outer
                 pinky:
                     key:
-                        stagger: 2
+                        column_net: P14
                     rows: {}
                     name: pinky
                 ring:
                     key:
-                        stagger: 4
                         splay: -2
+                        spread: kp + 0.2
+                        stagger: -0.35
+                        column_net: P16
                     rows: {}
                     name: ring
                 middle:
+                    rows:
+                        mod:
+                            skip: true
                     key:
-                        stagger: 3
-                    rows: {}
+                        column_net: P10
                     name: middle
                 index:
                     key:
-                        splay: -4
-                        stagger: -3
+                        splay: -2
+                        spread: kp + 0.2
+                        stagger: -0.35
+                        column_net: P19
                     rows:
                         mod:
                             skip: true
                     name: index
                 inner:
-                    key:
-                        splay: -4
-                        stagger: -3
                     rows:
                         mod:
                             skip: true
+                    key:
+                        column_net: P20
                     name: inner
             rows:
-                mod: {}
-                bottom: {}
-                home: {}
-                top: {}
+                mod:
+                    row_net: P9
+                bottom:
+                    row_net: P8
+                home:
+                    row_net: P7
+                top:
+                    row_net: P6
+                number:
+                    row_net: P5
             name: matrix
         col:
             key:
-                splay: -4
-                stagger: -3
+                splay: -2
+                spread: kp + 0.2
+                stagger: -0.35
+                column_net: P19
             rows:
                 mod:
                     skip: true
+            name: index
+        row: number
+        bind:
+            - 0
+            - 0
+            - 10
+            - 10
+matrix_inner_bottom:
+    x: 147.6568252
+    'y': -134.23300189999998
+    r: -4
+    meta:
+        stagger: 0
+        spread: 19.2
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 18.2
+        height: 18.2
+        padding: 19.2
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: inner_bottom
+        name: matrix_inner_bottom
+        column_net: P20
+        row_net: P8
+        zone:
+            columns:
+                outer:
+                    key:
+                        column_net: P15
+                    rows: {}
+                    name: outer
+                pinky:
+                    key:
+                        column_net: P14
+                    rows: {}
+                    name: pinky
+                ring:
+                    key:
+                        splay: -2
+                        spread: kp + 0.2
+                        stagger: -0.35
+                        column_net: P16
+                    rows: {}
+                    name: ring
+                middle:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        column_net: P10
+                    name: middle
+                index:
+                    key:
+                        splay: -2
+                        spread: kp + 0.2
+                        stagger: -0.35
+                        column_net: P19
+                    rows:
+                        mod:
+                            skip: true
+                    name: index
+                inner:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        column_net: P20
+                    name: inner
+            rows:
+                mod:
+                    row_net: P9
+                bottom:
+                    row_net: P8
+                home:
+                    row_net: P7
+                top:
+                    row_net: P6
+                number:
+                    row_net: P5
+            name: matrix
+        col:
+            rows:
+                mod:
+                    skip: true
+            key:
+                column_net: P20
             name: inner
         row: bottom
         bind:
@@ -1635,13 +2300,13 @@ matrix_inner_bottom:
             - 0
             - 0
 matrix_inner_home:
-    x: 146.60146609999998
-    'y': -96.20129879999999
-    r: -1
+    x: 148.99614949999997
+    'y': -115.07977209999999
+    r: -4
     meta:
-        stagger: -3
-        spread: 19.5
-        splay: -4
+        stagger: 0
+        spread: 19.2
+        splay: 0
         origin:
             - 0
             - 0
@@ -1651,66 +2316,78 @@ matrix_inner_home:
             - 0
         rotate: 0
         adjust: {}
-        width: 18.5
-        height: 18.5
-        padding: 19.5
+        width: 18.2
+        height: 18.2
+        padding: 19.2
         autobind: 10
         skip: false
         asym: both
         colrow: inner_home
         name: matrix_inner_home
+        column_net: P20
+        row_net: P7
         zone:
             columns:
                 outer:
                     key:
-                        splay: 2
+                        column_net: P15
                     rows: {}
                     name: outer
                 pinky:
                     key:
-                        stagger: 2
+                        column_net: P14
                     rows: {}
                     name: pinky
                 ring:
                     key:
-                        stagger: 4
                         splay: -2
+                        spread: kp + 0.2
+                        stagger: -0.35
+                        column_net: P16
                     rows: {}
                     name: ring
                 middle:
+                    rows:
+                        mod:
+                            skip: true
                     key:
-                        stagger: 3
-                    rows: {}
+                        column_net: P10
                     name: middle
                 index:
                     key:
-                        splay: -4
-                        stagger: -3
+                        splay: -2
+                        spread: kp + 0.2
+                        stagger: -0.35
+                        column_net: P19
                     rows:
                         mod:
                             skip: true
                     name: index
                 inner:
-                    key:
-                        splay: -4
-                        stagger: -3
                     rows:
                         mod:
                             skip: true
+                    key:
+                        column_net: P20
                     name: inner
             rows:
-                mod: {}
-                bottom: {}
-                home: {}
-                top: {}
+                mod:
+                    row_net: P9
+                bottom:
+                    row_net: P8
+                home:
+                    row_net: P7
+                top:
+                    row_net: P6
+                number:
+                    row_net: P5
             name: matrix
         col:
-            key:
-                splay: -4
-                stagger: -3
             rows:
                 mod:
                     skip: true
+            key:
+                column_net: P20
             name: inner
         row: home
         bind:
@@ -1719,96 +2396,12 @@ matrix_inner_home:
             - 10
             - 10
 matrix_inner_top:
-    x: 146.94178799999997
-    'y': -76.70426869999999
-    r: -1
-    meta:
-        stagger: -3
-        spread: 19.5
-        splay: -4
-        origin:
-            - 0
-            - 0
-        orient: 0
-        shift:
-            - 0
-            - 0
-        rotate: 0
-        adjust: {}
-        width: 18.5
-        height: 18.5
-        padding: 19.5
-        autobind: 10
-        skip: false
-        asym: both
-        colrow: inner_top
-        name: matrix_inner_top
-        zone:
-            columns:
-                outer:
-                    key:
-                        splay: 2
-                    rows: {}
-                    name: outer
-                pinky:
-                    key:
-                        stagger: 2
-                    rows: {}
-                    name: pinky
-                ring:
-                    key:
-                        stagger: 4
-                        splay: -2
-                    rows: {}
-                    name: ring
-                middle:
-                    key:
-                        stagger: 3
-                    rows: {}
-                    name: middle
-                index:
-                    key:
-                        splay: -4
-                        stagger: -3
-                    rows:
-                        mod:
-                            skip: true
-                    name: index
-                inner:
-                    key:
-                        splay: -4
-                        stagger: -3
-                    rows:
-                        mod:
-                            skip: true
-                    name: inner
-            rows:
-                mod: {}
-                bottom: {}
-                home: {}
-                top: {}
-            name: matrix
-        col:
-            key:
-                splay: -4
-                stagger: -3
-            rows:
-                mod:
-                    skip: true
-            name: inner
-        row: top
-        bind:
-            - 0
-            - 0
-            - 10
-            - 10
-thumbfan_inner_cluster:
-    x: 145.74629819999998
-    'y': -145.19383589999998
-    r: -21
+    x: 150.33547379999996
+    'y': -95.9265423
+    r: -4
     meta:
         stagger: 0
-        spread: 19.5
+        spread: 19.2
         splay: 0
         origin:
             - 0
@@ -1819,39 +2412,344 @@ thumbfan_inner_cluster:
             - 0
         rotate: 0
         adjust: {}
-        width: 18.5
-        height: 18.5
-        padding: 19.5
+        width: 18.2
+        height: 18.2
+        padding: 19.2
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: inner_top
+        name: matrix_inner_top
+        column_net: P20
+        row_net: P6
+        zone:
+            columns:
+                outer:
+                    key:
+                        column_net: P15
+                    rows: {}
+                    name: outer
+                pinky:
+                    key:
+                        column_net: P14
+                    rows: {}
+                    name: pinky
+                ring:
+                    key:
+                        splay: -2
+                        spread: kp + 0.2
+                        stagger: -0.35
+                        column_net: P16
+                    rows: {}
+                    name: ring
+                middle:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        column_net: P10
+                    name: middle
+                index:
+                    key:
+                        splay: -2
+                        spread: kp + 0.2
+                        stagger: -0.35
+                        column_net: P19
+                    rows:
+                        mod:
+                            skip: true
+                    name: index
+                inner:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        column_net: P20
+                    name: inner
+            rows:
+                mod:
+                    row_net: P9
+                bottom:
+                    row_net: P8
+                home:
+                    row_net: P7
+                top:
+                    row_net: P6
+                number:
+                    row_net: P5
+            name: matrix
+        col:
+            rows:
+                mod:
+                    skip: true
+            key:
+                column_net: P20
+            name: inner
+        row: top
+        bind:
+            - 10
+            - 0
+            - 10
+            - 10
+matrix_inner_number:
+    x: 151.67479809999995
+    'y': -76.7733125
+    r: -4
+    meta:
+        stagger: 0
+        spread: 19.2
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 18.2
+        height: 18.2
+        padding: 19.2
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: inner_number
+        name: matrix_inner_number
+        column_net: P20
+        row_net: P5
+        zone:
+            columns:
+                outer:
+                    key:
+                        column_net: P15
+                    rows: {}
+                    name: outer
+                pinky:
+                    key:
+                        column_net: P14
+                    rows: {}
+                    name: pinky
+                ring:
+                    key:
+                        splay: -2
+                        spread: kp + 0.2
+                        stagger: -0.35
+                        column_net: P16
+                    rows: {}
+                    name: ring
+                middle:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        column_net: P10
+                    name: middle
+                index:
+                    key:
+                        splay: -2
+                        spread: kp + 0.2
+                        stagger: -0.35
+                        column_net: P19
+                    rows:
+                        mod:
+                            skip: true
+                    name: index
+                inner:
+                    rows:
+                        mod:
+                            skip: true
+                    key:
+                        column_net: P20
+                    name: inner
+            rows:
+                mod:
+                    row_net: P9
+                bottom:
+                    row_net: P8
+                home:
+                    row_net: P7
+                top:
+                    row_net: P6
+                number:
+                    row_net: P5
+            name: matrix
+        col:
+            rows:
+                mod:
+                    skip: true
+            key:
+                column_net: P20
+            name: inner
+        row: number
+        bind:
+            - 0
+            - 0
+            - 10
+            - 10
+thumbfan_mod_cluster:
+    x: 126.81548869999999
+    'y': -157.0347276
+    r: -100
+    meta:
+        stagger: 0
+        spread: 19.2
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: -90
+        adjust: {}
+        width: 18.2
+        height: 18.2
+        padding: 19.2
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: mod_cluster
+        name: thumbfan_mod_cluster
+        column_net: P10
+        row_net: P9
+        zone:
+            columns:
+                mod:
+                    key:
+                        rotate: -90
+                        column_net: P10
+                    rows: {}
+                    name: mod
+                inner:
+                    key:
+                        splay: -8
+                        shift:
+                            - 2
+                            - -1
+                        rotate: -90
+                        column_net: P19
+                    rows: {}
+                    name: inner
+                home:
+                    key:
+                        splay: -8
+                        width: 1.5kc
+                        shift:
+                            - 4
+                            - 0.25kc - 2
+                        rotate: -90
+                        column_net: P20
+                    rows: {}
+                    name: home
+                outer:
+                    key:
+                        splay: -8
+                        width: 1.5kc
+                        shift:
+                            - 6
+                            - 0.25kc - 3
+                        rotate: -90
+                        column_net: P18
+                    rows: {}
+                    name: outer
+            rows:
+                cluster:
+                    row_net: P9
+            name: thumbfan
+        col:
+            key:
+                rotate: -90
+                column_net: P10
+            rows: {}
+            name: mod
+        row: cluster
+        bind:
+            - 0
+            - 0
+            - 0
+            - 0
+thumbfan_inner_cluster:
+    x: 147.3168936
+    'y': -161.9378631
+    r: -108
+    meta:
+        stagger: 0
+        spread: 19.2
+        splay: -8
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 2
+            - -1
+        rotate: -90
+        adjust: {}
+        width: 18.2
+        height: 18.2
+        padding: 19.2
         autobind: 10
         skip: false
         asym: both
         colrow: inner_cluster
         name: thumbfan_inner_cluster
+        column_net: P19
+        row_net: P9
         zone:
             columns:
-                inner: null
+                mod:
+                    key:
+                        rotate: -90
+                        column_net: P10
+                    rows: {}
+                    name: mod
+                inner:
+                    key:
+                        splay: -8
+                        shift:
+                            - 2
+                            - -1
+                        rotate: -90
+                        column_net: P19
+                    rows: {}
+                    name: inner
                 home:
                     key:
-                        height: 1.5kc
+                        splay: -8
+                        width: 1.5kc
                         shift:
-                            - 0
-                            - 0.25kc
+                            - 4
+                            - 0.25kc - 2
+                        rotate: -90
+                        column_net: P20
                     rows: {}
                     name: home
                 outer:
                     key:
-                        height: 1.5kc
+                        splay: -8
+                        width: 1.5kc
                         shift:
-                            - 0
-                            - 0.25kc
+                            - 6
+                            - 0.25kc - 3
+                        rotate: -90
+                        column_net: P18
                     rows: {}
                     name: outer
             rows:
-                cluster: {}
+                cluster:
+                    row_net: P9
             name: thumbfan
         col:
+            key:
+                splay: -8
+                shift:
+                    - 2
+                    - -1
+                rotate: -90
+                column_net: P19
             rows: {}
-            key: {}
             name: inner
         row: cluster
         bind:
@@ -1860,58 +2758,85 @@ thumbfan_inner_cluster:
             - 0
             - 0
 thumbfan_home_cluster:
-    x: 165.60856829999997
-    'y': -147.86420139999998
-    r: -21
+    x: 168.69710529999998
+    'y': -165.7634587
+    r: -116
     meta:
         stagger: 0
-        spread: 19.5
-        splay: 0
+        spread: 19.2
+        splay: -8
         origin:
             - 0
             - 0
         orient: 0
         shift:
-            - 0
-            - 4.625
-        rotate: 0
+            - 4
+            - 2.55
+        rotate: -90
         adjust: {}
-        width: 18.5
-        height: 27.75
-        padding: 19.5
+        width: 27.299999999999997
+        height: 18.2
+        padding: 19.2
         autobind: 10
         skip: false
         asym: both
         colrow: home_cluster
         name: thumbfan_home_cluster
+        column_net: P20
+        row_net: P9
         zone:
             columns:
-                inner: null
+                mod:
+                    key:
+                        rotate: -90
+                        column_net: P10
+                    rows: {}
+                    name: mod
+                inner:
+                    key:
+                        splay: -8
+                        shift:
+                            - 2
+                            - -1
+                        rotate: -90
+                        column_net: P19
+                    rows: {}
+                    name: inner
                 home:
                     key:
-                        height: 1.5kc
+                        splay: -8
+                        width: 1.5kc
                         shift:
-                            - 0
-                            - 0.25kc
+                            - 4
+                            - 0.25kc - 2
+                        rotate: -90
+                        column_net: P20
                     rows: {}
                     name: home
                 outer:
                     key:
-                        height: 1.5kc
+                        splay: -8
+                        width: 1.5kc
                         shift:
-                            - 0
-                            - 0.25kc
+                            - 6
+                            - 0.25kc - 3
+                        rotate: -90
+                        column_net: P18
                     rows: {}
                     name: outer
             rows:
-                cluster: {}
+                cluster:
+                    row_net: P9
             name: thumbfan
         col:
             key:
-                height: 1.5kc
+                splay: -8
+                width: 1.5kc
                 shift:
-                    - 0
-                    - 0.25kc
+                    - 4
+                    - 0.25kc - 2
+                rotate: -90
+                column_net: P20
             rows: {}
             name: home
         row: cluster
@@ -1921,58 +2846,85 @@ thumbfan_home_cluster:
             - 0
             - 0
 thumbfan_outer_cluster:
-    x: 183.81338659999997
-    'y': -154.85237639999997
-    r: -21
+    x: 187.08190279999997
+    'y': -176.7887741
+    r: -124
     meta:
         stagger: 0
-        spread: 19.5
-        splay: 0
+        spread: 19.2
+        splay: -8
         origin:
             - 0
             - 0
         orient: 0
         shift:
-            - 0
-            - 4.625
-        rotate: 0
+            - 6
+            - 1.5499999999999998
+        rotate: -90
         adjust: {}
-        width: 18.5
-        height: 27.75
-        padding: 19.5
+        width: 27.299999999999997
+        height: 18.2
+        padding: 19.2
         autobind: 10
         skip: false
         asym: both
         colrow: outer_cluster
         name: thumbfan_outer_cluster
+        column_net: P18
+        row_net: P9
         zone:
             columns:
-                inner: null
+                mod:
+                    key:
+                        rotate: -90
+                        column_net: P10
+                    rows: {}
+                    name: mod
+                inner:
+                    key:
+                        splay: -8
+                        shift:
+                            - 2
+                            - -1
+                        rotate: -90
+                        column_net: P19
+                    rows: {}
+                    name: inner
                 home:
                     key:
-                        height: 1.5kc
+                        splay: -8
+                        width: 1.5kc
                         shift:
-                            - 0
-                            - 0.25kc
+                            - 4
+                            - 0.25kc - 2
+                        rotate: -90
+                        column_net: P20
                     rows: {}
                     name: home
                 outer:
                     key:
-                        height: 1.5kc
+                        splay: -8
+                        width: 1.5kc
                         shift:
-                            - 0
-                            - 0.25kc
+                            - 6
+                            - 0.25kc - 3
+                        rotate: -90
+                        column_net: P18
                     rows: {}
                     name: outer
             rows:
-                cluster: {}
+                cluster:
+                    row_net: P9
             name: thumbfan
         col:
             key:
-                height: 1.5kc
+                splay: -8
+                width: 1.5kc
                 shift:
-                    - 0
-                    - 0.25kc
+                    - 6
+                    - 0.25kc - 3
+                rotate: -90
+                column_net: P18
             rows: {}
             name: outer
         row: cluster
